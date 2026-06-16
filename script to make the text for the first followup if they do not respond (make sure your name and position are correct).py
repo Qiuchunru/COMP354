@@ -14,7 +14,7 @@ We offer various sponsorship packages that can be tailored to fit your company's
 Thanks,
 
 {your_name}
-HackConcordia {your_title} of Sponsorship
+HackCanada {your_title} of Sponsorship
 """
 
 def generate_email(company_name, recipient_name):
