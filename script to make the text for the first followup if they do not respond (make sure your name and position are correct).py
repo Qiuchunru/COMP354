@@ -1,5 +1,5 @@
 # Hardcoded values
-YOUR_NAME = "Toby Fischer"
+YOUR_NAME = ""
 YOUR_TITLE = "Vice-President"
 
 email_template = """
