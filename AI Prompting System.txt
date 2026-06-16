@@ -1,0 +1,302 @@
+## Goal
+
+Your task is to design an AI prompting system that helps Hack Canada find, score, research, and contact potential sponsors. The goal is not just to find “cool”, the  goal is to find companies that are realistically likely to sponsor.
+
+A good sponsor is a company that has a clear reason to care about one or more of the following:
+
+1. Hiring strong technical students.
+2. Getting developers to use their API, SDK, tool, platform, or product.
+3. Building brand awareness in the Canadian student tech community.
+4. Supporting hackathons, student events, open source communities, or university recruiting.
+
+## Part 1: Build a List of Potential Companies
+
+Use AI to find a large list of companies
+
+The AI should look for companies from sources such as:
+
+1. Past hackathon sponsors.
+2. Sponsors listed on MLH hackathon websites.
+3. Companies **launching** developer facing products.
+4. Companies hiring interns or new grads in Canada.
+5. Companies with Waterloo, Toronto, Vancouver, Montreal, or Canadian recruiting interest/offices
+
+A useful starting point is the MLH events page:
+
+https://www.mlh.com/seasons/2026/events
+
+The AI can check individual hackathon websites and look for sponsor there.
+
+## Part 2: Score Each Company Out of 10
+
+After creating the list, get a separate AI prompt to rate each company based on how likely they are to sponsor Hack Canada.
+
+The score should be based on sponsorship fit, not just company size, fame, or how impressive the company is.
+
+For example:
+
+OpenAI may be a famous company, but it should not automatically receive a high score. If there is little evidence that they sponsor  student hackathons, if they are difficult to contact, and if they receive thousands of similar requests, their score should be lower.
+
+On the other hand, companies like DRW or Citadel may score higher because they actively recruit top technical students, have a history of sponsoring university or quant events, and have a strong reason to care about Waterloo talent.
+
+Instead of only giving one overall score, the AI should break the score into multiple categories.
+
+A company should not be punished just because it only fits one category. For example, a trading firm may have almost no developer adoption angle, but it can still be an excellent sponsor if it strongly cares about hiring Waterloo students.
+
+### 1. Main Sponsorship Motivation
+
+The AI should first identify **why this company would sponsor**. Most companies fall into one or more of these categories:
+
+### Hiring Talent
+
+The company wants access to strong students for internships, new grad roles, coops, AI, software, data, quant, product, design, or hardware roles.
+
+Strong signs:
+
+- Intern or new grad job postings.
+- Hiring in Canada, especially Toronto, Waterloo, Vancouver, Montreal, or remote Canada.
+- Waterloo alumni at the company.
+- Campus recruiters, university recruiters, or early talent recruiters.
+- Past university recruiting, career fairs, student clubs, or hackathon involvement.
+
+### Developer Adoption
+
+The company wants students to build with its product.
+
+Strong signs:
+
+- APIs, SDKs, cloud tools, databases, AI tools, DevOps products, auth tools, payment APIs, open source tools, or developer platforms.
+- Public developer docs.
+- DevRel, community, developer marketing, or developer advocate roles.
+- Product can realistically be used in a 48 hour hackathon.
+- The company could sponsor a prize track, workshop, credits, demo challenge, or API challenge.
+
+### Brand Awareness / Community
+
+The company wants visibility with students, developers, or the Canadian tech ecosystem.
+
+Strong signs:
+
+- They sponsor events, conferences, student programs, startup programs, or community initiatives.
+- They care about social media, booth traffic, workshops, photos, demos, or being seen as supporting Canadian student innovation.
+
+The AI should look for evidence in these areas:
+
+### Past Sponsorship Evidence
+
+This is one of the strongest signals. Look for whether the company has sponsored:
+
+- Hackathons.
+- MLH events.
+- University clubs.
+- Student competitions.
+- Devpost events.
+- Startup/student programs.
+- Developer conferences.
+- Canadian tech/community events.
+
+A company that has sponsored similar events before should score much higher.
+
+### Waterloo / Canada Fit
+
+Because Hack Canada has a strong Waterloo audience, the AI should check:
+
+- Does the company hire Waterloo coops or new grads?
+- Are there Waterloo alumni at the company?
+- Does the company hire in Canada?
+- Does it have Canadian offices or remote Canada roles?
+- Has it worked with Canadian universities or student groups before?
+
+Strong Canada or Waterloo fit should significantly increase the score.
+
+### Developer Product Fit
+
+The AI should check whether students can actually build with the company’s product.
+
+Good signs:
+
+- Public API or SDK.
+- Developer documentation.
+- Free tier, student credits, or easy sign up.
+- Product can be used in a weekend project.
+- Active GitHub, Discord, Slack, forum, or developer community.
+- Tutorials, webinars, workshops, or example projects.
+
+If the company has a strong developer product, it may be a good sponsor even if it is not hiring many students.
+
+### Company Size and Accessibility
+
+The AI should not automatically give big companies high scores. It should judge whether the company is realistic to close.
+
+Too Small
+
+Examples: two person startups, indie tools, unfunded projects, very early pre seed companies.
+
+They may be interested but may not have much budget. They could still sponsor with credits, swag, small prizes, workshops, or mentorship.
+
+Typical score: **3–6/10**, unless product fit is extremely strong.
+
+Sweet Spot
+
+Examples: seed to Series C startups, 20–500 employee companies, developer tools, AI tools, infrastructure companies, fintech/data/cloud companies, Canadian startups, Waterloo connected companies.
+
+These are often the best targets because they may have budget, want growth, want talent, and are still reachable.
+
+Typical score: **7–10/10** if there is strong evidence.
+
+Too Big / Hard to Reach
+
+Examples: OpenAI, Google, Meta, Apple, Microsoft, Amazon, Nvidia.
+
+These companies may have money, but they are usually hard to reach through cold outreach unless there is a local team, warm intro, campus program, or previous hackathon sponsorship evidence.
+
+Typical score: **2–6/10**, unless there is clear evidence they sponsor comparable Canadian student hackathons.
+
+### Contactability
+
+A company should score higher if there is a realistic person to contact.
+
+Good contacts:
+
+- Developer Advocate.
+- Developer Relations.
+- Community Manager.
+- Developer Marketing Manager.
+- Growth Marketing Manager.
+- Campus Recruiter.
+- University Recruiter.
+- Early Talent Recruiter.
+- Partnerships Manager.
+- Startup Program Manager.
+- Founder or CEO, especially for smaller companies.
+
+Positive signs:
+
+- They are active on LinkedIn or X.
+- They post about students, hackathons, APIs, open source, demos, hiring, or developer community.
+- They have a public email or easy contact path.
+- The company has a community, Discord, Slack, forum, ambassador program, or startup program.
+
+Negative signs:
+
+- Only a generic sales/contact form.
+- No DevRel, recruiting, community, or partnership person.
+- Sponsorship must go through a corporate portal.
+- Only senior executives are reachable.
+- No public activity around students, developers, or community.
+
+For each company, the AI should return:
+
+E.g.
+
+Talent Sponsor Score: 9/10
+
+Developer Adoption Score: 1/10
+
+Brand/Community Score: 7/10
+
+Accessibility Score: 7/10
+
+Budget Likelihood Score: 9/10
+
+Overall Sponsorship Likelihood: 8.5/10
+
+## Part 3: Research Each Company in Detail
+
+For each high scoring company, use AI to create a detailed sponsor report.
+
+The report should answer:
+
+1. What does the company do?
+2. What products or services does it offer?
+3. What products, APIs, SDKs, AI tools, or developer platforms has it recently launched?
+4. Has the company sponsored hackathons, MLH events, student events, developer events, or university programs before?
+5. Does the company hire interns or new grads?
+6. Does the company hire in Canada?
+7. Does the company have Waterloo alumni or employees with University of Waterloo backgrounds?
+8. Does the company have DevRel, community, campus recruiting, or partnerships staff?
+9. Who should Hack Canada contact?
+10. What is the best outreach angle?
+11. What sponsor tier should Hack Canada pitch?
+
+Here is an example template
+
+Company:
+
+Website:
+
+Industry:
+
+Company size:
+
+Score:
+
+Priority: High / Medium / Low
+
+Talent Sponsor Score: /10
+
+Developer Adoption Score: /10
+
+Brand/Community Score: /10
+
+Accessibility Score: /10
+
+Budget Likelihood Score: /10
+
+Overall Sponsorship Likelihood: /10
+
+Best Sponsor Angle:
+
+….
+
+## Part 4: Find Contact Information
+
+Based on that company, the AI should look for a list of people working there, you mostly want developer relations, developer advocate, community manger, or marketing le d.
+
+After identifying the best person to contact, use AI to help find public contact information.
+
+The AI should look for:
+
+1. Public company emails.
+2. Personal websites.
+3. GitHub profiles.
+4. X profiles.
+5. LinkedIn profiles.
+6. Conference speaker pages.
+7. Blog author pages.
+8. Company team pages.
+9. Community pages.
+10. Developer documentation pages.
+
+Important limitation:
+
+The system must not assume access to private databases, LinkedIn scraping tools, CRM software, Apollo, Hunter, RocketReach, or other proprietary contact finding tools.
+
+The assignment should be possible using a normal AI model and standard web research.
+
+---
+
+# TLDR
+
+The final system should take a company from unknown lead to outreach ready sponsor prospect.
+
+It should be able to:
+
+1. Find companies that are actually likely to sponsor Hack Canada.
+2. Score them based on real sponsorship fit, not just fame or company size.
+3. Separate companies by sponsor motivation:
+    - Hiring talent.
+    - Developer adoption.
+    - Brand/community awareness.
+4. Remove companies that are probably not worth our time.
+5. Research each company deeply enough to understand why they would care.
+6. Find the best person to contact.
+7. Find a public email, LinkedIn, X account, or contact method.
+
+The most important idea is that sponsor quality is not the same as company fame.
+
+A good sponsor is not just a rich company. A good sponsor is a company with a clear reason to care about Hack Canada’s audience.
+
+For Hack Canada, the strongest sponsors are usually companies that want access to Waterloo heavy technical talent, companies that want students building with their developer tools, or companies that already support hackathons, student events, DevRel, open source, or Canadian recruiting.
+
+The AI should act like a sponsor research assistant. Its job is to save time, filter bad leads, find strong leads, and give the outreach team enough information to send specific, high converting messages.
