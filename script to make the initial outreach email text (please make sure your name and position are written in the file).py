@@ -1,17 +1,17 @@
 # Hardcoded values
-YOUR_NAME = ""
+YOUR_NAME = "Toby Fischer"
 YOUR_TITLE = "Vice-President"
 
 email_template = """
 Subject:
 
-Sponsorship opportunity for {company_name} with HackCanada student association annual ConUHacks event
+Sponsorship opportunity for {company_name} with HackConcordia student association annual ConUHacks event
 
 Body:
 
 Hello {recipient_name},
 
-My name is {your_name} and I am reaching out to you at {company_name} as {your_title} of Sponsorship for the HackCanada student association. We are a student group focused on bringing together a community of developers and programmers through experiential learning opportunities. This January, we are hosting the 10th edition of our annual Hackathon event, ConUHacks X, where over 1000 students from across Canada (and beyond) will compete in teams for 24 hours straight to produce innovative and creative projects. We would like to invite {company_name} to be a key sponsor for ConUHacks X, taking place on January 24-25, 2026 at Concordia University's John Molson Building{location}.
+My name is {your_name} and I am reaching out to you at {company_name} as {your_title} of Sponsorship for the HackConcordia student association at Concordia University. We are a student group focused on bringing together a community of developers and programmers through experiential learning opportunities. This January, we are hosting the 10th edition of our annual Hackathon event, ConUHacks X, where over 1000 students from across Canada (and beyond) will compete in teams for 24 hours straight to produce innovative and creative projects. We would like to invite {company_name} to be a key sponsor for ConUHacks X, taking place on January 24-25, 2026 at Concordia University's John Molson Building{location}.
 
 Either through a booth at our career fair, access to participants' CVs, or even a post-event recruitment email, we believe that this partnership would provide {company_name} with the unique opportunity to meet with (and recruit from) over 1000 top-tier engineering and computer science students from Montreal and beyond, who will one day be key stakeholders in their fields. As well, sponsoring ConUHacks opens up an exceptional avenue to promote your company to a vibrant student community, both through our event's branding or by sending company representatives as mentors or judges for our competition.
 
