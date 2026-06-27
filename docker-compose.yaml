@@ -1,0 +1,100 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi
+    working_dir: /app
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/app"
+      REDIS_URL: "redis://redis:6379"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./api:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/docs')"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  playwright:
+    build:
+      context: .
+      dockerfile: Dockerfile.playwright
+    working_dir: /app
+    environment:
+      BASE_URL: "http://app:8000"
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/app"
+      REDIS_URL: "redis://redis:6379"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - .:/app
+      - ./reports:/app/reports
+      - ./test-results:/app/test-results
+      - ./downloads:/app/downloads
+    depends_on:
+      app:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    command: ["pytest", "-v", "--browser", "chromium"]
+
+  playwright-script:
+    build:
+      context: .
+      dockerfile: Dockerfile.playwright
+    working_dir: /app
+    environment:
+      BASE_URL: "http://app:8000"
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/app"
+      REDIS_URL: "redis://redis:6379"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - .:/app
+      - ./reports:/app/reports
+      - ./test-results:/app/test-results
+      - ./downloads:/app/downloads
+    depends_on:
+      app:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    command: ["python", "crawling/scrape_single_website.py"]
+    profiles:
+      - scripts
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d app"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:
