@@ -88,7 +88,7 @@ evaluator.py                                  ----------------------------------
         │                                                evaluator.py
         |                                                 │
         |                                                 ├── calls ->
-        |                                                 │     llm/sponsor_dimension_evaluator.py (where the LLM prompt lives)
+        |                                                 │     llm/sponsor_dimension_evaluator.py  (where the LLM prompt lives)
         |                                                 │
         |                                                 │         -> sends prompt to model
         |                                                 │         -> returns structured scores
