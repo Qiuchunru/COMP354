@@ -61,21 +61,71 @@ This output is structured so the CLI can display it, the export module can write
 
 ---
 
-## Pipeline flow
-```
-Discovery stage
-  (Company + Evidence)
+## Pipeline Flow
+
+```text
+Discovery Stage
+(Company + Evidence)
+        │
+        ▼                                
+schemas.py                                    -----------------------------------------------------------------------------
+   Defines data structures:
+    - Company
+    - Evidence
+    - CriterionScore                                                I/O structuring stage
+    - SponsorScore                                     Purpose: standardizes all data used across the system
         │
         ▼
-  SponsorEvaluator
+evaluator.py                                  ------------------------------------------------------------------------------
+   SponsorEvaluator (core orchestrator)
+    ├── Evaluates each sponsorship dimension
+    ├── (Later) sends evidence to LLM for scoring                    Evaluation stage
+    ├── Collects the six criterion scores                Purpose: controls the evaluation workflow, not the math 
+        |                                                 it does not have an LLM prompt, prompt engineering lives in llm/
+        |   
+        |                                                How will it work:
+        |                                               
+        │                                                evaluator.py
+        |                                                 │
+        |                                                 ├── calls ->
+        |                                                 │     llm/sponsor_dimension_evaluator.py  (where the LLM prompt lives)
+        |                                                 │
+        |                                                 │         -> sends prompt to model
+        |                                                 │         -> returns structured scores
+        |                                                 │
+        |                                                 ▼
+        |                                                collects results
+        |                                                
+        |                                                 
+        |   
+        │   
+        |   
+        |   
+        │   
+        |      
+        |   
+        │                                     
+        ▼                                     -------------------------------------------------------------------------------
+scoring.py
+   ScoreCalculator
+    ├── Validates criterion scores (0–10)
+    ├── Applies configurable weights (from criteria.py)                 Calculation stage
+    └── Computes overall sponsorship score                Purpose: converts individual scores into a final weighted score
         │
-        ├── Sends evidence to the LLM
-        ├── Gets back scores for each dimension
-        ├── Calculates the overall weighted score
-        └── Assembles the full SponsorScore
-        │
+        ▼                                     -------------------------------------------------------------------------------
+SponsorScore (schemas.py)
+   Final structured output:
+    ├── Company info
+    ├── 6 criterion scores
+    ├── Overall score                        
+    ├── Confidence level                                              Output production stage
+    ├── Explanation                                         Purpose: clean, exportable result object for CLI / CSV / storage
+    ├── Sponsorship motivations
+    ├── Strengths & weaknesses
+    └── Outreach recommendation
+        │                                     --------------------------------------------------------------------------------
         ▼
-  Saved to persistence -> exported to CSV / shown in CLI
+Persistence / Export / CLI
 ```
 
 ---
