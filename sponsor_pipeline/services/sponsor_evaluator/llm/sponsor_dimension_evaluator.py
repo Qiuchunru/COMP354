@@ -132,3 +132,61 @@ _SUMMARY_SYSTEM_PROMPT = (
     "- Recommended contact role should be a real job title, not a vague category"
 )
 
+
+# ---------------------------------------------------------------------------
+# Evidence field metadata shared by both prompt builders
+# ---------------------------------------------------------------------------
+
+# Maps each criterion key to the Evidence field that carries its primary signals
+# For this evaluation criterion, which evidence is the most important?
+# it chooses what to emphasize for each criterion
+
+_PRIMARY_EVIDENCE_FIELD: dict[str, str] = {
+    "talent_acquisition":     "hiring_signals",
+    "developer_ecosystem":    "developer_products",
+    "community_sponsorship":  "past_sponsorships",
+    "outreach_accessibility": "contact_signals",
+    "sponsorship_capacity":   "company_size_signals",
+    "strategic_alignment":    "canada_signals",
+}
+
+# All evidence fields with human-readable labels
+# used by both the dimension and summary prompt builders
+_EVIDENCE_FIELDS: list[tuple[str, str]] = [
+    ("hiring_signals",       "Hiring signals"),
+    ("developer_products",   "Developer products"),
+    ("past_sponsorships",    "Past sponsorships"),
+    ("contact_signals",      "Contact signals" ),
+    ("company_size_signals", "Company size signals"),
+    ("canada_signals",       "Canada signals"),
+]
+
+
+
+# ---------------------------------------------------------------------------
+# ClaudeSponsorDimensionEvaluator implementation —--->  calls the Claude API
+# ---------------------------------------------------------------------------
+class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
+    """
+    Claude backed implementation of SponsorDimensionEvaluator
+    builds prompts, calls the Claude API, and parses responses into
+    CriterionScore and SponsorEvaluationSummary objects
+
+    structured output strategy (tool use):
+        define a tool whose input_schema matches the data we need,
+        then force the model to call it with tool_choice= {"type": "tool"}
+        claude must populate required fields before responding, so the
+        output arrives as validated JSON 
+
+    Approach to be adopted: client injection
+    """
+
+    def __init__(
+        self,
+        client: anthropic.Anthropic,
+        model: str = "claude-sonnet-4-6",
+    ) -> None:
+        # client is owned by the caller (API key and connection config live there
+        self._client = client
+        self._model = model
+
