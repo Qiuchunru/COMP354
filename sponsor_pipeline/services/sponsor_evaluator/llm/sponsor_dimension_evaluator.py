@@ -1,12 +1,16 @@
 """
 LLM backed evaluator for individual sponsorship dimensions
 This module owns all prompt engineering and LLM interaction logic,
-evaluator.py calls into this module and receives structured results back 
+evaluator.py calls into this module and receives structured results back
 rather than touching a prompt string directly
+
+The abstract class SponsorDimensionEvaluator is the contract evaluator.py depends on
+and ClaudeSponsorDimensionEvaluator is the concrete implementation that calls the Claude API
 """
 
 from __future__ import annotations
 
+import anthropic
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
@@ -99,3 +103,32 @@ class SponsorDimensionEvaluator(ABC):
         Returns:
             A SponsorEvaluationSummary with confidence, motivations, outreach advice...
         """
+
+
+# ---------------------------------------------------------------------------
+# Prompt constants for the concrete Claude implementation
+# defined at module level so they can be read and tuned without digging into methods
+# ---------------------------------------------------------------------------
+
+_DIMENSION_SYSTEM_PROMPT = (
+    "You are a sponsorship analyst for Hack Canada, a major Canadian university hackathon.\n"
+    "Your job is to score one dimension of a company's fit as a potential sponsor.\n"
+    "\n"
+    "Rules:\n"
+    "- Score based only on the evidence provided, never on company reputation or name recognition\n"
+    "- A well-known company with no relevant evidence should score low\n"
+    "- A smaller company with strong targeted evidence should score high\n"
+    "- Cite the specific evidence items that drove the score in supporting_evidence"
+)
+
+_SUMMARY_SYSTEM_PROMPT = (
+    "You are a sponsorship analyst for Hack Canada, a major Canadian university hackathon.\n"
+    "You have already scored a company across six dimensions. Now produce a holistic summary.\n"
+    "\n"
+    "Rules:\n"
+    "- Motivations must be grounded in the dimension scores and evidence, not assumed\n"
+    "- Confidence reflects evidence volume and quality, not score height\n"
+    "- The outreach angle should be concrete and specific to this company, not generic\n"
+    "- Recommended contact role should be a real job title, not a vague category"
+)
+
