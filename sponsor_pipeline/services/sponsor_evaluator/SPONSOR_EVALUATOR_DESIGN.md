@@ -67,64 +67,59 @@ This output is structured so the CLI can display it, the export module can write
 Discovery Stage
 (Company + Evidence)
         │
-        ▼                                
-schemas.py                                    -----------------------------------------------------------------------------
-   Defines data structures:
-    - Company
+        ▼
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+schemas.py
+   Defines data structures:                                          I/O structuring stage
+    - Company                                            Purpose: standardizes all data used across the system
     - Evidence
-    - CriterionScore                                                I/O structuring stage
-    - SponsorScore                                     Purpose: standardizes all data used across the system
+    - CriterionScore
+    - SponsorScore
         │
         ▼
-evaluator.py                                  ------------------------------------------------------------------------------
-   SponsorEvaluator (core orchestrator)
-    ├── Evaluates each sponsorship dimension
-    ├── (Later) sends evidence to LLM for scoring                    Evaluation stage
-    ├── Collects the six criterion scores                Purpose: controls the evaluation workflow, not the math 
-        |                                                 it does not have an LLM prompt, prompt engineering lives in llm/
-        |   
-        |                                                How will it work:
-        |                                               
-        │                                                evaluator.py
-        |                                                 │
-        |                                                 ├── calls ->
-        |                                                 │     llm/sponsor_dimension_evaluator.py  (where the LLM prompt lives)
-        |                                                 │
-        |                                                 │         -> sends prompt to model
-        |                                                 │         -> returns structured scores
-        |                                                 │
-        |                                                 ▼
-        |                                                collects results
-        |                                                
-        |                                                 
-        |   
-        │   
-        |   
-        |   
-        │   
-        |      
-        |   
-        │                                     
-        ▼                                     -------------------------------------------------------------------------------
-scoring.py
-   ScoreCalculator
-    ├── Validates criterion scores (0–10)
-    ├── Applies configurable weights (from criteria.py)                 Calculation stage
-    └── Computes overall sponsorship score                Purpose: converts individual scores into a final weighted score
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+evaluator.py
+   SponsorEvaluator (core orchestrator)                              Evaluation stage
+    ├── Evaluates each sponsorship dimension               Purpose: controls the evaluation workflow, not the math
+    ├── (Later) sends evidence to LLM for scoring                    it does not have an LLM prompt, prompt engineering lives in llm/
+    ├── Collects the six criterion scores
         │
-        ▼                                     -------------------------------------------------------------------------------
+        │                                                How will it work:
+        │
+        │                                                evaluator.py
+        │                                                 │
+        │                                                 ├── calls ->
+        │                                                 │     llm/sponsor_dimension_evaluator.py  (where the LLM prompt lives)
+        │                                                 │
+        │                                                 │         -> sends prompt to model
+        │                                                 │         -> returns structured scores
+        │                                                 │
+        │                                                 ▼
+        │                                                collects results
+        │
+        ▼
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+scoring.py
+   ScoreCalculator                                                   Calculation stage
+    ├── Validates criterion scores (0–10)                 Purpose: converts individual scores into a final weighted score
+    ├── Applies configurable weights (from criteria.py)
+    └── Computes overall sponsorship score
+        │
+        ▼
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 SponsorScore (schemas.py)
-   Final structured output:
-    ├── Company info
+   Final structured output:                                          Output production stage
+    ├── Company info                                       Purpose: clean, exportable result object for CLI / CSV / storage
     ├── 6 criterion scores
-    ├── Overall score                        
-    ├── Confidence level                                              Output production stage
-    ├── Explanation                                         Purpose: clean, exportable result object for CLI / CSV / storage
+    ├── Overall score
+    ├── Confidence level
+    ├── Explanation
     ├── Sponsorship motivations
     ├── Strengths & weaknesses
     └── Outreach recommendation
-        │                                     --------------------------------------------------------------------------------
+        │
         ▼
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
 Persistence / Export / CLI
 ```
 
