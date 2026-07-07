@@ -1,0 +1,10 @@
+# Add hackathon URLs to crawl for sponsors, one per line
+# Lines starting with # are ignored
+# Example:
+# https://hackthenorth.com
+# https://mchacks.ca
+# https://conuhacks.io
+https://conuhacks.io
+https://hackthenorth.com
+https://mchacks.ca
+https://canadahacks.ca
