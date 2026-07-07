@@ -2,7 +2,6 @@
 Initial outreach email generator.
 """
 from __future__ import annotations
-import sys
 from sponsor_pipeline.config import Settings
 
 # Load sender and event details from .env via Settings
