@@ -38,14 +38,20 @@ class PipelineOrchestrator:
         self._repo = SponsorRepository(settings.sponsor_csv_path)
         self._scraper = WebScraperService(settings)
         self._crawl_cache: dict[str, CrawlResult] = {}
-        self._discovery = CompanyDiscoveryService(self._build_adapters(settings), self._llm, self._prompts)
+        self._discovery = CompanyDiscoveryService(
+            self._build_adapters(settings), self._llm, self._prompts
+        )
         self._scoring = SponsorScoringService(self._llm, self._prompts)
         self._filter = LeadFilter(self._scoring, settings.min_overall_score)
         self._research = CompanyResearchService(self._llm, self._prompts, self._filter)
-        self._contacts = ContactDiscoveryService(self._llm, self._scraper, self._prompts)
+        self._contacts = ContactDiscoveryService(
+            self._llm, self._scraper, self._prompts
+        )
         self._exporter = ReportExporter()
 
-    def run_full_pipeline(self, sources: list[DiscoverySource] | None = None) -> PipelineResult:
+    def run_full_pipeline(
+        self, sources: list[DiscoverySource] | None = None
+    ) -> PipelineResult:
         companies = self.run_discovery(sources)
         scored = self.run_scoring(companies)
         passed, rejected = self._filter.filter_by_threshold(scored)
@@ -63,7 +69,9 @@ class PipelineOrchestrator:
             prospects=prospects,
         )
 
-    def run_discovery(self, sources: list[DiscoverySource] | None = None) -> list[Company]:
+    def run_discovery(
+        self, sources: list[DiscoverySource] | None = None
+    ) -> list[Company]:
         companies = self._discovery.discover_companies(sources)
         enriched: list[Company] = []
         for company in companies:
@@ -99,7 +107,9 @@ class PipelineOrchestrator:
 
         researched: list[Company] = []
         for company in companies:
-            score = self._scoring.get_score(company.id) or self._repo.get_score(company.id)
+            score = self._scoring.get_score(company.id) or self._repo.get_score(
+                company.id
+            )
             if not score:
                 continue
             crawl = self._get_crawl(company.website) if company.website else None
@@ -110,12 +120,16 @@ class PipelineOrchestrator:
             researched.append(company)
         return researched
 
-    def run_contact_discovery(self, companies: list[Company] | None = None) -> list[OutreachProspect]:
+    def run_contact_discovery(
+        self, companies: list[Company] | None = None
+    ) -> list[OutreachProspect]:
         targets = companies or self._repo.get_companies(LeadStatus.RESEARCHED)
         prospects: list[OutreachProspect] = []
         for company in targets:
             report = self._repo.get_report(company.id)
-            score = self._scoring.get_score(company.id) or self._repo.get_score(company.id)
+            score = self._scoring.get_score(company.id) or self._repo.get_score(
+                company.id
+            )
             if not report or not score or not company.website:
                 continue
             crawl = self._get_crawl(company.website)

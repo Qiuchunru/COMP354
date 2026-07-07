@@ -41,7 +41,8 @@ class ContactDiscoveryService:
     ) -> list[ContactPerson]:
         crawl = crawl or self._scraper.crawl_site(company.website)
         snippet_text = "\n\n".join(
-            f"URL: {url}\n{text}" for url, text in list(crawl.page_snippets.items())[:12]
+            f"URL: {url}\n{text}"
+            for url, text in list(crawl.page_snippets.items())[:12]
         )
         result = self._llm.complete_structured(
             self._prompts.get_contact_identification_prompt()
@@ -92,7 +93,8 @@ class ContactDiscoveryService:
                 )
             )
         snippet_text = "\n\n".join(
-            f"URL: {url}\n{text}" for url, text in list(crawl.page_snippets.items())[:10]
+            f"URL: {url}\n{text}"
+            for url, text in list(crawl.page_snippets.items())[:10]
         )
         ai_result = self._llm.complete_structured(
             self._prompts.get_contact_enrichment_prompt()
@@ -117,7 +119,9 @@ class ContactDiscoveryService:
             if confidence > 1:
                 confidence /= 10.0
             if ctype == ContactMethodType.EMAIL:
-                confidence = max(confidence, _email_confidence(value, contact.full_name))
+                confidence = max(
+                    confidence, _email_confidence(value, contact.full_name)
+                )
             methods.append(
                 ContactMethod(
                     type=ctype,

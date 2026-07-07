@@ -145,7 +145,9 @@ class SponsorRepository:
                     (status.value,),
                 ).fetchall()
             else:
-                rows = conn.execute("SELECT * FROM companies ORDER BY created_at").fetchall()
+                rows = conn.execute(
+                    "SELECT * FROM companies ORDER BY created_at"
+                ).fetchall()
         return [_row_to_company(row) for row in rows]
 
     def get_score(self, company_id: str) -> SponsorScore | None:
@@ -222,7 +224,9 @@ def _dict_to_score(data: dict) -> SponsorScore:
         accessibility_score=data["accessibility_score"],
         budget_likelihood_score=data["budget_likelihood_score"],
         overall_score=data["overall_score"],
-        primary_motivations=[SponsorMotivation(v) for v in data.get("primary_motivations", [])],
+        primary_motivations=[
+            SponsorMotivation(v) for v in data.get("primary_motivations", [])
+        ],
         scoring_rationale=data.get("scoring_rationale", ""),
         company_size=CompanySize(data.get("company_size", "unknown")),
         scored_at=datetime.fromisoformat(data["scored_at"]),
@@ -330,7 +334,9 @@ def _row_to_company(row: sqlite3.Row) -> Company:
         website=row["website"] or "",
         industry=row["industry"] or "",
         company_size=CompanySize(row["company_size"] or "unknown"),
-        discovery_sources=[DiscoverySource(v) for v in json.loads(row["discovery_sources"] or "[]")],
+        discovery_sources=[
+            DiscoverySource(v) for v in json.loads(row["discovery_sources"] or "[]")
+        ],
         status=LeadStatus(row["status"]),
         created_at=datetime.fromisoformat(row["created_at"]),
     )

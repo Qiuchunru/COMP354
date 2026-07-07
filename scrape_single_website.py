@@ -1,4 +1,5 @@
 """Deprecated: use `python main.py scrape --output emails.txt` with a single URL in urls.txt."""
+
 from sponsor_pipeline.cli import main
 
 if __name__ == "__main__":

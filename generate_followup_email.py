@@ -32,17 +32,21 @@ Thanks,
 HackConcordia {your_title} of Sponsorship
 """
 
+
 def generate_email(company_name, recipient_name):
     if not recipient_name.strip():
         recipient_name = company_name
 
-    body = email_body.format(recipient_name=recipient_name,
-                             company_name=company_name,
-                             your_name=YOUR_NAME,
-                             your_title=YOUR_TITLE,
-                             event_name=EVENT_NAME,)
+    body = email_body.format(
+        recipient_name=recipient_name,
+        company_name=company_name,
+        your_name=YOUR_NAME,
+        your_title=YOUR_TITLE,
+        event_name=EVENT_NAME,
+    )
 
     return body
+
 
 # Input prompts
 def main():
@@ -52,9 +56,13 @@ def main():
             if company_name:
                 break
             else:
-                print("Company name cannot be blank. Please enter a valid company name.")
+                print(
+                    "Company name cannot be blank. Please enter a valid company name."
+                )
 
-        recipient_name = input("Enter the recipient's name (leave blank to use company name): ").strip()
+        recipient_name = input(
+            "Enter the recipient's name (leave blank to use company name): "
+        ).strip()
 
         email = generate_email(company_name, recipient_name)
         print("\n" + "=" * 80)
@@ -62,6 +70,7 @@ def main():
         print("=" * 80 + "\n")
 
         input("Press enter to generate another follow-up email: ")
+
 
 if __name__ == "__main__":
     raise SystemExit(main())

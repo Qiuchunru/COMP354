@@ -14,6 +14,7 @@ from typing import Any
 
 from sponsor_pipeline.config import Settings
 
+
 # Abstract backend interface
 class _LLMBackend(ABC):
     """
@@ -26,11 +27,12 @@ class _LLMBackend(ABC):
         Send a prompt and return the model's text response.
         """
 
+
 # For Anthropic / Claude backend -----------------------------
 class _AnthropicBackend(_LLMBackend):
-
     def __init__(self, api_key: str, model: str) -> None:
         import anthropic
+
         self._client = anthropic.Anthropic(api_key=api_key)
         self._model = model
 
@@ -43,11 +45,12 @@ class _AnthropicBackend(_LLMBackend):
         )
         return response.content[0].text or ""
 
+
 # For OpenAI / ChatGPT backend -------------------------------
 class _OpenAIBackend(_LLMBackend):
-
     def __init__(self, api_key: str, model: str) -> None:
         from openai import OpenAI
+
         self._client = OpenAI(api_key=api_key)
         self._model = model
 
@@ -55,23 +58,30 @@ class _OpenAIBackend(_LLMBackend):
         response = self._client.chat.completions.create(
             model=self._model,
             temperature=0.2,
-            messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
         )
         return response.choices[0].message.content or ""
 
+
 # For Google / Gemini backend --------------------------------
 class _GoogleBackend(_LLMBackend):
-
     def __init__(self, api_key: str, model: str) -> None:
         import google.generativeai as genai
+
         genai.configure(api_key=api_key)
         self._model_name = model
         self._genai = genai
 
     def complete(self, system: str, user: str) -> str:
-        model = self._genai.GenerativeModel(model_name=self._model_name, system_instruction=system)
+        model = self._genai.GenerativeModel(
+            model_name=self._model_name, system_instruction=system
+        )
         response = model.generate_content(user)
         return response.text or ""
+
 
 # ------------------------------------------------------------
 
@@ -80,33 +90,42 @@ _SYSTEM_PROMPT = (
     "Be realistic about sponsorship fit, not company fame."
 )
 
+
 class LLMClient:
     """
     AI LLM Client instantiated by PipelineOrchestrator and passed to all services that need an AI LLM access.
     LLM provider is selected via LLM_PROVIDER in .env
     """
+
     def __init__(self, settings: Settings) -> None:
         provider = settings.llm_provider
         model = settings.llm_model
 
         if provider == "anthropic":
             if not settings.anthropic_api_key:
-                raise ValueError("You need to set ANTHROPIC_API_KEY in .env file for this LLM provider.")
+                raise ValueError(
+                    "You need to set ANTHROPIC_API_KEY in .env file for this LLM provider."
+                )
             self._backend = _AnthropicBackend(settings.anthropic_api_key, model)
 
         elif provider == "openai":
             if not settings.openai_api_key:
-                raise ValueError("You need to set OPENAI_API_KEY in .env file for this LLM provider.")
+                raise ValueError(
+                    "You need to set OPENAI_API_KEY in .env file for this LLM provider."
+                )
             self._backend = _OpenAIBackend(settings.openai_api_key, model)
 
         elif provider == "google":
             if not settings.google_api_key:
-                raise ValueError("You need to set GOOGLE_API_KEY in .env file for this LLM provider.")
+                raise ValueError(
+                    "You need to set GOOGLE_API_KEY in .env file for this LLM provider."
+                )
             self._backend = _GoogleBackend(settings.google_api_key, model)
 
         else:
-            raise ValueError(f"Unsupported LLM provider: '{provider}'. Choose one of 'anthropic', 'openai', 'google'.")
-
+            raise ValueError(
+                f"Unsupported LLM provider: '{provider}'. Choose one of 'anthropic', 'openai', 'google'."
+            )
 
     def complete(self, prompt: str, context: dict[str, Any] | None = None) -> str:
         """
@@ -114,7 +133,9 @@ class LLMClient:
         """
         user_content = prompt
         if context:
-            user_content += "\n\nContext:\n" + json.dumps(context, indent=2, default=str)
+            user_content += "\n\nContext:\n" + json.dumps(
+                context, indent=2, default=str
+            )
         return self._backend.complete(_SYSTEM_PROMPT, user_content)
 
     def complete_structured(self, prompt: str, schema_hint: str) -> dict[str, Any]:

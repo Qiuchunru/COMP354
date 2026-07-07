@@ -1,6 +1,7 @@
 """
 Initial outreach email generator.
 """
+
 from __future__ import annotations
 from sponsor_pipeline.config import Settings
 
@@ -15,9 +16,7 @@ EVENT_VENUE = _settings.event_venue
 
 # New email template with a better subject-body separation for the OutreachEmailGenerator integration
 
-email_subject = (
-    "Sponsorship opportunity for {company_name} with HackConcordia student association annual {event_name} event"
-)
+email_subject = "Sponsorship opportunity for {company_name} with HackConcordia student association annual {event_name} event"
 
 email_body = """
 Hello {recipient_name},
@@ -42,22 +41,28 @@ Thank you,
 {your_name}
 """
 
+
 def generate_email(company_name, recipient_name, location):
     if not recipient_name.strip():
-        recipient_name = company_name  # Default to company name if no recipient name is provided
+        recipient_name = (
+            company_name  # Default to company name if no recipient name is provided
+        )
 
     subject = email_subject.format(company_name=company_name, event_name=EVENT_NAME)
 
-    body = email_body.format(recipient_name=recipient_name,
-                             company_name=company_name,
-                             your_name=YOUR_NAME,
-                             your_title=YOUR_TITLE,
-                             event_name=EVENT_NAME,
-                             event_date=EVENT_DATE,
-                             event_venue=EVENT_VENUE,
-                             location=location)
+    body = email_body.format(
+        recipient_name=recipient_name,
+        company_name=company_name,
+        your_name=YOUR_NAME,
+        your_title=YOUR_TITLE,
+        event_name=EVENT_NAME,
+        event_date=EVENT_DATE,
+        event_venue=EVENT_VENUE,
+        location=location,
+    )
 
     return subject, body
+
 
 # Input prompts
 def main():
@@ -67,14 +72,20 @@ def main():
             if company_name:
                 break
             else:
-                print("Company name cannot be blank. Please enter a valid company name.")
+                print(
+                    "Company name cannot be blank. Please enter a valid company name."
+                )
 
-        recipient_name = input("Enter the recipient's name (leave blank to use company name): ").strip()
+        recipient_name = input(
+            "Enter the recipient's name (leave blank to use company name): "
+        ).strip()
 
         # Ask if the recipient is local; default to Montreal, Quebec if blank
-        local_input = input("Is the recipient local? (y for yes, blank for no): ").strip().lower()
+        local_input = (
+            input("Is the recipient local? (y for yes, blank for no): ").strip().lower()
+        )
 
-        if local_input == 'y':
+        if local_input == "y":
             location = ""
         else:
             location = " in Montreal, Quebec"
@@ -88,6 +99,7 @@ def main():
         print("=" * 80 + "\n")
 
         input("Press enter to generate another email: ")
+
 
 if __name__ == "__main__":
     raise SystemExit(main())

@@ -37,7 +37,6 @@ class EvaluationCriterion:
     evidence_hints: list[str] = field(default_factory=list)
 
 
-
 # ---------------------------------------------------------------------------
 # Six evaluation criteria
 # Weights are currently equal (1.0 each)  [To be adjusted!!]

@@ -5,7 +5,9 @@ from sponsor_pipeline.services.scoring import SponsorScoringService
 
 
 class LeadFilter:
-    def __init__(self, scoring_service: SponsorScoringService, min_overall: float = 6.0) -> None:
+    def __init__(
+        self, scoring_service: SponsorScoringService, min_overall: float = 6.0
+    ) -> None:
         self._scoring_service = scoring_service
         self._min_overall = min_overall
 

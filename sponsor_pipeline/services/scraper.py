@@ -8,21 +8,58 @@ from urllib.parse import urljoin, urlparse
 from playwright.sync_api import sync_playwright
 
 from sponsor_pipeline.config import Settings
-from sponsor_pipeline.models import ContactMethod, ContactMethodType, CrawlResult, Evidence, EvidenceCategory
+from sponsor_pipeline.models import (
+    ContactMethod,
+    ContactMethodType,
+    CrawlResult,
+    Evidence,
+    EvidenceCategory,
+)
 
 logger = logging.getLogger(__name__)
 
 SKIP_EXTENSIONS = (
-    ".jpg", ".jpeg", ".png", ".gif", ".svg", ".pdf", ".doc", ".docx",
-    ".xls", ".xlsx", ".ppt", ".pptx", ".zip", ".rar", ".mp4", ".mp3",
-    ".css", ".js", ".ico", ".woff", ".woff2",
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".gif",
+    ".svg",
+    ".pdf",
+    ".doc",
+    ".docx",
+    ".xls",
+    ".xlsx",
+    ".ppt",
+    ".pptx",
+    ".zip",
+    ".rar",
+    ".mp4",
+    ".mp3",
+    ".css",
+    ".js",
+    ".ico",
+    ".woff",
+    ".woff2",
 )
 PRIORITY_KEYWORDS = (
-    "contact", "about", "team", "career", "jobs", "people",
-    "sponsor", "partners", "community", "devrel", "blog",
+    "contact",
+    "about",
+    "team",
+    "career",
+    "jobs",
+    "people",
+    "sponsor",
+    "partners",
+    "community",
+    "devrel",
+    "blog",
 )
-EMAIL_RE = re.compile(r"\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b", re.IGNORECASE)
-LINKEDIN_RE = re.compile(r"https?://(?:www\.)?linkedin\.com/(?:in|company)/[A-Za-z0-9_/%-]+", re.I)
+EMAIL_RE = re.compile(
+    r"\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b", re.IGNORECASE
+)
+LINKEDIN_RE = re.compile(
+    r"https?://(?:www\.)?linkedin\.com/(?:in|company)/[A-Za-z0-9_/%-]+", re.I
+)
 TWITTER_RE = re.compile(r"https?://(?:www\.)?(?:twitter|x)\.com/[A-Za-z0-9_]+", re.I)
 GITHUB_RE = re.compile(r"https?://(?:www\.)?github\.com/[A-Za-z0-9_-]+", re.I)
 
@@ -54,7 +91,10 @@ class WebScraperService:
             )
             try:
                 while queue and pages_crawled < self._settings.max_crawl_pages:
-                    if len(emails) >= self._settings.max_emails_per_site and pages_crawled > 10:
+                    if (
+                        len(emails) >= self._settings.max_emails_per_site
+                        and pages_crawled > 10
+                    ):
                         break
 
                     url = queue.popleft()
@@ -106,7 +146,9 @@ class WebScraperService:
             page_snippets=snippets,
             evidence=evidence,
         )
-        self._log(f"Finished crawl: {start_url} ({pages_crawled} pages, {len(emails)} emails)")
+        self._log(
+            f"Finished crawl: {start_url} ({pages_crawled} pages, {len(emails)} emails)"
+        )
         return result
 
     def batch_crawl(self, urls: list[str]) -> list[CrawlResult]:
@@ -195,7 +237,9 @@ def _extract_social_links(html: str, source_url: str) -> list[ContactMethod]:
     ):
         for match in pattern.findall(html):
             methods.append(
-                ContactMethod(type=ctype, value=match, source_url=source_url, confidence=0.7)
+                ContactMethod(
+                    type=ctype, value=match, source_url=source_url, confidence=0.7
+                )
             )
     return methods
 
@@ -218,7 +262,10 @@ def _collect_evidence(html: str, url: str, evidence: list[Evidence]) -> None:
                 source_url=url,
             )
         )
-    if any(city in text for city in ("waterloo", "toronto", "vancouver", "montreal", "canada")):
+    if any(
+        city in text
+        for city in ("waterloo", "toronto", "vancouver", "montreal", "canada")
+    ):
         evidence.append(
             Evidence(
                 category=EvidenceCategory.WATERLOO_CANADA_FIT,
@@ -226,7 +273,9 @@ def _collect_evidence(html: str, url: str, evidence: list[Evidence]) -> None:
                 source_url=url,
             )
         )
-    if any(word in text for word in ("api", "sdk", "developer", "documentation", "devrel")):
+    if any(
+        word in text for word in ("api", "sdk", "developer", "documentation", "devrel")
+    ):
         evidence.append(
             Evidence(
                 category=EvidenceCategory.DEVELOPER_PRODUCT_FIT,
@@ -234,7 +283,10 @@ def _collect_evidence(html: str, url: str, evidence: list[Evidence]) -> None:
                 source_url=url,
             )
         )
-    if any(word in text for word in ("intern", "new grad", "co-op", "coop", "campus recruiter")):
+    if any(
+        word in text
+        for word in ("intern", "new grad", "co-op", "coop", "campus recruiter")
+    ):
         evidence.append(
             Evidence(
                 category=EvidenceCategory.HIRING_SIGNAL,

@@ -14,6 +14,7 @@ from dotenv import load_dotenv
 # Supported AI LLM providers
 SUPPORTED_PROVIDERS = ("anthropic", "openai", "google")
 
+
 @dataclass
 class Settings:
     """
@@ -101,16 +102,31 @@ class Settings:
             openai_api_key=openai_key,
             google_api_key=google_key,
             llm_model=llm_model,
-            sponsor_csv_path=Path(os.getenv("SPONSOR_CSV_PATH", str(project_root / "data" / "sponsors.csv"))),
-            hackathon_urls_file=Path(os.getenv("HACKATHON_URLS_FILE", str(project_root / "data" / "hackathon_urls.txt"))),
-            scrape_log_path=Path(os.getenv("SCRAPE_LOG_PATH", str(project_root / "log.txt"))),
+            sponsor_csv_path=Path(
+                os.getenv(
+                    "SPONSOR_CSV_PATH", str(project_root / "data" / "sponsors.csv")
+                )
+            ),
+            hackathon_urls_file=Path(
+                os.getenv(
+                    "HACKATHON_URLS_FILE",
+                    str(project_root / "data" / "hackathon_urls.txt"),
+                )
+            ),
+            scrape_log_path=Path(
+                os.getenv("SCRAPE_LOG_PATH", str(project_root / "log.txt"))
+            ),
             min_overall_score=float(os.getenv("MIN_OVERALL_SCORE", "6.0")),
             max_crawl_pages=int(os.getenv("MAX_CRAWL_PAGES", "50")),
             max_emails_per_site=int(os.getenv("MAX_EMAILS_PER_SITE", "5")),
-            mlh_events_url=os.getenv("MLH_EVENTS_URL", "https://www.mlh.io/seasons/2026/events"),
+            mlh_events_url=os.getenv(
+                "MLH_EVENTS_URL", "https://www.mlh.io/seasons/2026/events"
+            ),
             sender_name=os.getenv("SENDER_NAME", "Your Name Here"),
             sender_title=os.getenv("SENDER_TITLE", "Your Title Here"),
             event_name=os.getenv("EVENT_NAME", "ConUHacks X"),
             event_date=os.getenv("EVENT_DATE", "January 24-25, 2026"),
-            event_venue=os.getenv("EVENT_VENUE", "Concordia University's John Molson Building"),
+            event_venue=os.getenv(
+                "EVENT_VENUE", "Concordia University's John Molson Building"
+            ),
         )

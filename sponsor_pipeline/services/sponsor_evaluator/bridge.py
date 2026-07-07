@@ -15,7 +15,9 @@ from __future__ import annotations
 
 from sponsor_pipeline.models import CrawlResult
 from sponsor_pipeline.models import EvidenceCategory
-from sponsor_pipeline.services.sponsor_evaluator.schemas import Evidence as EvaluatorEvidence
+from sponsor_pipeline.services.sponsor_evaluator.schemas import (
+    Evidence as EvaluatorEvidence,
+)
 
 
 def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
@@ -75,6 +77,7 @@ def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
         company_size_signals=_dedupe(size),
         canada_signals=_dedupe(canada),
     )
+
 
 def _dedupe(items: list[str]) -> list[str]:
     """
