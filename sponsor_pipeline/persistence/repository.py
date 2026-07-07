@@ -13,7 +13,6 @@ from sponsor_pipeline.models import (
     ContactRole,
     DiscoverySource,
     Evidence,
-    EvidenceCategory,
     LeadStatus,
     OutreachProspect,
     Priority,
