@@ -1,2 +1,8 @@
+# LLM providers — currently supported: anthropic-claude, openai-chatgpt, and google-gemini
+# Adding a new provider: implement a backend class in client.py
 anthropic>=0.40.0
+openai>=1.0.0
+google-generativeai>=0.8.0
 python-dotenv>=1.2.0
+playwright>=1.40.0
+requests>=2.31.0

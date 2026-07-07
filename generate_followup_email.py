@@ -1,12 +1,16 @@
-# Follow-up email generator
-# It will connect to 'python main.py export --email followup' once OutreachEmailGenerator is fully implemented
+"""
+Follow-up email generator
+"""
 
-# Hardcoded values (replaceable for variables handled by Settings once config.py is complete)
-YOUR_NAME = "Toby Fischer"
-YOUR_TITLE = "Vice-President"
+from __future__ import annotations
+from sponsor_pipeline.config import Settings
 
-# Other hardcoded value (replaceable for variables handled by Settings once config.py is complete)
-EVENT_NAME = "ConUHacks X"
+# Load sender and event details from .env via Settings
+_settings = Settings.from_env(require_llm=False)
+
+YOUR_NAME = _settings.sender_name
+YOUR_TITLE = _settings.sender_title
+EVENT_NAME = _settings.event_name
 
 # No subject cause follow-up emails are replies to original outreach emails
 email_body = """
@@ -30,7 +34,7 @@ HackConcordia {your_title} of Sponsorship
 
 def generate_email(company_name, recipient_name):
     if not recipient_name.strip():
-        recipient_name = company_name  # Default to company name if no recipient name is provided
+        recipient_name = company_name
 
     body = email_body.format(recipient_name=recipient_name,
                              company_name=company_name,
