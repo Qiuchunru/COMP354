@@ -1,4 +1,4 @@
-""" 
+"""
 Data structures for the sponsor evaluator module
 
 the file contains  data definitions only,
@@ -14,6 +14,7 @@ from enum import Enum
 # ----------------------------------------
 # Input schemas
 # ----------------------------------------
+
 
 @dataclass
 class Company:
@@ -67,12 +68,10 @@ class Evidence:
     """ex: 'Toronto office', 'Waterloo co-op program listed on careers page'"""
 
 
-
-
-
 # ---------------------------------------------------------------------------
 # Output schemas
 # ---------------------------------------------------------------------------
+
 
 class Confidence(str, Enum):
     """
@@ -82,9 +81,9 @@ class Confidence(str, Enum):
     there was not enough information to be certain either way.
     """
 
-    LOW = "low"        # Sparse evidence; score may not reflect reality
+    LOW = "low"  # Sparse evidence; score may not reflect reality
     MEDIUM = "medium"  # Reasonable evidence; score is likely directionally correct
-    HIGH = "high"      # Strong evidence; score is well-supported
+    HIGH = "high"  # Strong evidence; score is well-supported
 
 
 class SponsorMotivation(str, Enum):
@@ -94,9 +93,13 @@ class SponsorMotivation(str, Enum):
     the categories described in the AI Prompting System.txt
     """
 
-    TALENT = "talent"              # wants to recruit students
-    DEVELOPER_ADOPTION = "developer_adoption"  # wants students building with their product
-    BRAND_AWARENESS = "brand_awareness"        # wants visibility in the Canadian student tech scene
+    TALENT = "talent"  # wants to recruit students
+    DEVELOPER_ADOPTION = (
+        "developer_adoption"  # wants students building with their product
+    )
+    BRAND_AWARENESS = (
+        "brand_awareness"  # wants visibility in the Canadian student tech scene
+    )
 
 
 @dataclass

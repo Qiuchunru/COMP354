@@ -38,7 +38,6 @@ class ScoreCalculator:
                         provided scores dict
         """
 
-
         # Collect criteria that have a score entry
         scored_criteria = [c for c in self._criteria if c.key in criterion_scores]
 
@@ -47,7 +46,7 @@ class ScoreCalculator:
                 "No criterion scores match the criteria keys "
                 f"Expected one of: {[c.key for c in self._criteria]}"
             )
- 
+
         # Validate score ranges
         for criterion in scored_criteria:
             score = criterion_scores[criterion.key].score

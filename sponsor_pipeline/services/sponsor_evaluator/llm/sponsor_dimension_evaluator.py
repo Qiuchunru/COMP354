@@ -28,6 +28,7 @@ from sponsor_pipeline.services.sponsor_evaluator.schemas import (
 # Summary result  produced  after all  criterion scores are collected
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class SponsorEvaluationSummary:
     """
@@ -61,6 +62,7 @@ class SponsorEvaluationSummary:
 # Abstract interface, evaluator.py depends on this, not on any concrete impl
 # ---------------------------------------------------------------------------
 
+
 class SponsorDimensionEvaluator(ABC):
     """
     the contract between evaluator.py and the LLM layer
@@ -85,7 +87,6 @@ class SponsorDimensionEvaluator(ABC):
         Returns:
             A CriterionScore with score (0–10) along with reasoning, and supporting evidence
         """
-
 
     @abstractmethod
     def evaluate_summary(
@@ -142,25 +143,24 @@ _SUMMARY_SYSTEM_PROMPT = (
 # it chooses what to emphasize for each criterion
 
 _PRIMARY_EVIDENCE_FIELD: dict[str, str] = {
-    "talent_acquisition":     "hiring_signals",
-    "developer_ecosystem":    "developer_products",
-    "community_sponsorship":  "past_sponsorships",
+    "talent_acquisition": "hiring_signals",
+    "developer_ecosystem": "developer_products",
+    "community_sponsorship": "past_sponsorships",
     "outreach_accessibility": "contact_signals",
-    "sponsorship_capacity":   "company_size_signals",
-    "strategic_alignment":    "canada_signals",
+    "sponsorship_capacity": "company_size_signals",
+    "strategic_alignment": "canada_signals",
 }
 
 # All evidence fields with human-readable labels
 # used by both the dimension and summary prompt builders
 _EVIDENCE_FIELDS: list[tuple[str, str]] = [
-    ("hiring_signals",       "Hiring signals"),
-    ("developer_products",   "Developer products"),
-    ("past_sponsorships",    "Past sponsorships"),
-    ("contact_signals",      "Contact signals" ),
+    ("hiring_signals", "Hiring signals"),
+    ("developer_products", "Developer products"),
+    ("past_sponsorships", "Past sponsorships"),
+    ("contact_signals", "Contact signals"),
     ("company_size_signals", "Company size signals"),
-    ("canada_signals",       "Canada signals"),
+    ("canada_signals", "Canada signals"),
 ]
-
 
 
 # ---------------------------------------------------------------------------
@@ -176,7 +176,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         define a tool whose input_schema matches the data we need,
         then force the model to call it with tool_choice= {"type": "tool"}
         claude must populate required fields before responding, so the
-        output arrives as validated JSON 
+        output arrives as validated JSON
 
     Approach to be adopted: client injection
     """
@@ -189,7 +189,6 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         # client is owned by the caller (API key and connection config live there)
         self._client = client
         self._model = model
-
 
     # ------------------------------------------------------------------
     # Public interface
@@ -215,7 +214,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
             ValueError: if the model response contains no tool_use block
         """
         prompt = self._build_dimension_prompt(criterion, company, evidence)
-        tool   = self._criterion_score_tool()
+        tool = self._criterion_score_tool()
 
         response = self._client.messages.create(
             model=self._model,
@@ -235,7 +234,6 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         evidence: Evidence,
         criterion_scores: dict[str, CriterionScore],
     ) -> SponsorEvaluationSummary:
-        
         """
         Produces the holistic evaluation fields after all  dimensions are scored
         builds a summary prompt that includes all dimension scores and calls claude
@@ -251,7 +249,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
             ValueError: if the model response contains no tool_use block
         """
         prompt = self._build_summary_prompt(company, evidence, criterion_scores)
-        tool   = self._summary_tool()
+        tool = self._summary_tool()
 
         response = self._client.messages.create(
             model=self._model,
@@ -265,8 +263,6 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
 
         return self._parse_summary(response)
 
-
-
     # ------------------------------------------------------------------
     #  Prompt builders
     # ------------------------------------------------------------------
@@ -276,7 +272,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         company: Company,
         evidence: Evidence,
     ) -> str:
-        """ Build the user-turn message for a single dimension evaluation"""
+        """Build the user-turn message for a single dimension evaluation"""
         lines: list[str] = [f"Company: {company.name}"]
         if company.industry:
             lines.append(f"Industry: {company.industry}")
@@ -295,7 +291,6 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         for hint in criterion.evidence_hints:
             lines.append(f"  - {hint}")
 
-
         # Primary evidence: the field that maps directly to this criterion
         primary_field = _PRIMARY_EVIDENCE_FIELD.get(criterion.key, "")
         primary_items = getattr(evidence, primary_field, []) if primary_field else []
@@ -308,7 +303,9 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
             lines.append("  (none collected)")
 
         # supporting context: all other evidence fields so the LLM can infer across signals
-        other_fields = [(f, label) for f, label in _EVIDENCE_FIELDS if f != primary_field]
+        other_fields = [
+            (f, label) for f, label in _EVIDENCE_FIELDS if f != primary_field
+        ]
         has_other = any(getattr(evidence, f, []) for f, _ in other_fields)
 
         lines += ["", "Additional context (all other collected evidence):"]
@@ -328,9 +325,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
             "Base the score strictly on the evidence above, not on company reputation.",
         ]
 
-
         return "\n".join(lines)
-
 
     @staticmethod
     def _build_summary_prompt(
@@ -338,7 +333,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         evidence: Evidence,
         criterion_scores: dict[str, CriterionScore],
     ) -> str:
-        """ Build the user-turn message for the holistic summary call"""
+        """Build the user-turn message for the holistic summary call"""
         lines: list[str] = [f"Company: {company.name}"]
         if company.industry:
             lines.append(f"Industry: {company.industry}")
@@ -370,8 +365,6 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         ]
 
         return "\n".join(lines)
-
-
 
     # ------------------------------------------------------------------
     # Tool schemas
@@ -409,7 +402,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
 
     @staticmethod
     def _summary_tool() -> dict:
-        """ tool schema, forces Claude to return a structured SponsorEvaluationSummary"""
+        """tool schema, forces Claude to return a structured SponsorEvaluationSummary"""
         return {
             "name": "record_evaluation_summary",
             "description": (
@@ -467,8 +460,6 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
             },
         }
 
-
-
     # ------------------------------------------------------------------
     # response parsers
     # ------------------------------------------------------------------
@@ -496,9 +487,7 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
             score=float(data["score"]),
             reasoning=data["reasoning"],
             supporting_evidence=data.get("supporting_evidence", []),
-
         )
-
 
     @staticmethod
     def _parse_summary(response) -> SponsorEvaluationSummary:

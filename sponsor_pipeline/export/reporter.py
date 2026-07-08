@@ -9,7 +9,9 @@ from sponsor_pipeline.persistence.repository import SponsorRepository
 
 
 class ReportExporter:
-    def to_markdown(self, report: SponsorReport, company_name: str, website: str, scores_text: str) -> str:
+    def to_markdown(
+        self, report: SponsorReport, company_name: str, website: str, scores_text: str
+    ) -> str:
         return f"""# Sponsor Report: {company_name}
 
 **Website:** {website}
@@ -77,7 +79,9 @@ class ReportExporter:
     def export_all(self, repo: SponsorRepository, output_dir: Path) -> None:
         output_dir.mkdir(parents=True, exist_ok=True)
         prospects = repo.get_outreach_ready()
-        (output_dir / "prospects.csv").write_text(self.to_csv(prospects), encoding="utf-8")
+        (output_dir / "prospects.csv").write_text(
+            self.to_csv(prospects), encoding="utf-8"
+        )
         for prospect in prospects:
             scores_text = (
                 f"- Talent: {prospect.score.talent_score}/10\n"
@@ -102,4 +106,6 @@ class ReportExporter:
                     for m in prospect.contact_methods
                 )
             )
-            (output_dir / f"{slug}.md").write_text(md + contact_section, encoding="utf-8")
+            (output_dir / f"{slug}.md").write_text(
+                md + contact_section, encoding="utf-8"
+            )

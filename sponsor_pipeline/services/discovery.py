@@ -77,7 +77,9 @@ class CompanyDiscoveryService:
                 if not name:
                     continue
                 website = str(item.get("website", "")).strip()
-                sources_raw = item.get("sources") or [item.get("source", "manual_input")]
+                sources_raw = item.get("sources") or [
+                    item.get("source", "manual_input")
+                ]
                 sources_list = []
                 for s in sources_raw:
                     try:
@@ -89,7 +91,8 @@ class CompanyDiscoveryService:
                         name=name,
                         website=website if website.startswith("http") else "",
                         industry=str(item.get("industry", "")),
-                        discovery_sources=sources_list or [DiscoverySource.MANUAL_INPUT],
+                        discovery_sources=sources_list
+                        or [DiscoverySource.MANUAL_INPUT],
                     )
                 )
         return companies

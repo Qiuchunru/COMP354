@@ -11,7 +11,11 @@ from sponsor_pipeline.services.scraper import normalize_url
 def read_urls(path: Path) -> list[str]:
     if not path.exists():
         return []
-    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return [
+        line.strip()
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
 
 
 def append_url(path: Path, url: str) -> bool:
