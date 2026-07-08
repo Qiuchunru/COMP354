@@ -1,47 +1,147 @@
+"""
+AI LLM gateway for the sponsor research pipeline.
+Single interface for all AI LLM calls.
+Supports anthropic, openai, and google as backends via LLM_PROVIDER in .env
+The rest of the pipeline goes through LLMClient class. No other llm provider is imported afterward.
+"""
+
 from __future__ import annotations
 
 import json
 import re
+from abc import ABC, abstractmethod
 from typing import Any
-
-from openai import OpenAI
 
 from sponsor_pipeline.config import Settings
 
 
+# Abstract backend interface
+class _LLMBackend(ABC):
+    """
+    Internal interface all provider backends must implement.
+    """
+
+    @abstractmethod
+    def complete(self, system: str, user: str) -> str:
+        """
+        Send a prompt and return the model's text response.
+        """
+
+
+# For Anthropic / Claude backend -----------------------------
+class _AnthropicBackend(_LLMBackend):
+    def __init__(self, api_key: str, model: str) -> None:
+        import anthropic
+
+        self._client = anthropic.Anthropic(api_key=api_key)
+        self._model = model
+
+    def complete(self, system: str, user: str) -> str:
+        response = self._client.messages.create(
+            model=self._model,
+            max_tokens=2048,
+            system=system,
+            messages=[{"role": "user", "content": user}],
+        )
+        return response.content[0].text or ""
+
+
+# For OpenAI / ChatGPT backend -------------------------------
+class _OpenAIBackend(_LLMBackend):
+    def __init__(self, api_key: str, model: str) -> None:
+        from openai import OpenAI
+
+        self._client = OpenAI(api_key=api_key)
+        self._model = model
+
+    def complete(self, system: str, user: str) -> str:
+        response = self._client.chat.completions.create(
+            model=self._model,
+            temperature=0.2,
+            messages=[
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+        )
+        return response.choices[0].message.content or ""
+
+
+# For Google / Gemini backend --------------------------------
+class _GoogleBackend(_LLMBackend):
+    def __init__(self, api_key: str, model: str) -> None:
+        import google.generativeai as genai
+
+        genai.configure(api_key=api_key)
+        self._model_name = model
+        self._genai = genai
+
+    def complete(self, system: str, user: str) -> str:
+        model = self._genai.GenerativeModel(
+            model_name=self._model_name, system_instruction=system
+        )
+        response = model.generate_content(user)
+        return response.text or ""
+
+
+# ------------------------------------------------------------
+
+_SYSTEM_PROMPT = (
+    "You are a sponsor research assistant for Hack Canada, a student hackathon with a strong Waterloo and Canadian audience. "
+    "Be realistic about sponsorship fit, not company fame."
+)
+
+
 class LLMClient:
+    """
+    AI LLM Client instantiated by PipelineOrchestrator and passed to all services that need an AI LLM access.
+    LLM provider is selected via LLM_PROVIDER in .env
+    """
+
     def __init__(self, settings: Settings) -> None:
-        if not settings.openai_api_key:
+        provider = settings.llm_provider
+        model = settings.llm_model
+
+        if provider == "anthropic":
+            if not settings.anthropic_api_key:
+                raise ValueError(
+                    "You need to set ANTHROPIC_API_KEY in .env file for this LLM provider."
+                )
+            self._backend = _AnthropicBackend(settings.anthropic_api_key, model)
+
+        elif provider == "openai":
+            if not settings.openai_api_key:
+                raise ValueError(
+                    "You need to set OPENAI_API_KEY in .env file for this LLM provider."
+                )
+            self._backend = _OpenAIBackend(settings.openai_api_key, model)
+
+        elif provider == "google":
+            if not settings.google_api_key:
+                raise ValueError(
+                    "You need to set GOOGLE_API_KEY in .env file for this LLM provider."
+                )
+            self._backend = _GoogleBackend(settings.google_api_key, model)
+
+        else:
             raise ValueError(
-                "OPENAI_API_KEY is required. Set it in your environment or .env file."
+                f"Unsupported LLM provider: '{provider}'. Choose one of 'anthropic', 'openai', 'google'."
             )
-        self._client = OpenAI(api_key=settings.openai_api_key)
-        self._model = settings.openai_model
 
     def complete(self, prompt: str, context: dict[str, Any] | None = None) -> str:
+        """
+        Send a prompt and return the model's text response.
+        """
         user_content = prompt
         if context:
             user_content += "\n\nContext:\n" + json.dumps(
                 context, indent=2, default=str
             )
-        response = self._client.chat.completions.create(
-            model=self._model,
-            messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "You are a sponsor research assistant for Hack Canada, "
-                        "a student hackathon with a strong Waterloo and Canadian audience. "
-                        "Be realistic about sponsorship fit, not company fame."
-                    ),
-                },
-                {"role": "user", "content": user_content},
-            ],
-            temperature=0.2,
-        )
-        return response.choices[0].message.content or ""
+        return self._backend.complete(_SYSTEM_PROMPT, user_content)
 
     def complete_structured(self, prompt: str, schema_hint: str) -> dict[str, Any]:
+        """
+        Send a prompt and parse the response as JSON.
+        """
         full_prompt = (
             f"{prompt}\n\n"
             f"Return ONLY valid JSON matching this shape:\n{schema_hint}\n"
@@ -52,6 +152,9 @@ class LLMClient:
 
 
 def _parse_json(text: str) -> dict[str, Any]:
+    """
+    Strip markdown fences if present and parse JSON.
+    """
     text = text.strip()
     fence = re.search(r"```(?:json)?\s*([\s\S]*?)```", text)
     if fence:
