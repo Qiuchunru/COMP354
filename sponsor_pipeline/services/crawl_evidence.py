@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from sponsor_pipeline.models import CrawlResult
 
+
 def format_crawl_for_prompt(crawl: CrawlResult, max_pages: int = 12) -> str:
     """
     Convert a CrawlResult into a structured text block for LLM prompts.
@@ -17,18 +18,34 @@ def format_crawl_for_prompt(crawl: CrawlResult, max_pages: int = 12) -> str:
     sections: list[str] = []
 
     if crawl.evidence:
-        sections.append("Evidence tags:\n" + "\n".join(f"- {e.category.value}: {e.description} [{e.source_url}]" for e in crawl.evidence))
+        sections.append(
+            "Evidence tags:\n"
+            + "\n".join(
+                f"- {e.category.value}: {e.description} [{e.source_url}]"
+                for e in crawl.evidence
+            )
+        )
 
     snippets = list(crawl.page_snippets.items())[:max_pages]
 
     if snippets:
-        sections.append("Page snippets:\n" + "\n\n".join(f"URL: {url}\n{text}" for url, text in snippets))
+        sections.append(
+            "Page snippets:\n"
+            + "\n\n".join(f"URL: {url}\n{text}" for url, text in snippets)
+        )
 
     if crawl.emails:
-        sections.append("Emails found:\n" + "\n".join(f"- {email}" for email in crawl.emails))
+        sections.append(
+            "Emails found:\n" + "\n".join(f"- {email}" for email in crawl.emails)
+        )
 
     if crawl.social_links:
-        sections.append("Social links:\n" + "\n".join(f"- {link.type.value}: {link.value}" for link in crawl.social_links))
+        sections.append(
+            "Social links:\n"
+            + "\n".join(
+                f"- {link.type.value}: {link.value}" for link in crawl.social_links
+            )
+        )
 
     return "\n\n".join(sections)
 

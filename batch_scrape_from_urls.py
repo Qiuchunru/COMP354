@@ -1,4 +1,5 @@
 """Deprecated: use `python main.py scrape urls.txt` instead."""
+
 from sponsor_pipeline.cli import main
 import sys
 

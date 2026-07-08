@@ -51,11 +51,24 @@ class Settings:
             openai_api_key=api_key,
             openai_model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
             # CHANGED: was SPONSOR_DB_PATH -> data/sponsors.db => now reads SPONSOR_CSV_PATH -> data/sponsors.csv
-            sponsor_csv_path=Path(os.getenv("SPONSOR_CSV_PATH", str(project_root / "data" / "sponsors.csv"))),
-            hackathon_urls_file=Path(os.getenv("HACKATHON_URLS_FILE", str(project_root / "data" / "hackathon_urls.txt"))),
-            scrape_log_path=Path(os.getenv("SCRAPE_LOG_PATH", str(project_root / "log.txt"))),
+            sponsor_csv_path=Path(
+                os.getenv(
+                    "SPONSOR_CSV_PATH", str(project_root / "data" / "sponsors.csv")
+                )
+            ),
+            hackathon_urls_file=Path(
+                os.getenv(
+                    "HACKATHON_URLS_FILE",
+                    str(project_root / "data" / "hackathon_urls.txt"),
+                )
+            ),
+            scrape_log_path=Path(
+                os.getenv("SCRAPE_LOG_PATH", str(project_root / "log.txt"))
+            ),
             min_overall_score=float(os.getenv("MIN_OVERALL_SCORE", "6.0")),
             max_crawl_pages=int(os.getenv("MAX_CRAWL_PAGES", "50")),
             max_emails_per_site=int(os.getenv("MAX_EMAILS_PER_SITE", "5")),
-            mlh_events_url=os.getenv("MLH_EVENTS_URL", "https://www.mlh.io/seasons/2026/events"),
+            mlh_events_url=os.getenv(
+                "MLH_EVENTS_URL", "https://www.mlh.io/seasons/2026/events"
+            ),
         )
