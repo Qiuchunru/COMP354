@@ -1,0 +1,28 @@
+# Hackathon sponsor candidate URLs
+# Format: one URL per line, lines starting with # are ignored
+
+# Hackathon websites — crawled to discover sponsor company names
+https://conuhacks.io
+https://hackthenorth.com
+https://mchacks.ca
+https://canadahacks.ca
+
+# Trading & Finance — direct company URLs for email scraping
+https://www.janestreet.com
+https://www.citadelsecurities.com
+https://www.hudsonrivertrading.com
+https://www.twosigma.com
+https://drw.com
+https://www.optiver.com
+https://www.imc.com
+https://www.susinternational.com
+
+# Tech Giants — direct company URLs for email scraping
+https://www.nvidia.com
+https://www.microsoft.com
+https://careers.google.com
+https://aws.amazon.com
+https://www.apple.com
+https://www.spacex.com
+https://www.cisco.com
+https://about.meta.com
