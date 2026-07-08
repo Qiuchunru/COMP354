@@ -35,7 +35,9 @@ HackConcordia {your_title} of Sponsorship
 
 def generate_email(company_name, recipient_name):
     if not recipient_name.strip():
-        recipient_name = company_name
+        recipient_name = (
+            company_name  # Default to company name if no recipient name is provided
+        )
 
     body = email_body.format(
         recipient_name=recipient_name,
