@@ -28,7 +28,9 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("research", help="Part 3: research high-scoring companies")
     sub.add_parser("contacts", help="Part 4: find contacts for researched companies")
 
-    export = sub.add_parser("export", help="Export outreach-ready prospects to CSV/Markdown")
+    export = sub.add_parser(
+        "export", help="Export outreach-ready prospects to CSV/Markdown"
+    )
     export.add_argument(
         "--output",
         default="data/exports",
@@ -46,7 +48,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--url",
         help="Scrape a single URL directly (does not read or modify urls.txt)",
     )
-    scrape.add_argument("--output", default="emails.txt", help="Output file (default: emails.txt)")
+    scrape.add_argument(
+        "--output", default="emails.txt", help="Output file (default: emails.txt)"
+    )
     scrape.add_argument(
         "--append",
         action="store_true",
@@ -72,7 +76,9 @@ def _run_scrape(args: argparse.Namespace, settings: Settings) -> int:
         if not urls_path.exists():
             print(f"File not found: {urls_path}", file=sys.stderr)
             return 1
-        urls = [line.strip() for line in urls_path.read_text().splitlines() if line.strip()]
+        urls = [
+            line.strip() for line in urls_path.read_text().splitlines() if line.strip()
+        ]
 
     if not urls:
         print("No URLs to scrape.", file=sys.stderr)

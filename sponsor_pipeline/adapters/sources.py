@@ -63,7 +63,9 @@ class MLHSourceAdapter(SourceAdapter):
         event_links = [
             link
             for link in extract_links(html, self._events_url)
-            if "localhackday" in link.lower() or "hackathon" in link.lower() or "/events/" in link
+            if "localhackday" in link.lower()
+            or "hackathon" in link.lower()
+            or "/events/" in link
         ][:15]
 
         leads: list[RawLead] = []
@@ -200,7 +202,9 @@ def _extract_sponsor_section(html: str) -> str:
 
 
 def _guess_company_names(text: str) -> list[str]:
-    candidates = re.findall(r"\b([A-Z][A-Za-z0-9&.+]{1,30}(?:\s[A-Z][A-Za-z0-9&.+]{1,20}){0,2})\b", text)
+    candidates = re.findall(
+        r"\b([A-Z][A-Za-z0-9&.+]{1,30}(?:\s[A-Z][A-Za-z0-9&.+]{1,20}){0,2})\b", text
+    )
     blocked = {
         "Hack Canada",
         "Major League",

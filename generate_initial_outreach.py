@@ -24,17 +24,21 @@ Thank you,
 {your_name}
 """
 
+
 def generate_email(company_name, recipient_name, location):
     if not recipient_name.strip():
-        recipient_name = company_name  # Default to company name if no recipient name is provided
-    
+        recipient_name = (
+            company_name  # Default to company name if no recipient name is provided
+        )
+
     return email_template.format(
         recipient_name=recipient_name,
         your_name=YOUR_NAME,
         company_name=company_name,
         your_title=YOUR_TITLE,
-        location=location
+        location=location,
     )
+
 
 # Input prompts
 def main():
@@ -44,22 +48,29 @@ def main():
             if company_name:
                 break
             else:
-                print("Company name cannot be blank. Please enter a valid company name.")
-        recipient_name = input("Enter the recipient's name (leave blank to use company name): ").strip()
+                print(
+                    "Company name cannot be blank. Please enter a valid company name."
+                )
+        recipient_name = input(
+            "Enter the recipient's name (leave blank to use company name): "
+        ).strip()
 
         # Ask if the recipient is local; default to Montreal, Quebec if blank
-        local_input = input("Is the recipient local? (y for yes, blank for no): ").strip().lower()
-        if local_input == 'y':
+        local_input = (
+            input("Is the recipient local? (y for yes, blank for no): ").strip().lower()
+        )
+        if local_input == "y":
             location = ""
         else:
             location = " in Montreal, Quebec"
 
         email = generate_email(company_name, recipient_name, location)
-        print("\n" + "="*80)
+        print("\n" + "=" * 80)
         print(email)
-        print("="*80)
+        print("=" * 80)
         print("\n")
         input("Press enter to generate another email: ")
+
 
 if __name__ == "__main__":
     main()

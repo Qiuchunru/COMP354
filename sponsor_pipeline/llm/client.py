@@ -21,7 +21,9 @@ class LLMClient:
     def complete(self, prompt: str, context: dict[str, Any] | None = None) -> str:
         user_content = prompt
         if context:
-            user_content += "\n\nContext:\n" + json.dumps(context, indent=2, default=str)
+            user_content += "\n\nContext:\n" + json.dumps(
+                context, indent=2, default=str
+            )
         response = self._client.chat.completions.create(
             model=self._model,
             messages=[

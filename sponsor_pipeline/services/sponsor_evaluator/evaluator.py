@@ -43,7 +43,7 @@ from sponsor_pipeline.services.sponsor_evaluator.scoring import ScoreCalculator
 class SponsorEvaluator:
     """
     The main entry point for evaluating a company as a potential sponsor
-    Both dependencies are injected rather than hardcoded 
+    Both dependencies are injected rather than hardcoded
     dimension_evaluator handles all LLM interaction, per-dimension scoring and
     the holistic summary call. score_calculator handles the weighted math
     if neither is provided, score_calculator defaults to the standard CRITERIA weights
@@ -91,17 +91,30 @@ class SponsorEvaluator:
     # Internal orchestration
     # ------------------------------------------------------------------
 
-    def _evaluate_all_dimensions( self, company: Company, evidence: Evidence ) -> dict[str, CriterionScore]:
+    def _evaluate_all_dimensions(
+        self, company: Company, evidence: Evidence
+    ) -> dict[str, CriterionScore]:
         """Run all dimension evaluations and collect the results into a dict keyed by criterion_key"""
         return {
-            TALENT_ACQUISITION.key: self._evaluate_talent_acquisition(company, evidence),
-            DEVELOPER_ECOSYSTEM.key: self._evaluate_developer_ecosystem(company, evidence),
-            COMMUNITY_SPONSORSHIP.key: self._evaluate_community_sponsorship(company, evidence),
-            OUTREACH_ACCESSIBILITY.key: self._evaluate_outreach_accessibility(company, evidence),
-            SPONSORSHIP_CAPACITY.key: self._evaluate_sponsorship_capacity(company, evidence),
-            STRATEGIC_ALIGNMENT.key: self._evaluate_strategic_alignment(company, evidence),
+            TALENT_ACQUISITION.key: self._evaluate_talent_acquisition(
+                company, evidence
+            ),
+            DEVELOPER_ECOSYSTEM.key: self._evaluate_developer_ecosystem(
+                company, evidence
+            ),
+            COMMUNITY_SPONSORSHIP.key: self._evaluate_community_sponsorship(
+                company, evidence
+            ),
+            OUTREACH_ACCESSIBILITY.key: self._evaluate_outreach_accessibility(
+                company, evidence
+            ),
+            SPONSORSHIP_CAPACITY.key: self._evaluate_sponsorship_capacity(
+                company, evidence
+            ),
+            STRATEGIC_ALIGNMENT.key: self._evaluate_strategic_alignment(
+                company, evidence
+            ),
         }
-
 
     # ------------------------------------------------------------------
     # One method per dimension
@@ -113,7 +126,7 @@ class SponsorEvaluator:
     def _evaluate_talent_acquisition(
         self, company: Company, evidence: Evidence
     ) -> CriterionScore:
-        """ Does this company actually want to hire our students?"""
+        """Does this company actually want to hire our students?"""
         return self._dimension_evaluator.evaluate_dimension(
             TALENT_ACQUISITION, company, evidence
         )
@@ -121,7 +134,7 @@ class SponsorEvaluator:
     def _evaluate_developer_ecosystem(
         self, company: Company, evidence: Evidence
     ) -> CriterionScore:
-        """ Can students realistically build something with their product during a 48-hour hackathon?"""
+        """Can students realistically build something with their product during a 48-hour hackathon?"""
         return self._dimension_evaluator.evaluate_dimension(
             DEVELOPER_ECOSYSTEM, company, evidence
         )
@@ -129,7 +142,7 @@ class SponsorEvaluator:
     def _evaluate_community_sponsorship(
         self, company: Company, evidence: Evidence
     ) -> CriterionScore:
-        """ Have they shown up for student events and technical communities before?"""
+        """Have they shown up for student events and technical communities before?"""
         return self._dimension_evaluator.evaluate_dimension(
             COMMUNITY_SPONSORSHIP, company, evidence
         )
@@ -137,7 +150,7 @@ class SponsorEvaluator:
     def _evaluate_outreach_accessibility(
         self, company: Company, evidence: Evidence
     ) -> CriterionScore:
-        """ Is there a real person we can actually reach who has a reason to care?"""
+        """Is there a real person we can actually reach who has a reason to care?"""
         return self._dimension_evaluator.evaluate_dimension(
             OUTREACH_ACCESSIBILITY, company, evidence
         )
@@ -145,7 +158,7 @@ class SponsorEvaluator:
     def _evaluate_sponsorship_capacity(
         self, company: Company, evidence: Evidence
     ) -> CriterionScore:
-        """ Do they have the budget and the right size to be a realistic sponsor?"""
+        """Do they have the budget and the right size to be a realistic sponsor?"""
         return self._dimension_evaluator.evaluate_dimension(
             SPONSORSHIP_CAPACITY, company, evidence
         )
@@ -153,7 +166,7 @@ class SponsorEvaluator:
     def _evaluate_strategic_alignment(
         self, company: Company, evidence: Evidence
     ) -> CriterionScore:
-        """ Do their goals overlap with what Hack Canada actually offers?"""
+        """Do their goals overlap with what Hack Canada actually offers?"""
         return self._dimension_evaluator.evaluate_dimension(
             STRATEGIC_ALIGNMENT, company, evidence
         )
