@@ -103,9 +103,7 @@ class Settings:
             google_api_key=google_key,
             llm_model=llm_model,
             sponsor_db_path=Path(
-                os.getenv(
-                    "SPONSOR_DB_PATH", str(project_root / "data" / "sponsors.db")
-                )
+                os.getenv("SPONSOR_DB_PATH", str(project_root / "data" / "sponsors.db"))
             ),
             hackathon_urls_file=Path(
                 os.getenv(
