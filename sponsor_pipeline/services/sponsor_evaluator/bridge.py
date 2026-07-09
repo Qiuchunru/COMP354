@@ -13,25 +13,23 @@ This file converts between the two so neither module needs to know about the oth
 
 from __future__ import annotations
 
-from sponsor_pipeline.models import CrawlResult
-from sponsor_pipeline.models import EvidenceCategory
+from sponsor_pipeline.models import (
+    Company as PipelineCompany,
+    CrawlResult,
+    EvidenceCategory,
+)
 from sponsor_pipeline.services.sponsor_evaluator.schemas import (
+    Company as EvaluatorCompany,
     Evidence as EvaluatorEvidence,
 )
 
 
 def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
     """
-    Convert a pipeline CrawlResult into evaluator Evidence.
-    Maps each tagged PipelineEvidence item into the appropriate field of EvaluatorEvidence based on its EvidenceCategory.
-    Also folds emails and social links into contact signals, and page snippets into size and contact signals.
-
-    Args:
-        crawl: CrawlResult produced by WebScraperService.
-
-    Returns:
-        EvaluatorEvidence ready to pass into SponsorEvaluator.evaluate().
+    Takes what the scraper collected (CrawlResult)
+    and reorganizes it into (EvaluatorEvidence)
     """
+    # 1 empty list per evaluator bucket
     hiring: list[str] = []
     developer: list[str] = []
     past: list[str] = []
@@ -39,7 +37,8 @@ def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
     size: list[str] = []
     canada: list[str] = []
 
-    # Map each tagged pipeline Evidence item to the right evaluator bucket
+    # the scraper tags every piece of evidence with a category (ex:HIRING_SIGNAL)
+    # we sort each one into the matching evaluator bucket
     for item in crawl.evidence:
         line = f"{item.description} ({item.source_url})"
         if item.category == EvidenceCategory.HIRING_SIGNAL:
@@ -53,15 +52,16 @@ def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
         elif item.category == EvidenceCategory.WATERLOO_CANADA_FIT:
             canada.append(line)
 
-    # Fold emails into contact signals
+    # emails the scraper found on the site -> contact signals
     for email in crawl.emails:
         contact.append(f"Public email found: {email}")
 
-    # Fold social links into contact signals
+    # social links (LinkedIn, Twitter...) -> contact signals
     for link in crawl.social_links:
         contact.append(f"{link.type.value}: {link.value} ({link.source_url})")
 
-    # Fold page snippets — size signals from funding/employee mentions, contact signals from team/about pages
+    # page text: if they mention employees/funding -> size signal
+    #            if they're from a team/about page -> contact signal
     for url, text in crawl.page_snippets.items():
         lower = text.lower()
         if any(word in lower for word in ("employee", "funding", "series ", "startup")):
@@ -69,6 +69,8 @@ def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
         if "team" in url.lower() or "about" in url.lower():
             contact.append(f"Team/about page: {url}")
 
+
+    # dedupe each bucket before returning so the LLM doesnt get confused
     return EvaluatorEvidence(
         hiring_signals=_dedupe(hiring),
         developer_products=_dedupe(developer),
@@ -79,9 +81,21 @@ def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
     )
 
 
+def pipeline_company_to_evaluator(company: PipelineCompany) -> EvaluatorCompany:
+    """
+    the pipeline and the evaluator both have a Company object but they are of different types
+    this just copies the fields the evaluator needs out of the pipeline's version
+    """
+    return EvaluatorCompany(
+        name=company.name,
+        website=company.website,
+        industry=company.industry,
+    )
+
+
 def _dedupe(items: list[str]) -> list[str]:
     """
-    Remove duplicate strings case-insensitively, preserving order.
+    Removes duplicate strings from a list (case-insensitive), keeping the first occurrence.
     """
     seen: set[str] = set()
     unique: list[str] = []
