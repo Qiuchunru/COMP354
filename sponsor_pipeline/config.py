@@ -30,7 +30,7 @@ class Settings:
     llm_model: str
 
     # Pipeline paths
-    sponsor_csv_path: Path
+    sponsor_db_path: Path
     hackathon_urls_file: Path
     scrape_log_path: Path
 
@@ -102,10 +102,8 @@ class Settings:
             openai_api_key=openai_key,
             google_api_key=google_key,
             llm_model=llm_model,
-            sponsor_csv_path=Path(
-                os.getenv(
-                    "SPONSOR_CSV_PATH", str(project_root / "data" / "sponsors.csv")
-                )
+            sponsor_db_path=Path(
+                os.getenv("SPONSOR_DB_PATH", str(project_root / "data" / "sponsors.db"))
             ),
             hackathon_urls_file=Path(
                 os.getenv(

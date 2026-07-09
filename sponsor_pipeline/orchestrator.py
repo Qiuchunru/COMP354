@@ -39,8 +39,7 @@ class PipelineOrchestrator:
         self._settings = settings
         self._llm = LLMClient(settings)
         self._prompts = PromptTemplateRegistry()
-        # CHANGED: was settings.db_path => renamed to settings.sponsor_csv_path
-        self._repo = SponsorRepository(settings.sponsor_csv_path)
+        self._repo = SponsorRepository(settings.sponsor_db_path)
         self._scraper = WebScraperService(settings)
         self._crawl_cache: dict[str, CrawlResult] = {}
         self._discovery = CompanyDiscoveryService(
@@ -164,7 +163,6 @@ class PipelineOrchestrator:
         return prospects
 
     def export_reports(self, output_dir: str | Path) -> None:
-        # CHANGED: was settings.db_path.parent / "exports" => now uses sponsor_csv_path.parent / "exports" consistently
         self._exporter.export_all(self._repo, Path(output_dir))
 
     def _get_crawl(self, website: str) -> CrawlResult:
