@@ -6,6 +6,12 @@ https://conuhacks.io
 https://hackthenorth.com
 https://mchacks.ca
 https://canadahacks.ca
+https://uofthacks.com
+https://nwhacks.io
+https://deltahacks.com
+https://hackthe6ix.com
+https://hackwestern.com
+https://qhacks.io
 
 # Trading & Finance — direct company URLs for email scraping
 https://www.janestreet.com
@@ -26,3 +32,39 @@ https://www.apple.com
 https://www.spacex.com
 https://www.cisco.com
 https://about.meta.com
+
+# Developer Platforms & Software
+https://github.com
+https://www.gitlab.com
+https://www.atlassian.com
+https://www.jetbrains.com
+https://vercel.com
+
+# Cloud & infrastructure
+https://www.cloudflare.com
+https://www.heroku.com
+
+# Databases & Developer Tools
+https://www.mongodb.com
+https://www.postgresql.org
+https://redis.io
+https://www.elastic.co
+
+# Payments & Fintech
+https://stripe.com
+https://www.paypal.com
+https://wise.com
+
+# AI
+https://openai.com
+https://www.anthropic.com
+https://cohere.com
+https://huggingface.co
+
+# Banking & Financial Services
+https://www.desjardins.com
+https://www.rbc.com
+https://www.td.com
+https://www.scotiabank.com
+https://www.bmo.com
+https://www.cibc.com
