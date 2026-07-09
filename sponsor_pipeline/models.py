@@ -3,7 +3,6 @@ Domain models for the HackCanada sponsor research pipeline.
 Defines all data classes and uses enumerations to maintain fixed set of values for each.
 """
 
-
 from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -232,6 +231,7 @@ class CriterionScore:
     """
     Score for a single evaluation dimension produced by the sponsor evaluator.
     """
+
     criterion_key: str
     score: float
     reasoning: str
@@ -245,6 +245,7 @@ class SponsorScore:
     Replaces the previous 5-field fixed scoring model with richer evaluator output:
     per-dimension reasoning, confidence level, key strengths, weaknesses, and outreach angle are now all preserved.
     """
+
     company: "Company"
     criterion_scores: dict[str, CriterionScore]
     overall_score: float
