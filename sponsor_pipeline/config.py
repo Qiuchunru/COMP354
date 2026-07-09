@@ -104,7 +104,7 @@ class Settings:
             llm_model=llm_model,
             sponsor_db_path=Path(
                 os.getenv(
-                    "SPONSOR_CSV_PATH", str(project_root / "data" / "sponsors.db")
+                    "SPONSOR_DB_PATH", str(project_root / "data" / "sponsors.db")
                 )
             ),
             hackathon_urls_file=Path(
