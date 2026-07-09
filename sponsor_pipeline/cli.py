@@ -77,7 +77,8 @@ def _run_scrape(args: argparse.Namespace, settings: Settings) -> int:
             print(f"File not found: {urls_path}", file=sys.stderr)
             return 1
         urls = [
-            line.strip() for line in urls_path.read_text().splitlines() if line.strip()
+            line.strip() for line in urls_path.read_text().splitlines()
+            if line.strip() and not line.strip().startswith("#")
         ]
 
     if not urls:
