@@ -53,7 +53,7 @@ class CompanyResearchService:
             + f"Key strengths: {', '.join(score.key_strengths)}\n"
             + f"Potential weaknesses: {', '.join(score.potential_weaknesses)}\n"
             + f"Recommended outreach angle: {score.recommended_outreach_angle}\n"
-            + f"Criterion scores:\n"
+            + "Criterion scores:\n"
             + "".join(
                 f"  - {k}: {v.score}/10 — {v.reasoning}\n"
                 for k, v in score.criterion_scores.items()
