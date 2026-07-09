@@ -15,7 +15,7 @@ class LeadFilter:
         self, companies: list[Company]
     ) -> tuple[list[Company], list[Company]]:
         scores = self._scoring_service.get_scores()
-        score_by_company = {s.company_id: s for s in scores}
+        score_by_company = {s.company.id: s for s in scores}
         passed: list[Company] = []
         rejected: list[Company] = []
         for company in companies:

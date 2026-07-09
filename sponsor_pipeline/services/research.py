@@ -48,10 +48,17 @@ class CompanyResearchService:
         result = self._llm.complete_structured(
             self._prompts.get_research_prompt()
             + f"\n\nCompany: {company.name}\nWebsite: {company.website}\n"
-            + f"Scores: talent={score.talent_score}, dev={score.developer_adoption_score}, "
-            + f"brand={score.brand_community_score}, access={score.accessibility_score}, "
-            + f"budget={score.budget_likelihood_score}, overall={score.overall_score}\n"
-            + f"Rationale: {score.scoring_rationale}\n\n"
+            + f"Overall score: {score.overall_score}/10 (confidence: {score.confidence})\n"
+            + f"Summary: {score.explanation}\n"
+            + f"Key strengths: {', '.join(score.key_strengths)}\n"
+            + f"Potential weaknesses: {', '.join(score.potential_weaknesses)}\n"
+            + f"Recommended outreach angle: {score.recommended_outreach_angle}\n"
+            + f"Criterion scores:\n"
+            + "".join(
+                f"  - {k}: {v.score}/10 — {v.reasoning}\n"
+                for k, v in score.criterion_scores.items()
+            )
+            + "\n"
             + f"Website research:\n{crawl_context}",
             """{
 

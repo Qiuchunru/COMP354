@@ -1,5 +1,8 @@
-# Domain models for the HackCanada sponsor research pipeline.
-# It defines all data classes and uses enumerations to maintain fixed set of values for each.
+"""
+Domain models for the HackCanada sponsor research pipeline.
+Defines all data classes and uses enumerations to maintain fixed set of values for each.
+"""
+
 
 from __future__ import annotations
 from dataclasses import dataclass, field
@@ -225,21 +228,33 @@ class CrawlResult:
 
 
 @dataclass
+class CriterionScore:
+    """
+    Score for a single evaluation dimension produced by the sponsor evaluator.
+    """
+    criterion_key: str
+    score: float
+    reasoning: str
+    supporting_evidence: list[str] = field(default_factory=list)
+
+
+@dataclass
 class SponsorScore:
     """
-    Numeric sponsorship fit scores for a company.
+    The complete evaluation result for one company.
+    Replaces the previous 5-field fixed scoring model with richer evaluator output:
+    per-dimension reasoning, confidence level, key strengths, weaknesses, and outreach angle are now all preserved.
     """
-
-    company_id: str
-    talent_score: float = 0.0
-    developer_adoption_score: float = 0.0
-    brand_community_score: float = 0.0
-    accessibility_score: float = 0.0
-    budget_likelihood_score: float = 0.0
-    overall_score: float = 0.0
-    primary_motivations: list[SponsorMotivation] = field(default_factory=list)
-    scoring_rationale: str = ""
-    company_size: CompanySize = CompanySize.UNKNOWN
+    company: "Company"
+    criterion_scores: dict[str, CriterionScore]
+    overall_score: float
+    motivations: list[SponsorMotivation]
+    confidence: str
+    explanation: str
+    key_strengths: list[str] = field(default_factory=list)
+    potential_weaknesses: list[str] = field(default_factory=list)
+    recommended_outreach_angle: str = ""
+    recommended_contact_role: str = ""
     scored_at: datetime = field(default_factory=_now_utc)
 
 
