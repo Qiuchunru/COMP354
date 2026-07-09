@@ -105,7 +105,7 @@ class SponsorRepository:
                 INSERT INTO scores (company_id, data) VALUES (?, ?)
                 ON CONFLICT(company_id) DO UPDATE SET data=excluded.data
                 """,
-                (score.company_id, json.dumps(_score_to_dict(score))),
+                (score.company.id, json.dumps(_score_to_dict(score))),
             )
 
     def save_report(self, report: SponsorReport) -> None:
@@ -199,16 +199,26 @@ class SponsorRepository:
 
 def _score_to_dict(score: SponsorScore) -> dict:
     return {
-        "company_id": score.company_id,
-        "talent_score": score.talent_score,
-        "developer_adoption_score": score.developer_adoption_score,
-        "brand_community_score": score.brand_community_score,
-        "accessibility_score": score.accessibility_score,
-        "budget_likelihood_score": score.budget_likelihood_score,
+        "company_id": score.company.id,
+        "company_name": score.company.name,
+        "company_website": score.company.website,
+        "company_industry": score.company.industry,
         "overall_score": score.overall_score,
-        "primary_motivations": [m.value for m in score.primary_motivations],
-        "scoring_rationale": score.scoring_rationale,
-        "company_size": score.company_size.value,
+        "confidence": score.confidence,
+        "explanation": score.explanation,
+        "key_strengths": score.key_strengths,
+        "potential_weaknesses": score.potential_weaknesses,
+        "recommended_outreach_angle": score.recommended_outreach_angle,
+        "recommended_contact_role": score.recommended_contact_role,
+        "motivations": [m.value for m in score.motivations],
+        "criterion_scores": {
+            k: {
+                "score": v.score,
+                "reasoning": v.reasoning,
+                "supporting_evidence": v.supporting_evidence,
+            }
+            for k, v in score.criterion_scores.items()
+        },
         "scored_at": score.scored_at.isoformat(),
     }
 
@@ -216,19 +226,35 @@ def _score_to_dict(score: SponsorScore) -> dict:
 def _dict_to_score(data: dict) -> SponsorScore:
     from datetime import datetime
 
+    from sponsor_pipeline.models import Company, CriterionScore
+
+    company = Company(
+        id=data["company_id"],
+        name=data.get("company_name", ""),
+        website=data.get("company_website", ""),
+        industry=data.get("company_industry", ""),
+    )
+    criterion_scores = {
+        k: CriterionScore(
+            criterion_key=k,
+            score=float(v["score"]),
+            reasoning=str(v.get("reasoning", "")),
+            supporting_evidence=list(v.get("supporting_evidence", [])),
+        )
+        for k, v in data.get("criterion_scores", {}).items()
+    }
+
     return SponsorScore(
-        company_id=data["company_id"],
-        talent_score=data["talent_score"],
-        developer_adoption_score=data["developer_adoption_score"],
-        brand_community_score=data["brand_community_score"],
-        accessibility_score=data["accessibility_score"],
-        budget_likelihood_score=data["budget_likelihood_score"],
-        overall_score=data["overall_score"],
-        primary_motivations=[
-            SponsorMotivation(v) for v in data.get("primary_motivations", [])
-        ],
-        scoring_rationale=data.get("scoring_rationale", ""),
-        company_size=CompanySize(data.get("company_size", "unknown")),
+        company=company,
+        criterion_scores=criterion_scores,
+        overall_score=float(data.get("overall_score", 0.0)),
+        confidence=str(data.get("confidence", "medium")),
+        explanation=str(data.get("explanation", "")),
+        key_strengths=list(data.get("key_strengths", [])),
+        potential_weaknesses=list(data.get("potential_weaknesses", [])),
+        recommended_outreach_angle=str(data.get("recommended_outreach_angle", "")),
+        recommended_contact_role=str(data.get("recommended_contact_role", "")),
+        motivations=[SponsorMotivation(v) for v in data.get("motivations", [])],
         scored_at=datetime.fromisoformat(data["scored_at"]),
     )
 
