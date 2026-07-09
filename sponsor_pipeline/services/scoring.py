@@ -5,8 +5,8 @@ import json
 from sponsor_pipeline.llm.client import LLMClient
 from sponsor_pipeline.models import (
     Company,
-    CompanySize,
     CrawlResult,
+    CriterionScore,
     Evidence,
     SponsorMotivation,
     SponsorScore,
@@ -81,7 +81,9 @@ class SponsorScoringService:
             explanation=str(result.get("explanation", "")),
             key_strengths=list(result.get("key_strengths", [])),
             potential_weaknesses=list(result.get("potential_weaknesses", [])),
-            recommended_outreach_angle=str(result.get("recommended_outreach_angle", "")),
+            recommended_outreach_angle=str(
+                result.get("recommended_outreach_angle", "")
+            ),
             recommended_contact_role=str(result.get("recommended_contact_role", "")),
         )
         self._scores[company.id] = score
