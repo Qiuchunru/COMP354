@@ -47,7 +47,7 @@ https://www.heroku.com
 # Databases & Developer Tools
 https://www.mongodb.com
 https://www.postgresql.org
-https://www.redis.io
+https://redis.io
 https://www.elastic.co
 
 # Payments & Fintech
