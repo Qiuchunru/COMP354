@@ -39,7 +39,6 @@ class EvaluationCriterion:
 
 # ---------------------------------------------------------------------------
 # Six evaluation criteria
-# Weights are currently equal (1.0 each)  [To be adjusted!!]
 # --------------------------------------------------------------------------
 
 TALENT_ACQUISITION = EvaluationCriterion(
@@ -49,7 +48,7 @@ TALENT_ACQUISITION = EvaluationCriterion(
         "How strongly the company benefits from recruiting Hack Canada participants, "
         "Focuses on Canadian student hiring, internships, co-ops, and new grad roles."
     ),
-    weight=1.0,
+    weight=1.5,
     evidence_hints=[
         "Internship or co-op programs",
         "New graduate hiring",
@@ -68,7 +67,7 @@ DEVELOPER_ECOSYSTEM = EvaluationCriterion(
         "A strong score means students can realistically build with this product "
         "during a 48-hour event."
     ),
-    weight=1.0,
+    weight=0.75,
     evidence_hints=[
         "Public API or SDK",
         "Developer documentation",
@@ -86,7 +85,7 @@ COMMUNITY_SPONSORSHIP = EvaluationCriterion(
         "The company's history of supporting technical communities and student events, "
         "Past sponsorship of comparable events is the strongest possible signal."
     ),
-    weight=1.0,
+    weight=2.0,
     evidence_hints=[
         "Previous hackathon sponsorships",
         "MLH event sponsorships",
@@ -105,7 +104,7 @@ OUTREACH_ACCESSIBILITY = EvaluationCriterion(
         "A high score means there is a named, reachable contact with a clear reason "
         "to care about sponsorship."
     ),
-    weight=1.0,
+    weight=1.5,
     evidence_hints=[
         "Developer Relations or community manager",
         "Campus or university recruiter",
@@ -124,7 +123,7 @@ SPONSORSHIP_CAPACITY = EvaluationCriterion(
         "THE sweet-spot companies are seed-to-Series-C, 20–500 employees. "
         "Very small or very large companies typically score lower."
     ),
-    weight=1.0,
+    weight=1.5,
     evidence_hints=[
         "Company size (headcount)",
         "Funding stage and recent rounds",
@@ -142,7 +141,7 @@ STRATEGIC_ALIGNMENT = EvaluationCriterion(
         "Looks for overlap between what the company wants and what Hack Canada offers: "
         "Waterloo-heavy technical talent, student builders, and Canadian tech visibility."
     ),
-    weight=1.0,
+    weight=1.25,
     evidence_hints=[
         "Explicit interest in Waterloo or Canadian technical talent",
         "Goal of growing developer adoption among students",

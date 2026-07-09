@@ -36,7 +36,7 @@ from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     SponsorScore,
 )
 
-# scoring.py isn't yet implemented,  ScoreCalculator will live there
+# scoring.py
 from sponsor_pipeline.services.sponsor_evaluator.scoring import ScoreCalculator
 
 

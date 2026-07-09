@@ -38,9 +38,17 @@ We score each company across **six dimensions**, from 0 -10
 | **Sponsorship Capacity** | Do they have the budget to sponsor? |
 | **Strategic Alignment** | Do their goals overlap with what Hack Canada offers? |
 
-The final score is a weighted average of these six. **Weights are equal for now and will be adjusted later** in `criteria.py`
+the final score is a weighted average of these six, configured in `criteria.py`:
 
-A company can score high on just one or two dimensions and still be a great lead, example a trading firm might score 0 on Developer Ecosystem but 10 on Talent Acquisition, and that's fine.
+| Dimension | Weight | comment |
+| Community Sponsorship Fit | 2.0 | past sponsorship behavior is the strongest predictor of future sponsorship |
+| Talent Acquisition Fit | 1.5 | reliable primary motivation for tech companies |
+| Outreach Accessibility | 1.5 | no reachable contact means the pipeline stalls regardless of score |
+| Sponsorship Capacity | 1.5 | no budget -> no deal |
+| Strategic Alignment | 1.25 | Canada/Waterloo fit is secondary to the above |
+| Developer Ecosystem Fit | 0.75 | relevant for APIs but not a prerequisite for a sponsorship|
+
+A company can score high on just one or two dimensions and still be a great lead
 
 ---
 
