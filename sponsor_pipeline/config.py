@@ -90,7 +90,7 @@ class Settings:
 
         # Default model per llm provider if LLM_MODEL not set
         default_models = {
-            "anthropic": "claude-sonnet-4-5",
+            "anthropic": "claude-sonnet-4-6",
             "openai": "gpt-4o-mini",
             "google": "gemini-1.5-flash",
         }
