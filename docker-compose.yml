@@ -1,0 +1,42 @@
+services:
+  app:
+    build:
+      context: .
+    image: comp354-sponsor-pipeline:local
+    working_dir: /app
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
+      LLM_MODEL: ${LLM_MODEL:-}
+      SPONSOR_DB_PATH: /app/data/sponsors.db
+      HACKATHON_URLS_FILE: /app/data/hackathon_urls.txt
+      SCRAPE_LOG_PATH: /app/data/log.txt
+      MIN_OVERALL_SCORE: ${MIN_OVERALL_SCORE:-6.0}
+      MAX_CRAWL_PAGES: ${MAX_CRAWL_PAGES:-50}
+      MAX_EMAILS_PER_SITE: ${MAX_EMAILS_PER_SITE:-5}
+      MLH_EVENTS_URL: ${MLH_EVENTS_URL:-https://www.mlh.io/seasons/2026/events}
+      SENDER_NAME: ${SENDER_NAME:-Your Name Here}
+      SENDER_TITLE: ${SENDER_TITLE:-Your Title Here}
+      EVENT_NAME: ${EVENT_NAME:-ConUHacks X}
+      EVENT_DATE: ${EVENT_DATE:-January 24-25, 2026}
+      EVENT_VENUE: ${EVENT_VENUE:-Concordia University's John Molson Building}
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+    command: ["python", "main.py", "--help"]
+
+  test:
+    image: comp354-sponsor-pipeline:local
+    build:
+      context: .
+    working_dir: /app
+    command: ["sh", "scripts/docker-checks.sh"]
+
+  lint:
+    image: comp354-sponsor-pipeline:local
+    build:
+      context: .
+    working_dir: /app
+    command: ["python", "-m", "ruff", "check", "."]
