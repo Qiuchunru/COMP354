@@ -453,6 +453,20 @@ class ClaudeSponsorDimensionEvaluator(SponsorDimensionEvaluator):
         return _parse_claude_summary(response)
 
 
+def _parse_motivations(raw: list) -> list[SponsorMotivation]:
+    """
+    Convert raw motivation strings to SponsorMotivation enums, skipping any
+    invalid values the LLM may return (ex: criterion keys instead of motivation values)
+    """
+    result = []
+    for m in raw:
+        try:
+            result.append(SponsorMotivation(m))
+        except ValueError:
+            pass
+    return result or [SponsorMotivation.BRAND_AWARENESS]
+
+
 def _parse_claude_criterion_score(criterion_key: str, response) -> CriterionScore:
     """
     Extracts the tool_use block from a Claude dimension response
@@ -490,7 +504,7 @@ def _parse_claude_summary(response) -> SponsorEvaluationSummary:
         )
     data = tool_block.input
     return SponsorEvaluationSummary(
-        motivations=[SponsorMotivation(m) for m in data["motivations"]],
+        motivations=_parse_motivations(data["motivations"]),
         confidence=Confidence(data["confidence"]),
         explanation=data["explanation"],
         key_strengths=data["key_strengths"],
@@ -619,7 +633,7 @@ def _parse_openai_summary(response) -> SponsorEvaluationSummary:
         )
     data = json.loads(choice.message.tool_calls[0].function.arguments)
     return SponsorEvaluationSummary(
-        motivations=[SponsorMotivation(m) for m in data["motivations"]],
+        motivations=_parse_motivations(data["motivations"]),
         confidence=Confidence(data["confidence"]),
         explanation=data["explanation"],
         key_strengths=data["key_strengths"],
@@ -816,7 +830,7 @@ def _parse_google_summary(response) -> SponsorEvaluationSummary:
     fc = _extract_google_function_call(response, "summary")
     data = fc.args
     return SponsorEvaluationSummary(
-        motivations=[SponsorMotivation(m) for m in data["motivations"]],
+        motivations=_parse_motivations(data["motivations"]),
         confidence=Confidence(data["confidence"]),
         explanation=data["explanation"],
         key_strengths=list(data["key_strengths"]),
