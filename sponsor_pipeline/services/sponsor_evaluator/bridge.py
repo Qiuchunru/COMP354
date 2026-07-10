@@ -9,6 +9,7 @@ of the same underlying data:
 The pipeline produces CrawlResult objects containing models.Evidence items.
 The sponsor evaluator expects schemas.Evidence as its input format.
 This file converts between the two so neither module needs to know about the other.
+& converts evaluator output (schemas.SponsorScore) back to pipeline types (models.SponsorScore)
 """
 
 from __future__ import annotations
@@ -16,12 +17,24 @@ from __future__ import annotations
 from sponsor_pipeline.models import (
     Company as PipelineCompany,
     CrawlResult,
+    CriterionScore as PipelineCriterionScore,
     EvidenceCategory,
+    SponsorMotivation as PipelineMotivation,
+    SponsorScore as PipelineSponsorScore,
 )
 from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     Company as EvaluatorCompany,
     Evidence as EvaluatorEvidence,
+    SponsorMotivation as EvaluatorMotivation,
+    SponsorScore as EvaluatorScore,
 )
+
+# maps the evaluator's motivation values to the pipeline's motivation values
+_MOTIVATION_MAP: dict[EvaluatorMotivation, PipelineMotivation] = {
+    EvaluatorMotivation.TALENT: PipelineMotivation.HIRING_TALENT,
+    EvaluatorMotivation.DEVELOPER_ADOPTION: PipelineMotivation.DEVELOPER_ADOPTION,
+    EvaluatorMotivation.BRAND_AWARENESS: PipelineMotivation.BRAND_COMMUNITY,
+}
 
 
 def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
@@ -89,6 +102,41 @@ def pipeline_company_to_evaluator(company: PipelineCompany) -> EvaluatorCompany:
         name=company.name,
         website=company.website,
         industry=company.industry,
+    )
+
+
+def evaluator_score_to_pipeline(
+    company: PipelineCompany,
+    eval_score: EvaluatorScore,
+) -> PipelineSponsorScore:
+    """
+    Convert schemas.SponsorScore (evaluator output) to models.SponsorScore (pipeline type)
+    Uses the pipeline Company so the score is linked to the correct pipeline entity (with id, status...)
+    """
+    criterion_scores = {
+        key: PipelineCriterionScore(
+            criterion_key=cs.criterion_key,
+            score=cs.score,
+            reasoning=cs.reasoning,
+            supporting_evidence=cs.supporting_evidence,
+        )
+        for key, cs in eval_score.criterion_scores.items()
+    }
+    motivations = [
+        _MOTIVATION_MAP.get(m, PipelineMotivation.HIRING_TALENT)
+        for m in eval_score.motivations
+    ]
+    return PipelineSponsorScore(
+        company=company,
+        criterion_scores=criterion_scores,
+        overall_score=eval_score.overall_score,
+        motivations=motivations,
+        confidence=eval_score.confidence.value,
+        explanation=eval_score.explanation,
+        key_strengths=eval_score.key_strengths,
+        potential_weaknesses=eval_score.potential_weaknesses,
+        recommended_outreach_angle=eval_score.recommended_outreach_angle,
+        recommended_contact_role=eval_score.recommended_contact_role,
     )
 
 

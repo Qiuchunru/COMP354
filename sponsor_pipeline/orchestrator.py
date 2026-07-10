@@ -34,6 +34,56 @@ from sponsor_pipeline.services.sponsor_evaluator import (
     SponsorEvaluator,
 )
 
+from sponsor_pipeline.services.sponsor_evaluator.bridge import (
+    crawl_to_evidence,
+    evaluator_score_to_pipeline,
+    pipeline_company_to_evaluator,
+)
+from sponsor_pipeline.services.sponsor_evaluator.llm.sponsor_dimension_evaluator import (
+    SponsorDimensionEvaluator,
+)
+
+def _build_dimension_evaluator(settings: Settings) -> SponsorDimensionEvaluator:
+    """
+    factory that creates the right LLM evaluator based on the LLM_PROVIDER setting
+
+    lazy imports (import inside the if-branch)
+    only import the SDK for the provider the user actually configured
+
+    Each branch:
+        anthropic : creates an anthropic.Anthropic client and passes it to Claude evaluator
+        openai    : creates an openai.OpenAI client and passes it to OpenAI evaluator
+        google    : configures genai globally with the API key, passes the module to Google evaluator
+    """
+    provider = settings.llm_provider
+    model = settings.llm_model
+
+    if provider == "anthropic":
+        import anthropic
+        return ClaudeSponsorDimensionEvaluator(
+            anthropic.Anthropic(api_key=settings.anthropic_api_key),
+            model,
+        )
+
+    if provider == "openai":
+        from openai import OpenAI
+        return OpenAISponsorDimensionEvaluator(
+            OpenAI(api_key=settings.openai_api_key),
+            model,
+        )
+
+    if provider == "google":
+        # Uses the new google.genai SDK (google-genai package), not the deprecated google.generativeai
+        from google import genai
+        client = genai.Client(api_key=settings.google_api_key)
+        return GoogleSponsorDimensionEvaluator(client, model)
+
+    # raise as a safety net
+    raise ValueError(
+        f"Unsupported LLM provider for the evaluator: '{provider}'. "
+        f"Choose one of: anthropic, openai, google"
+    )
+
 logger = get_logger(__name__)
 
 
@@ -136,7 +186,11 @@ class PipelineOrchestrator:
                 continue
             crawl = self._get_crawl(company.website)
             self._repo.save_evidence(company.id, crawl.evidence)
-            score = self._scoring.score_company(company, crawl.evidence, crawl)
+            eval_score = self._evaluator.evaluate(
+                pipeline_company_to_evaluator(company),
+                crawl_to_evidence(crawl),
+            )
+            score = evaluator_score_to_pipeline(company, eval_score)
             logger.info(
                 "Score for %s: %.1f/10 (%s)",
                 company.name,
@@ -144,9 +198,9 @@ class PipelineOrchestrator:
                 score.confidence,
             )
             company.status = LeadStatus.SCORED
-            company.company_size = score.company_size
             self._repo.save_company(company)
             self._repo.save_score(score)
+            self._scoring.load_scores([score])
             scored.append(company)
         logger.info("Scoring finished with %s scored company record(s)", len(scored))
         return scored
