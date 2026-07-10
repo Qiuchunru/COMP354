@@ -20,3 +20,6 @@ results/
 
 venv/
 sponsors.db
+data/*.db
+data/log.txt
+log.txt

@@ -1,0 +1,17 @@
+.agents/
+.codex/
+.git/
+.github/
+.ruff_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+venv/
+results/
+test_emails.txt
+log.txt
+data/*.db
+data/log.txt
