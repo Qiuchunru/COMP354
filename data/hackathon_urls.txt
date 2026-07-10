@@ -2,41 +2,18 @@
 # Format: one URL per line, lines starting with # are ignored
 
 # Hackathon websites — crawled to discover sponsor company names
-https://conuhacks.io
 https://hackthenorth.com
-https://mchacks.ca
 https://canadahacks.ca
-https://uofthacks.com
-https://nwhacks.io
-https://deltahacks.com
-https://hackthe6ix.com
-https://hackwestern.com
-https://qhacks.io
 
 # Trading & Finance — direct company URLs for email scraping
-https://www.janestreet.com
 https://www.citadelsecurities.com
-https://www.hudsonrivertrading.com
 https://www.twosigma.com
-https://drw.com
-https://www.optiver.com
-https://www.imc.com
-https://www.susinternational.com
 
 # Tech Giants — direct company URLs for email scraping
-https://www.nvidia.com
 https://www.microsoft.com
 https://careers.google.com
-https://aws.amazon.com
-https://www.apple.com
-https://www.spacex.com
-https://www.cisco.com
-https://about.meta.com
 
 # Developer Platforms & Software
-https://github.com
-https://www.gitlab.com
-https://www.atlassian.com
 https://www.jetbrains.com
 https://vercel.com
 
@@ -47,24 +24,16 @@ https://www.heroku.com
 # Databases & Developer Tools
 https://www.mongodb.com
 https://www.postgresql.org
-https://redis.io
-https://www.elastic.co
 
 # Payments & Fintech
 https://stripe.com
-https://www.paypal.com
 https://wise.com
 
 # AI
 https://openai.com
 https://www.anthropic.com
-https://cohere.com
-https://huggingface.co
 
 # Banking & Financial Services
-https://www.desjardins.com
 https://www.rbc.com
 https://www.td.com
-https://www.scotiabank.com
-https://www.bmo.com
-https://www.cibc.com
+
