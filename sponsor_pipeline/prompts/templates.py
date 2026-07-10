@@ -17,17 +17,18 @@ Skip duplicates, generic placeholders, and companies with no clear sponsorship a
         return """Score this company's likelihood to sponsor Hack Canada.
 
 Score each category 0-10:
-- talent_score: hiring interns/new grads, Canada/Waterloo recruiting
-- developer_adoption_score: APIs, SDKs, dev tools usable in a hackathon
-- brand_community_score: event sponsorship, student community visibility
-- accessibility_score: realistic to contact (DevRel, campus recruiter, not just generic form)
-- budget_likelihood_score: size sweet spot (seed to Series C often best; tiny startups and mega-caps score lower unless strong evidence)
+- talent_acquisition: hiring interns/new grads, Canada/Waterloo recruiting
+- developer_ecosystem: APIs, SDKs, dev tools usable in a hackathon
+- community_sponsorship: event sponsorship, student community visibility
+- outreach_accessibility: realistic to contact (DevRel, campus recruiter, not just generic form)
+- sponsorship_capacity: size sweet spot (seed to Series C often best; tiny startups and mega-caps score lower unless strong evidence)
+- strategic_alignment: fit with Hack Canada's Canadian university audience
 
 Also provide:
 - overall_score: weighted judgment, not just average of fame
-- primary_motivations: list from ["hiring_talent", "developer_adoption", "brand_community"]
+- motivations: list from ["hiring_talent", "developer_adoption", "brand_community"]
 - company_size: one of "too_small", "sweet_spot", "too_big", "unknown"
-- scoring_rationale: 2-4 sentences citing evidence
+- explanation: 2-4 sentences citing evidence
 
 Famous companies without hackathon sponsorship history should NOT get high scores automatically."""
 
