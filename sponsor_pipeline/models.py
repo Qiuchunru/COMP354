@@ -334,3 +334,12 @@ class PipelineResult:
     researched: int = 0
     outreach_ready: int = 0
     prospects: list[OutreachProspect] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, int]:
+        return {
+            "discovered": self.discovered,
+            "scored": self.scored,
+            "filtered_out": self.filtered_out,
+            "researched": self.researched,
+            "outreach_ready": self.outreach_ready,
+        }
