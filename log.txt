@@ -1,0 +1,1752 @@
+Starting crawl: https://conuhacks.io
+Crawled: https://conuhacks.io
+Found email: sponsor.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Found email: team.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Crawled: https://conuhacks.io/
+Crawled: https://register.conuhacks.io/login
+Found email: john.doe@mail.com on https://register.conuhacks.io/login
+Crawled: https://conuhacks.io/forgot-password
+Crawled: https://conuhacks.io/register
+Finished crawl: https://conuhacks.io (5 pages, 3 emails)
+Starting crawl: https://# Hackathon sponsor candidate URLs
+Failed to crawl: https://# Hackathon sponsor candidate URLs
+Finished crawl: https://# Hackathon sponsor candidate URLs (0 pages, 0 emails)
+Starting crawl: https://# Format: one URL per line, lines starting with # are ignored
+Failed to crawl: https://# Format: one URL per line, lines starting with # are ignored
+Finished crawl: https://# Format: one URL per line, lines starting with # are ignored (0 pages, 0 emails)
+Starting crawl: https://# Hackathon websites â€” crawled to discover sponsor company names
+Failed to crawl: https://# Hackathon websites â€” crawled to discover sponsor company names
+Finished crawl: https://# Hackathon websites â€” crawled to discover sponsor company names (0 pages, 0 emails)
+Starting crawl: https://conuhacks.io
+Crawled: https://conuhacks.io
+Found email: sponsor.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Found email: team.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Crawled: https://conuhacks.io/
+Crawled: https://register.conuhacks.io/login
+Found email: john.doe@mail.com on https://register.conuhacks.io/login
+Crawled: https://conuhacks.io/forgot-password
+Crawled: https://conuhacks.io/register
+Finished crawl: https://conuhacks.io (5 pages, 3 emails)
+Starting crawl: https://hackthenorth.com
+Crawled: https://hackthenorth.com
+Found email: sponsor@hackthenorth.com on https://hackthenorth.com
+Found email: hello@hackthenorth.com on https://hackthenorth.com
+Failed to crawl: https://hackthenorth.com/site.webmanifest
+Crawled: https://museum.hackthenorth.com/s-kbd67
+Crawled: https://museum.hackthenorth.com
+Crawled: https://hackthenorth.com/blockblog-9djbn2
+Crawled: https://museum.hackthenorth.com/coach-bob
+Crawled: https://museum.hackthenorth.com/puppeteer-7429qv
+Crawled: https://museum.hackthenorth.com/vibe-director
+Crawled: https://hackthenorth.com/travel-guidelines
+Found email: travel@hackthenorth.com on https://hackthenorth.com/travel-guidelines
+Crawled: https://hackthenorth.com/code-of-conduct
+Crawled: https://hackthenorth.com/privacy
+Crawled: https://2026-teaser.hackthenorth.com/
+Crawled: https://hackthenorth.com/
+Crawled: https://2025.hackthenorth.com
+Crawled: https://hackthenorth.com/chessmate-nwygvq
+Crawled: https://hackthenorth.com/coach-bob
+Crawled: https://hackthenorth.com/dum-e-kgx6at
+Crawled: https://hackthenorth.com/lattice-flck7q
+Crawled: https://hackthenorth.com/maatchaa
+Crawled: https://hackthenorth.com/puppeteer-7429qv
+Crawled: https://hackthenorth.com/ross-42pnvi
+Crawled: https://hackthenorth.com/s-kbd67
+Crawled: https://hackthenorth.com/sauron-zvo2je
+Crawled: https://hackthenorth.com/speakeasy-vdkc9n
+Crawled: https://hackthenorth.com/vibe-director
+Crawled: https://hackthenorth.com/tango-q37d4z
+Crawled: https://hackthenorth.com/autost
+Crawled: https://hackthenorth.com/chatgpme
+Crawled: https://hackthenorth.com/conart-ai
+Crawled: https://hackthenorth.com/craven
+Crawled: https://hackthenorth.com/budget-defender
+Crawled: https://hackthenorth.com/flashback-q3kzg9
+Crawled: https://hackthenorth.com/ludwig
+Crawled: https://hackthenorth.com/lurelore
+Crawled: https://hackthenorth.com/pathsense-athy2r
+Crawled: https://hackthenorth.com/pulsegrip
+Crawled: https://hackthenorth.com/ted-twz9b1
+Crawled: https://hackthenorth.com/tinkerflow
+Crawled: https://hackthenorth.com/llm-interview
+Crawled: https://hackthenorth.com/dejavu
+Crawled: https://hackthenorth.com/dreamweaver
+Crawled: https://hackthenorth.com/drive-sense
+Crawled: https://hackthenorth.com/edusphere-95goxk
+Crawled: https://hackthenorth.com/hack-the-geese
+Crawled: https://hackthenorth.com/pear-piano
+Crawled: https://hackthenorth.com/the-plant-whisperer
+Crawled: https://hackthenorth.com/spyder
+Crawled: https://hackthenorth.com/swag-the-north
+Crawled: https://hackthenorth.com/the-council
+Crawled: https://hackthenorth.com/vibes-decentralized-social-media-for-artists
+Crawled: https://hackthenorth.com/bb8-droid-pko3jb
+Finished crawl: https://hackthenorth.com (50 pages, 3 emails)
+Starting crawl: https://mchacks.ca
+Crawled: https://mchacks.ca
+Found email: sponsorship@mchacks.ca on https://mchacks.ca
+Found email: contact@mchacks.ca on https://mchacks.ca
+Crawled: https://mchacks.ca/manifest.webmanifest
+Crawled: https://mchacks.ca/
+Crawled: https://app.mchacks.ca/
+Found email: your_email@gmail.com on https://app.mchacks.ca/
+Crawled: https://mchacks.ca/code-of-conduct
+Found email: directors@mchacks.ca on https://mchacks.ca/code-of-conduct
+Crawled: https://mchacks.ca/privacy
+Crawled: https://mchacks.ca/manifest.json
+Crawled: https://mchacks.ca/password/forgot
+Crawled: https://mchacks.ca/account/create
+Finished crawl: https://mchacks.ca (9 pages, 4 emails)
+Starting crawl: https://canadahacks.ca
+Crawled: https://canadahacks.ca
+Finished crawl: https://canadahacks.ca (1 pages, 0 emails)
+Starting crawl: https://uofthacks.com
+Crawled: https://uofthacks.com
+Found email: sponsors@uofthacks.com on https://uofthacks.com
+Found email: contact@uofthacks.com on https://uofthacks.com
+Crawled: https://uofthacks.com/shared/loading_gang.webp
+Crawled: https://portal.uofthacks.com/
+Crawled: https://uofthacks.com/privacypolicy
+Crawled: https://uofthacks.com/manifest.json
+Crawled: https://uofthacks.com/forgot-password
+Crawled: https://uofthacks.com/admin/login
+Finished crawl: https://uofthacks.com (7 pages, 2 emails)
+Starting crawl: https://nwhacks.io
+Crawled: https://nwhacks.io
+Found email: sponsorship@nwplus.io on https://nwhacks.io
+Found email: info@nwplus.io on https://nwhacks.io
+Crawled: https://nwhacks.io/
+Crawled: https://2026.nwhacks.io/
+Crawled: https://nwhacks.io/linkedin.com/in/cait-chan/
+Crawled: https://nwhacks.io/www.linkedin.com/in/sunnysu101
+Crawled: https://nwhacks.io/linkedin.com/in/jagathi-moturi
+Crawled: https://nwhacks.io/www.linkedin.com/in/tiffany-nguyen-14b227216
+Crawled: https://nwhacks.io/linkedin.com/in/conryoung
+Crawled: https://nwhacks.io/ysu.dev
+Crawled: https://nwhacks.io/www.linkedin.com/in/elaine-c-3ab8a2231
+Crawled: https://nwhacks.io/mackenziedy.com
+Crawled: https://nwhacks.io/linkedin.com/in/lincoln-seungha-lee
+Crawled: https://nwhacks.io/danielpanhead.com
+Starting crawl: https://conuhacks.io
+Crawled: https://conuhacks.io
+Found email: sponsor.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Found email: team.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Crawled: https://conuhacks.io/
+Crawled: https://register.conuhacks.io/login
+Found email: john.doe@mail.com on https://register.conuhacks.io/login
+Crawled: https://conuhacks.io/forgot-password
+Crawled: https://conuhacks.io/register
+Finished crawl: https://conuhacks.io (5 pages, 3 emails)
+Starting crawl: https://hackthenorth.com
+Crawled: https://hackthenorth.com
+Found email: sponsor@hackthenorth.com on https://hackthenorth.com
+Found email: hello@hackthenorth.com on https://hackthenorth.com
+Failed to crawl: https://hackthenorth.com/site.webmanifest
+Crawled: https://museum.hackthenorth.com/s-kbd67
+Crawled: https://museum.hackthenorth.com
+Crawled: https://hackthenorth.com/blockblog-9djbn2
+Crawled: https://museum.hackthenorth.com/coach-bob
+Crawled: https://museum.hackthenorth.com/puppeteer-7429qv
+Crawled: https://museum.hackthenorth.com/vibe-director
+Crawled: https://hackthenorth.com/travel-guidelines
+Found email: travel@hackthenorth.com on https://hackthenorth.com/travel-guidelines
+Crawled: https://hackthenorth.com/code-of-conduct
+Crawled: https://hackthenorth.com/privacy
+Crawled: https://2026-teaser.hackthenorth.com/
+Crawled: https://hackthenorth.com/
+Crawled: https://2025.hackthenorth.com
+Crawled: https://hackthenorth.com/chessmate-nwygvq
+Crawled: https://hackthenorth.com/coach-bob
+Crawled: https://hackthenorth.com/dum-e-kgx6at
+Crawled: https://hackthenorth.com/lattice-flck7q
+Crawled: https://hackthenorth.com/maatchaa
+Crawled: https://hackthenorth.com/puppeteer-7429qv
+Crawled: https://hackthenorth.com/ross-42pnvi
+Crawled: https://hackthenorth.com/s-kbd67
+Crawled: https://hackthenorth.com/sauron-zvo2je
+Crawled: https://hackthenorth.com/speakeasy-vdkc9n
+Crawled: https://hackthenorth.com/vibe-director
+Crawled: https://hackthenorth.com/tango-q37d4z
+Crawled: https://hackthenorth.com/autost
+Crawled: https://hackthenorth.com/chatgpme
+Crawled: https://hackthenorth.com/conart-ai
+Crawled: https://hackthenorth.com/craven
+Crawled: https://hackthenorth.com/budget-defender
+Crawled: https://hackthenorth.com/flashback-q3kzg9
+Crawled: https://hackthenorth.com/ludwig
+Crawled: https://hackthenorth.com/lurelore
+Crawled: https://hackthenorth.com/pathsense-athy2r
+Crawled: https://hackthenorth.com/pulsegrip
+Crawled: https://hackthenorth.com/ted-twz9b1
+Crawled: https://hackthenorth.com/tinkerflow
+Crawled: https://hackthenorth.com/llm-interview
+Crawled: https://hackthenorth.com/dejavu
+Crawled: https://hackthenorth.com/dreamweaver
+Crawled: https://hackthenorth.com/drive-sense
+Crawled: https://hackthenorth.com/edusphere-95goxk
+Crawled: https://hackthenorth.com/hack-the-geese
+Crawled: https://hackthenorth.com/pear-piano
+Crawled: https://hackthenorth.com/the-plant-whisperer
+Crawled: https://hackthenorth.com/spyder
+Crawled: https://hackthenorth.com/swag-the-north
+Crawled: https://hackthenorth.com/the-council
+Crawled: https://hackthenorth.com/vibes-decentralized-social-media-for-artists
+Crawled: https://hackthenorth.com/bb8-droid-pko3jb
+Finished crawl: https://hackthenorth.com (50 pages, 3 emails)
+Starting crawl: https://mchacks.ca
+Crawled: https://mchacks.ca
+Found email: sponsorship@mchacks.ca on https://mchacks.ca
+Found email: contact@mchacks.ca on https://mchacks.ca
+Crawled: https://mchacks.ca/manifest.webmanifest
+Crawled: https://mchacks.ca/
+Crawled: https://app.mchacks.ca/
+Found email: your_email@gmail.com on https://app.mchacks.ca/
+Crawled: https://mchacks.ca/code-of-conduct
+Found email: directors@mchacks.ca on https://mchacks.ca/code-of-conduct
+Crawled: https://mchacks.ca/privacy
+Crawled: https://mchacks.ca/manifest.json
+Crawled: https://mchacks.ca/password/forgot
+Crawled: https://mchacks.ca/account/create
+Finished crawl: https://mchacks.ca (9 pages, 4 emails)
+Starting crawl: https://canadahacks.ca
+Crawled: https://canadahacks.ca
+Finished crawl: https://canadahacks.ca (1 pages, 0 emails)
+Starting crawl: https://uofthacks.com
+Crawled: https://uofthacks.com
+Found email: sponsors@uofthacks.com on https://uofthacks.com
+Found email: contact@uofthacks.com on https://uofthacks.com
+Crawled: https://uofthacks.com/shared/loading_gang.webp
+Crawled: https://portal.uofthacks.com/
+Crawled: https://uofthacks.com/privacypolicy
+Crawled: https://uofthacks.com/manifest.json
+Crawled: https://uofthacks.com/forgot-password
+Crawled: https://uofthacks.com/admin/login
+Finished crawl: https://uofthacks.com (7 pages, 2 emails)
+Starting crawl: https://nwhacks.io
+Crawled: https://nwhacks.io
+Found email: sponsorship@nwplus.io on https://nwhacks.io
+Found email: info@nwplus.io on https://nwhacks.io
+Crawled: https://nwhacks.io/
+Crawled: https://2026.nwhacks.io/
+Crawled: https://nwhacks.io/linkedin.com/in/cait-chan/
+Crawled: https://nwhacks.io/www.linkedin.com/in/sunnysu101
+Crawled: https://nwhacks.io/linkedin.com/in/jagathi-moturi
+Crawled: https://nwhacks.io/www.linkedin.com/in/tiffany-nguyen-14b227216
+Crawled: https://nwhacks.io/linkedin.com/in/conryoung
+Crawled: https://nwhacks.io/ysu.dev
+Crawled: https://nwhacks.io/www.linkedin.com/in/elaine-c-3ab8a2231
+Crawled: https://nwhacks.io/mackenziedy.com
+Crawled: https://nwhacks.io/linkedin.com/in/lincoln-seungha-lee
+Crawled: https://nwhacks.io/danielpanhead.com
+Crawled: https://nwhacks.io/www.linkedin.com/in/wakana-k
+Crawled: https://2025.nwhacks.io/
+Crawled: https://nwhacks.io/linkedin.com/in/karenagustino/
+Crawled: https://nwhacks.io/linkedin.com/in/mackenzie-tenefrancia-dy
+Crawled: https://2024.nwhacks.io/
+Crawled: https://nwhacks.io/www.linkedin.com/in/charlenechiu-chl/
+Crawled: https://nwhacks.io/www.linkedin.com/in/jadetjandra
+Crawled: https://nwhacks.io/linkedin.com/in/kittyliu3
+Crawled: https://2023.nwhacks.io
+Crawled: https://nwhacks.io/www.linkedin.com/in/jennguyen-ubc
+Crawled: https://nwhacks.io/www.linkedin.com/in/saminourji
+Crawled: https://nwhacks.io/info.html
+Crawled: https://2022.nwhacks.io
+Crawled: https://2021.nwhacks.io
+Finished crawl: https://nwhacks.io (27 pages, 2 emails)
+Starting crawl: https://deltahacks.com
+Crawled: https://deltahacks.com
+Found email: hello@deltahacks.com on https://deltahacks.com
+Crawled: https://deltahacks.com/
+Finished crawl: https://deltahacks.com (2 pages, 1 emails)
+Starting crawl: https://hackthe6ix.com
+Crawled: https://hackthe6ix.com
+Found email: sponsor@hackthe6ix.com on https://hackthe6ix.com
+Found email: hello@hackthe6ix.com on https://hackthe6ix.com
+Crawled: https://2026.dash.hackthe6ix.com
+Found email: name@host.com on https://2026.dash.hackthe6ix.com
+Found email: username@corporateID.com on https://2026.dash.hackthe6ix.com
+Crawled: https://hackthe6ix.com/forgotPassword
+Crawled: https://hackthe6ix.com/signup
+Crawled: https://hackthe6ix.com/oauth2/authorize
+Crawled: https://hackthe6ix.com/
+Finished crawl: https://hackthe6ix.com (6 pages, 4 emails)
+Starting crawl: https://hackwestern.com
+Crawled: https://hackwestern.com
+Found email: hello@hackwestern.me on https://hackwestern.com
+Crawled: https://hackwestern.com/meta/manifest.json
+Finished crawl: https://hackwestern.com (2 pages, 1 emails)
+Starting crawl: https://qhacks.io
+Crawled: https://qhacks.io
+Crawled: https://qhacks.io/register
+Crawled: https://qhacks.io/login
+Crawled: https://qhacks.io/
+Finished crawl: https://qhacks.io (4 pages, 0 emails)
+Starting crawl: https://www.janestreet.com
+Crawled: https://www.janestreet.com
+Crawled: https://www.janestreet.com/contact-us/
+Found email: media@janestreet.com on https://www.janestreet.com/contact-us/
+Found email: sponsorship-inquiries@janestreet.com on https://www.janestreet.com/contact-us/
+Crawled: https://blog.janestreet.com/
+Crawled: https://www.janestreet.com/contact-us
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Light-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Medium-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Black-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Regular-1v7.otf
+Crawled: https://www.janestreet.com/ad-cookie-policy
+Found email: privacy-policy@janestreet.com on https://www.janestreet.com/ad-cookie-policy
+Crawled: https://www.janestreet.com/
+Crawled: https://www.janestreet.com/who-we-are/
+Crawled: https://www.janestreet.com/what-we-do/overview/
+Crawled: https://blog.janestreet.com/why-ocaml/
+Crawled: https://www.janestreet.com/the-latest/
+Crawled: https://blog.janestreet.com/strace-ui-bonsai-term-and-the-tui-renaissance/
+Crawled: https://blog.janestreet.com/the-joy-of-expect-tests/
+Crawled: https://blog.janestreet.com/quickcheck-for-core/
+Crawled: https://blog.janestreet.com/formal-methods-at-jane-street-index/
+Crawled: https://blog.janestreet.com/getting-from-tested-to-battle-tested/
+Crawled: https://blog.janestreet.com/oxcaml-typesafe-reference-counting-python/
+Crawled: https://blog.janestreet.com/fun-with-algebraic-effects-hardcaml/
+Crawled: https://blog.janestreet.com/introducing-oxcaml/
+Crawled: https://www.janestreet.com/culture/overview/
+Crawled: https://www.janestreet.com/join-jane-street/overview/
+Crawled: https://www.janestreet.com/what-we-do/client-offering/
+Found email: nysales@janestreet.com on https://www.janestreet.com/what-we-do/client-offering/
+Found email: europesales@janestreet.com on https://www.janestreet.com/what-we-do/client-offering/
+Found email: asiasales@janestreet.com on https://www.janestreet.com/what-we-do/client-offering/
+Finished crawl: https://www.janestreet.com (21 pages, 6 emails)
+Starting crawl: https://www.citadelsecurities.com
+Crawled: https://www.citadelsecurities.com
+Crawled: https://www.citadelsecurities.com/careers/career-perspectives/why-c-is-growing-and-what-c26-means-for-production-systems/
+Crawled: https://www.citadelsecurities.com/careers/
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities/positions-for-professionals/
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities/
+Crawled: https://www.citadelsecurities.com/careers/career-perspectives/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/the-trading-invitational/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/terminal/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/phd-summit/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/ignite-womens-trading-program/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/the-citadel-securities-quant-invitational/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/datathons
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events/conference-travel-grant/
+Crawled: https://www.citadelsecurities.com/careers/programs-and-events
+Crawled: https://www.citadelsecurities.com/careers/internships
+Crawled: https://www.citadelsecurities.com/careers/engineering/
+Crawled: https://www.citadelsecurities.com/careers/quantitative-research/
+Crawled: https://www.citadelsecurities.com/careers/markets-and-trading
+Crawled: https://www.citadelsecurities.com/careers
+Crawled: https://www.citadelsecurities.com/
+Crawled: https://www.citadelsecurities.com/wp-json/oembed/1.0/embed
+Crawled: https://www.citadelsecurities.com/wp-json/
+Crawled: https://www.citadelsecurities.com/wp-json/wp/v2/pages/16939
+Crawled: https://www.citadelsecurities.com/xmlrpc.php
+Crawled: https://www.citadelsecurities.com/who-we-are/
+Crawled: https://www.citadelsecurities.com/who-we-are/our-culture/
+Crawled: https://www.citadelsecurities.com/who-we-are/leadership/
+Crawled: https://www.citadelsecurities.com/who-we-are/civic-leadership/
+Crawled: https://www.citadelsecurities.com/who-we-are/office-locations/
+Crawled: https://www.citadelsecurities.com/what-we-do/
+Crawled: https://www.citadelsecurities.com/what-we-do/equities/
+Crawled: https://www.citadelsecurities.com/what-we-do/equities/designated-market-maker-dmm/
+Crawled: https://www.citadelsecurities.com/what-we-do/options
+Crawled: https://www.citadelsecurities.com/what-we-do/fixed-income-and-fx
+Crawled: https://www.citadelsecurities.com/what-we-do/what-is-a-market-maker/
+Crawled: https://www.citadelsecurities.com/valuation-metrics/
+Crawled: https://www.citadelsecurities.com/news-and-insights
+Crawled: https://www.citadelsecurities.com/news-and-insights/in-the-media/
+Crawled: https://www.citadelsecurities.com/news-and-insights/category/market-insights/
+Crawled: https://www.citadelsecurities.com/news-and-insights/policy-positions/
+Crawled: https://www.citadelsecurities.com/ja-jp/
+Crawled: https://www.citadelsecurities.com/zh-hans/
+Crawled: https://www.citadelsecurities.com/news-and-insights/
+Crawled: https://www.citadelsecurities.com/privacy/
+Crawled: https://www.citadelsecurities.com/terms-of-use/
+Crawled: https://www.citadelsecurities.com/notices/
+Crawled: https://www.citadelsecurities.com/disclosures/
+Crawled: https://www.citadelsecurities.com/footnotes
+Finished crawl: https://www.citadelsecurities.com (50 pages, 0 emails)
+Starting crawl: https://www.hudsonrivertrading.com
+Crawled: https://www.hudsonrivertrading.com
+Found email: info@hudson-trading.com on https://www.hudsonrivertrading.com
+Crawled: https://www.hudsonrivertrading.com/about/
+Crawled: https://www.hudsonrivertrading.com/careers
+Found email: security@hudson-trading.com on https://www.hudsonrivertrading.com/careers
+Crawled: https://www.hudsonrivertrading.com/hrt-job/people-partner/
+Crawled: https://www.hudsonrivertrading.com/hrt-job/hardware-strategy-technology-partnerships-lead/
+Crawled: https://www.hudsonrivertrading.com/hrt-job/people-data-lead/
+Crawled: https://www.hudsonrivertrading.com/hrt-job/people-operations-generalist/
+Crawled: https://www.hudsonrivertrading.com/careers/
+Crawled: https://www.hudsonrivertrading.com/contact
+Found email: fraudreporting@hudson-trading.com on https://www.hudsonrivertrading.com/contact
+Found email: press@hudson-trading.com on https://www.hudsonrivertrading.com/contact
+Found email: careers@hudson-trading.com on https://www.hudsonrivertrading.com/contact
+Found email: 20sponsorships@hudson-trading.com on https://www.hudsonrivertrading.com/contact
+Found email: sponsorships@hudson-trading.com on https://www.hudsonrivertrading.com/contact
+Crawled: https://www.hudsonrivertrading.com/contact/
+Crawled: https://www.hudsonrivertrading.com/about
+Finished crawl: https://www.hudsonrivertrading.com (11 pages, 7 emails)
+Starting crawl: https://www.twosigma.com
+Crawled: https://www.twosigma.com
+Crawled: https://careers.twosigma.com/
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles
+Crawled: https://www.twosigma.com/careers/dei/
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles/
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Electronic-Trading-Service/13993
+Crawled: https://careers.twosigma.com/_linkedinApiv2
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Data-Scientist-Modeling/13575
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Corporate-Recruiter/13905
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Communications-Manager/13982
+Crawled: https://careers.twosigma.com/careers/JobDetail/London-United-Kingdom-of-Great-Britain-and-Northern-Ireland-Client-Services-Associate/13936
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Business-Strategy-Development-Associate/13827
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Business-Manager-Strategy-Operations/13904
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Business-Manager-Feature-Learner-Strategy/13938
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Business-Development-Relationship-Manager/13886
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Solutions-Developer/14008
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles/feed/
+Crawled: https://careers.twosigma.com/careers/InternshipsAndEarlyCareers
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Research-Scientist-Campus-Full-Time/13671
+Crawled: https://careers.twosigma.com/careers/InternshipsAndEarlyCareers/feed/
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-AI-Research-Scientist-Internship-2027-Summer/14022
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Quantitative-Researcher-Internship-2027-Summer/13945
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Quantitative-Researcher-Full-Time-Campus-Hire/13946
+Crawled: https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Software-Engineer/14081
+Crawled: https://careers.twosigma.com/careers/Login
+Crawled: https://careers.twosigma.com/careers/Register
+Crawled: https://careers.twosigma.com/events
+Crawled: https://careers.twosigma.com/events/Login
+Crawled: https://careers.twosigma.com/events/Register
+Crawled: https://careers.twosigma.com/careers
+Crawled: https://careers.twosigma.com/events/SearchEvents/feed/
+Crawled: https://careers.twosigma.com/events/SearchEvents
+Crawled: https://careers.twosigma.com/careers/OpenRoles
+Crawled: https://careers.twosigma.com/careers/OpenRoles/
+Crawled: https://careers.twosigma.com/careers/OpenRoles/feed/
+Crawled: https://careers.twosigma.com/careers/Home
+Crawled: http://www.twosigma.com/careers/
+Crawled: https://www.twosigma.com/academic-partnerships/
+Crawled: https://www.twosigma.com/articles/5-career-myths-from-women-in-engineering/
+Crawled: https://www.twosigma.com/articles/career-pathways-for-software-engineers/
+Crawled: https://www.twosigma.com/tag/careers/
+Crawled: https://www.twosigma.com/tag/careers/feed/
+Crawled: https://www.twosigma.com/tag/careers/page/2/
+Crawled: https://www.twosigma.com/topic/work-careers/
+Crawled: https://www.twosigma.com/articles/how-new-seekers-summit-kick-started-one-quantitative-researchers-career-at-two-sigma/
+Crawled: https://www.twosigma.com/tag/early-career/
+Crawled: https://www.twosigma.com/tag/early-career/feed/
+Crawled: https://www.twosigma.com/topic/work-careers/feed/
+Crawled: https://www.twosigma.com/topic/work-careers/page/2/
+Crawled: https://www.twosigma.com/topic/work-careers/page/3/
+Finished crawl: https://www.twosigma.com (50 pages, 0 emails)
+Starting crawl: https://drw.com
+Crawled: https://drw.com
+Found email: edesilva@drwholdings.com on https://drw.com
+Found email: spam_uxde@drwholdings.com on https://drw.com
+Crawled: https://drw.com/regulatory-and-fraud/contact-compliance
+Found email: compliance-us@drwholdings.com on https://drw.com/regulatory-and-fraud/contact-compliance
+Crawled: https://drw.com/contact-us
+Found email: name@email.com on https://drw.com/contact-us
+Found email: etf.sales@drw.com on https://drw.com/contact-us
+Found email: jbalbach@drwholdings.com on https://drw.com/contact-us
+Found email: convexityinfo@drwholdings.com on https://drw.com/contact-us
+Found email: rm@cumberland.io on https://drw.com/contact-us
+Found email: team@drwvc.com on https://drw.com/contact-us
+Found email: nx.business@drw.com on https://drw.com/contact-us
+Found email: FEdelmann@drw.com on https://drw.com/contact-us
+Found email: OYee@drw.com on https://drw.com/contact-us
+Found email: agreen@drwholdings.com on https://drw.com/contact-us
+Found email: campusrecruiting@drw.com on https://drw.com/contact-us
+Found email: drwrecruiting@drw.com on https://drw.com/contact-us
+Found email: mediarelations@drw.com on https://drw.com/contact-us
+Crawled: https://drw.com/tags/community-investment
+Crawled: https://drw.com/tags/community-investment/page/5
+Crawled: https://drw.com/tags/community-investment/page/6
+Crawled: https://drw.com/tags/community-investment/page/4
+Crawled: https://drw.com/updates/insights/what-we-learned-about-closing-the-gender-gap-in-technology
+Crawled: https://drw.com/tags/community-investment/page/3
+Crawled: https://drw.com/updates/insights/drw-cio-and-developer-coach-a-team-to-robotics-state-championship
+Crawled: https://drw.com/updates/insights/what-we-learned-about-data-driven-education
+Finished crawl: https://drw.com (11 pages, 16 emails)
+Starting crawl: https://www.optiver.com
+Crawled: https://www.optiver.com
+Found email: kWV@IUbHxuxEs.oza on https://www.optiver.com
+Crawled: https://www.optiver.com/about-us/contact/
+Found email: info@optiver.com on https://www.optiver.com/about-us/contact/
+Found email: recruiting@optiver.us on https://www.optiver.com/about-us/contact/
+Found email: careers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: office@optiver.uk on https://www.optiver.com/about-us/contact/
+Found email: indiacareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: chinacareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: taiwancareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Crawled: https://www.optiver.com/about-us/foundation/
+Crawled: https://www.optiver.com/insights/news/the-optiver-foundation-partners-with-oxford-university/
+Crawled: https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Found email: media@optiver.com on https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Found email: u003Emedia@optiver.com on https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Crawled: https://www.optiver.com/insights/news/optiver-partners-with-iit-bombay-to-establish-ai-innovation-lab/
+Crawled: https://www.optiver.com/insights/news/the-optiver-foundation-partners-with-women-win/
+Crawled: https://www.optiver.com/about-us/education/
+Crawled: https://www.optiver.com/about-us/
+Crawled: https://www.optiver.com/about-us/principal-strategic-investments/
+Found email: PSI@optiver.com on https://www.optiver.com/about-us/principal-strategic-investments/
+Found email: NIj@s.jZWCEMn on https://www.optiver.com/about-us/principal-strategic-investments/
+Crawled: https://www.optiver.com/join-us/jobs/
+Finished crawl: https://www.optiver.com (11 pages, 12 emails)
+Starting crawl: https://www.imc.com
+Crawled: https://www.imc.com
+Crawled: https://www.imc.com/us/careers/code-of-conduct
+Found email: contact.chicago@imc.com on https://www.imc.com/us/careers/code-of-conduct
+Crawled: https://www.imc.com/us/careers/talent-community
+Crawled: https://www.imc.com/in/careers/talent-community
+Crawled: https://www.imc.com/in/careers/code-of-conduct
+Crawled: https://www.imc.com/in/careers/benefits
+Crawled: https://www.imc.com/ap/careers/benefits
+Crawled: https://www.imc.com/ap/careers/code-of-conduct
+Crawled: https://www.imc.com/ap/careers/recruitment-process
+Crawled: https://www.imc.com/eu/careers/recruitment-process
+Crawled: https://www.imc.com/eu/careers/code-of-conduct
+Crawled: https://www.imc.com/eu/careers/students-graduates
+Crawled: https://www.imc.com/eu/careers/jobs/4564480101/apply
+Found email: CampusEU@imc.com on https://www.imc.com/eu/careers/jobs/4564480101/apply
+Found email: u003eCampusEU@imc.com on https://www.imc.com/eu/careers/jobs/4564480101/apply
+Found email: contact.amsterdam@imc.com on https://www.imc.com/eu/careers/jobs/4564480101/apply
+Crawled: https://www.imc.com/eu/careers/jobs/4564480101
+Crawled: https://www.imc.com/in/careers/jobs/4564480101
+Crawled: https://www.imc.com/in/favorite-jobs
+Crawled: https://www.imc.com/ap/favorite-jobs
+Crawled: https://www.imc.com/us/favorite-jobs
+Crawled: https://www.imc.com/in/careers/jobs/4564480101/apply
+Crawled: https://www.imc.com/ap/careers/jobs/4564480101
+Crawled: https://www.imc.com/ap/careers/jobs/4564480101/apply
+Crawled: https://www.imc.com/us/careers/jobs/4564480101
+Crawled: https://www.imc.com/us/careers/jobs/4564480101/apply
+Crawled: https://www.imc.com/eu/careers/jobs/4912874101/apply
+Crawled: https://www.imc.com/eu/careers/jobs/4912874101
+Found email: uscvreview@imc.com on https://www.imc.com/eu/careers/jobs/4912874101
+Finished crawl: https://www.imc.com (25 pages, 5 emails)
+Starting crawl: https://www.susinternational.com
+Failed to crawl: https://www.susinternational.com
+Finished crawl: https://www.susinternational.com (0 pages, 0 emails)
+Starting crawl: https://www.nvidia.com
+Crawled: https://www.nvidia.com
+Crawled: https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+Found email: privacy@nvidia.com on https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+Crawled: https://www.nvidia.com/en-us/about-nvidia/partners/
+Crawled: https://www.nvidia.com/en-us/data-center/gpu-cloud-computing/partners/
+Crawled: https://www.nvidia.com/en-us/about-nvidia/ai-computing/
+Crawled: https://www.nvidia.com/en-gb/about-nvidia/
+Crawled: https://www.nvidia.com/en-gb/about-nvidia/privacy-policy/
+Crawled: https://www.nvidia.com/en-gb/contact/
+Found email: info@nvidia.com on https://www.nvidia.com/en-gb/contact/
+Crawled: https://www.nvidia.com/en-gb/contact/sales/
+Crawled: https://www.nvidia.com/en-gb/contact/sales.md
+Crawled: https://www.nvidia.com/en-sg/contact/sales/
+Crawled: https://www.nvidia.com/en-sg/about-nvidia/company-policies/
+Crawled: https://blogs.nvidia.com/blog/tag/social-impact/
+Crawled: https://blogs.nvidia.com/blog/firefly-aerospace-nvidia-jetson-lunar-orbit/
+Crawled: https://blogs.nvidia.com/blog/claude-science-bionemo-agent-toolkit/
+Crawled: https://blogs.nvidia.com/blog/vision-ai-agent-skills-omniverse-metropolis/
+Crawled: https://blogs.nvidia.com/blog/tag/synthetic-data-generation/
+Crawled: https://blogs.nvidia.com/blog/jetson-edge-ai-holiday-2025/
+Crawled: https://blogs.nvidia.com/blog/category/corporate/nvidia-life/
+Crawled: https://blogs.nvidia.com/blog/nvidia-life-michal-filipiuk/
+Crawled: https://blogs.nvidia.com/blog/whats-a-recommender-system/
+Crawled: https://blogs.nvidia.com/blog/tag/recommender-systems/
+Crawled: https://blogs.nvidia.com/blog/what-are-graph-neural-networks/
+Crawled: https://blogs.nvidia.com/blog/tag/new-gpu-uses/
+Crawled: https://blogs.nvidia.com/blog/fast-company-nae-honors/
+Crawled: https://blogs.nvidia.com/blog/tag/gpu/
+Crawled: https://blogs.nvidia.com/blog/wildfire-ai-startups/
+Crawled: https://blogs.nvidia.com/blog/category/corporate/corporate-sustainability/
+Crawled: https://blogs.nvidia.com/blog/ai-pathways-boys-girls-clubs-hudson-county/
+Crawled: https://blogs.nvidia.com/blog/tag/education/
+Crawled: https://blogs.nvidia.com/blog/economic-development-us/
+Crawled: https://blogs.nvidia.com/blog/tag/trustworthy-ai/
+Crawled: https://blogs.nvidia.com/blog/agentic-ai-cybersecurity/
+Crawled: https://blogs.nvidia.com/blog/tag/nvidia-blueprints/
+Crawled: https://blogs.nvidia.com/blog/smart-city-ai-agents-urban-operations/
+Crawled: https://blogs.nvidia.com/blog/tag/visual-computing/
+Crawled: https://blogs.nvidia.com/blog/science/
+Crawled: https://blogs.nvidia.com/blog/tag/supercomputing/
+Crawled: https://blogs.nvidia.com/blog/apollo-open-models/
+Crawled: https://blogs.nvidia.com/blog/tag/scientific-visualization/
+Crawled: https://blogs.nvidia.com/blog/lilly-ai-factory-nvidia-blackwell-dgx-superpod/
+Crawled: https://blogs.nvidia.com/blog/tag/nvidia-dgx/
+Crawled: https://blogs.nvidia.com/blog/dgx-spark-and-station-open-source-frontier-models/
+Crawled: https://blogs.nvidia.com/blog/tag/nemotron/
+Crawled: https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory/
+Crawled: https://blogs.nvidia.com/blog/tag/nvidia-nemo/
+Crawled: https://blogs.nvidia.com/blog/huang-3dexperience-2026/
+Crawled: https://blogs.nvidia.com/blog/india-enterprise-ai-agents/
+Crawled: https://blogs.nvidia.com/blog/author/johnfanelli/
+Crawled: https://blogs.nvidia.com/blog/ai-enterprise-vmware-vsphere-tanzu/
+Finished crawl: https://www.nvidia.com (50 pages, 2 emails)
+Starting crawl: https://www.microsoft.com
+Crawled: https://www.microsoft.com
+Crawled: https://support.microsoft.com/contactus
+Crawled: https://www.microsoft.com/en-us/education/products/teams
+Crawled: https://www.microsoft.com/en/customers/story/26714-california-state-university-san-marcos-dynamics-365-contact-center
+Crawled: https://www.microsoft.com/en/microsoft-teams/group-chat-software
+Crawled: https://www.microsoft.com/en/microsoft-teams/locale
+Crawled: https://www.microsoft.com/zh-hk/microsoft-teams/
+Crawled: https://www.microsoft.com/zh-HK/microsoft-teams/locale
+Crawled: https://www.microsoft.com/en-us/microsoft-teams/
+Crawled: https://www.microsoft.com/en-US/microsoft-teams/locale
+Crawled: https://www.microsoft.com/en-us/microsoft-teams/locale
+Crawled: https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options
+Found email: you@yourbusiness.com on https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options
+Crawled: https://www.microsoft.com/en-us/microsoft-teams/security
+Crawled: https://www.microsoft.com/en-us/microsoft-teams/healthcare-solutions
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/healthcare/2026/05/21/ai-for-better-health-enabling-every-person-on-the-planet-to-live-healthier/
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/manufacturing/2026/06/18/agentic-ai-for-plant-operations-from-dashboards-to-decisions/
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/financial-services/2026/06/16/trust-as-infrastructure-how-agentic-ai-is-rearchitecting-asset-management-at-scale/
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/financial-services/2026/03/17/how-frontier-firms-use-agentic-ai-to-gain-an-edge-in-capital-markets/
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/author/microsoft-industry-team/
+Crawled: https://www.microsoft.com/en-us/microsoft-cloud/blog/general/2017/09/28/devon-energy-uses-microsoft-365-to-maximize-productivity-in-a-commodity-business/
+Crawled: https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/
+Crawled: https://www.microsoft.com/en-us/microsoft-365/blog/tag/copilot-for-work/
+Crawled: https://www.microsoft.com/en-us/microsoft-365/blog/2024/11/07/the-latest-on-ai-at-work-november-2024/
+Crawled: https://techcommunity.microsoft.com/blog/Microsoft365CopilotBlog/personalize-your-outlook-with-unique-dynamic-themes-by-copilot/4287302/
+Crawled: https://www.microsoft.com/t5/s/gxcuf89792/rss/Community
+Crawled: https://www.microsoft.com/en-us/about
+Crawled: https://www.microsoft.com/en-us/about/locale
+Crawled: https://www.microsoft.com/zh-cn/about
+Crawled: https://support.microsoft.com/contactus/
+Crawled: https://about.ads.microsoft.com/zh
+Crawled: https://careers.microsoft.com/search.aspx
+Crawled: https://apply.careers.microsoft.com/careers/join
+Crawled: https://www.microsoft.com/Contact Microsoft
+Crawled: https://careers.microsoft.com/v2/global/en/transparency.html
+Crawled: https://careers.microsoft.com/v2/global/en/contractor-roles.html
+Crawled: https://careers.microsoft.com/v2/global/en/legal-policies.html
+Crawled: https://careers.microsoft.com/v2/global/en/accessibility
+Crawled: https://careers.microsoft.com/v2/global/en/diversityandinclusion
+Crawled: https://careers.microsoft.com/v2/global/en/accessibility.html
+Crawled: https://apply.careers.microsoft.com/careers/forms/create
+Found email: import@microsoft.com on https://apply.careers.microsoft.com/careers/forms/create
+Found email: askgta@microsoft.com on https://apply.careers.microsoft.com/careers/forms/create
+Crawled: http://apply.careers.microsoft.com/careers/forms/create
+Crawled: https://www.microsoft.com/apply.careers.microsoft.com/careers
+Crawled: http://apply.careers.microsoft.com/careers/join
+Crawled: https://careers.microsoft.com/v2/global/en/hiring-tips.html
+Crawled: https://careers.microsoft.com/v2/global/en/hiring-tips/student-interviewing
+Crawled: https://careers.microsoft.com/v2/global/en/culture
+Crawled: https://careers.microsoft.com/v2/global/en/benefits
+Crawled: https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing
+Crawled: https://careers.microsoft.com/v2/global/en/hiring-tips/virtual-interviewing
+Finished crawl: https://www.microsoft.com (50 pages, 3 emails)
+Starting crawl: https://careers.google.com
+Crawled: https://careers.google.com
+Crawled: https://careers.google.com/privacy-policy
+Found email: hrdatarequest@google.com on https://careers.google.com/privacy-policy
+Found email: u003ehrdatarequest@google.com on https://careers.google.com/privacy-policy
+Found email: data-protection-office@google.com on https://careers.google.com/privacy-policy
+Found email: u003edata-protection-office@google.com on https://careers.google.com/privacy-policy
+Found email: peopleops-help@google.com on https://careers.google.com/privacy-policy
+Found email: u003epeopleops-help@google.com on https://careers.google.com/privacy-policy
+Crawled: https://www.google.com/about/careers/applications/privacy-policy/
+Crawled: https://careers.google.com/how-we-hire/
+Crawled: https://careers.google.com/interview-tips
+Crawled: https://www.google.com/about/careers/applications/interview-tips
+Crawled: https://www.google.com/about/careers/applications/how-we-hire/
+Crawled: https://www.google.com/about/careers/applications/eeo/
+Crawled: https://careers.google.com/dashboard
+Crawled: https://careers.google.com/how-we-hire
+Crawled: https://www.google.com/about/careers/applications/how-we-hire
+Finished crawl: https://careers.google.com (11 pages, 6 emails)
+Starting crawl: https://aws.amazon.com
+Failed to crawl: https://aws.amazon.com
+Finished crawl: https://aws.amazon.com (0 pages, 0 emails)
+Starting crawl: https://www.apple.com
+Crawled: https://www.apple.com
+Crawled: https://www.apple.com/contact/
+Failed to crawl: http://developer.apple.com/contact/
+Crawled: https://www.apple.com/contact/feedback/
+Crawled: https://www.apple.com/za/contact/feedback/
+Crawled: https://www.apple.com/vn/contact/feedback/
+Crawled: https://www.apple.com/uz/contact/feedback/
+Crawled: https://www.apple.com/careers/
+Crawled: https://www.apple.com/careers/choose-country-region.html
+Crawled: https://www.apple.com/careers/us/accommodation.html
+Found email: accommodationrequest@apple.com on https://www.apple.com/careers/us/accommodation.html
+Crawled: https://www.apple.com/careers/us/accessibility.html
+Crawled: https://www.apple.com/careers/us/accommodation_drugfree.html
+Crawled: https://www.apple.com/careers/sa-ar/accessibility.html
+Crawled: https://jobs.apple.com/ar-sa/search
+Found email: john.g@example.com on https://jobs.apple.com/ar-sa/search
+Crawled: https://www.apple.com/careers/sa-ar/index/index.html
+Crawled: https://www.apple.com/careers/sa-at/work-at-apple/locations.html
+Crawled: https://www.apple.com/careers/sa-ar
+Crawled: https://www.apple.com/careers/sa-ar/work-at-apple/teams/hardware.html
+Crawled: https://jobs.apple.com/app/ar-sa/getdiscovered
+Crawled: https://www.apple.com/careers/sa-ar/work-at-apple/teams/operations-and-supply-chain.html
+Crawled: https://www.apple.com/careers/sa-ar/work-at-apple/teams/corporate-functions.html
+Crawled: https://www.apple.com/careers/sa-ar/work-at-apple/teams/support-and-service.html
+Crawled: https://www.apple.com/careers/sa-ar/work-at-apple/teams/marketing.html
+Crawled: https://www.apple.com/careers/sa-ar/work-at-apple/teams/sales-and-business-development.html
+Crawled: https://www.apple.com/careers/sa/work-at-apple/teams/sales-and-business-development.html
+Crawled: https://jobs.apple.com/app/en-sa/getdiscovered
+Crawled: https://jobs.apple.com/app/en-sa/profile/info
+Crawled: https://www.apple.com/careers/sa/life-at-apple/benefits.html
+Crawled: https://www.apple.com/careers/gr/life-at-apple/benefits.html
+Crawled: https://jobs.apple.com/app/en-gr/getdiscovered
+Crawled: https://jobs.apple.com/app/en-gr/profile/info
+Crawled: https://www.apple.com/careers/gr/life-at-apple/shared-values.html
+Crawled: https://www.apple.com/careers/gr/life-at-apple/shared-values/brian-m.html
+Crawled: https://www.apple.com/careers/sa-ar/life-at-apple/shared-values/brian-m.html
+Crawled: https://www.apple.com/careers/ar_sa/hardware.html
+Crawled: https://www.apple.com/careers/sa/life-at-apple/shared-values/brian-m.html
+Crawled: https://www.apple.com/careers/sa/teams/hardware.html
+Crawled: https://www.apple.com/careers/sa/work-at-apple/teams/machine-learning-and-ai.html
+Crawled: https://www.apple.com/careers/gr/work-at-apple/teams/machine-learning-and-ai.html
+Crawled: https://www.apple.com/careers/gr/teams/hardware.html
+Crawled: https://www.apple.com/careers/gr/work-at-apple/teams/software-and-services.html
+Crawled: https://www.apple.com/careers/gr/teams/operations-and-supply-chain.html
+Crawled: https://www.apple.com/careers/gr/teams/machine-learning-and-ai.html
+Crawled: https://www.apple.com/careers/ua/work-at-apple/teams/software-and-services.html
+Crawled: https://jobs.apple.com/app/en-ua/getdiscovered
+Crawled: https://www.apple.com/careers/ua/teams/machine-learning-and-ai.html
+Crawled: https://jobs.apple.com/app/en-ua/profile/info
+Crawled: https://www.apple.com/careers/ua/life-at-apple/dna.html
+Crawled: https://www.apple.com/careers/ng/life-at-apple/dna.html
+Crawled: https://jobs.apple.com/app/en-ng/profile/info
+Crawled: https://www.apple.com/careers/ng/life-at-apple.html
+Finished crawl: https://www.apple.com (50 pages, 2 emails)
+Starting crawl: https://www.spacex.com
+Crawled: https://www.spacex.com
+Crawled: https://www.spacex.com/careers
+Crawled: https://www.spacex.com/careers/jobs
+Crawled: https://www.spacex.com/
+Crawled: https://www.spacex.com/vehicles/starship
+Found email: sales@spacex.com on https://www.spacex.com/vehicles/starship
+Crawled: https://www.spacex.com/vehicles/dragon
+Crawled: https://www.spacex.com/vehicles/falcon-9
+Crawled: https://www.spacex.com/vehicles/falcon-heavy
+Crawled: https://www.spacex.com/humanspaceflight/overview
+Crawled: https://www.spacex.com/humanspaceflight/iss
+Crawled: https://www.spacex.com/humanspaceflight/earth
+Crawled: https://www.spacex.com/humanspaceflight/moon
+Crawled: https://www.spacex.com/humanspaceflight/mars
+Crawled: https://www.spacex.com/starshield
+Found email: starshield@spacex.com on https://www.spacex.com/starshield
+Crawled: https://www.spacex.com/spacexai/starmind
+Crawled: https://www.spacex.com/mission
+Found email: becomeasupplier@spacex.com on https://www.spacex.com/mission
+Crawled: https://www.spacex.com/updates
+Found email: direct2cell@spacex.com on https://www.spacex.com/updates
+Crawled: https://www.spacex.com/content
+Crawled: https://ir.spacex.com
+Crawled: https://ir.spacex.com/faqs-and-contact/default.aspx
+Found email: FSTOperations@fmr.com on https://ir.spacex.com/faqs-and-contact/default.aspx
+Found email: investors@spacex.com on https://ir.spacex.com/faqs-and-contact/default.aspx
+Found email: corporatesecretary@spacex.com on https://ir.spacex.com/faqs-and-contact/default.aspx
+Finished crawl: https://www.spacex.com (20 pages, 7 emails)
+Starting crawl: https://www.cisco.com
+Crawled: https://www.cisco.com
+Crawled: https://www.cisco.com/site/us/en/about/sitemap.html
+Crawled: https://www.cisco.com/site/us/en/partners/tools/index.html
+Crawled: https://www.cisco.com/site/ae/ar/partners/tools-training/index.html
+Crawled: https://www.cisco.com/c/ar_ae/about/legal/privacy-full.html
+Crawled: https://www.cisco.com/c/ru_ru/about/legal/privacy-full.html
+Crawled: https://www.cisco.com/c/ru_ru/about/sitemap.html
+Crawled: https://www.cisco.com/c/ru_ru/about/contact-cisco.html
+Crawled: https://www.cisco.com/c/ru_ru/partners.html
+Crawled: https://www.cisco.com/c/ar_ae/about/legal/privacy.html
+Crawled: https://www.cisco.com/c/en/us/about/trust-transparency-center/overview.html
+Crawled: https://www.cisco.com/c/en/us/about/trust-center/trust-portal/security-risk-assessment.html
+Crawled: https://www.cisco.com/c/en/us/about/trust-center/trust-portal/faq.html
+Crawled: https://www.cisco.com/c/en/us/about/trust-center/trust-portal/getting-started.html
+Crawled: https://www.cisco.com/site/us/en/partners/cisco-partner-program/index.html
+Crawled: https://www.cisco.com/site/pt/pt/partners/index.html
+Crawled: https://www.cisco.com/site/us/en/partners/marketing-with-cisco/index.html
+Crawled: https://www.cisco.com/site/ae/ar/partners/marketing-with-cisco/index.html
+Crawled: https://www.cisco.com/site/cn/zh/partners/marketing-with-cisco/index.html
+Crawled: https://www.cisco.com/c/zh_cn/about/social_media.html
+Crawled: https://www.cisco.com/c/m/zh_cn/about/case_center/index.html
+Crawled: https://www.cisco.com/site/cn/zh/partners/connect-with-a-partner/index.html
+Crawled: https://www.cisco.com/site/ca/en/partners/evolved-partner-ecosystem/index.html
+Crawled: https://www.cisco.com/site/ca/en/partners/support-help/index.html
+Crawled: https://www.cisco.com/site/ae/ar/partners/support-help/index.html
+Crawled: https://www.cisco.com/site/uk/en/partners/support-help/index.html
+Crawled: https://www.cisco.com/site/uk/en/about/contact-cisco/index.html
+Crawled: https://www.cisco.com/site/us/en/about/contact-cisco/global-office-locations.html
+Crawled: https://www.cisco.com/site/us/en/about/contact-cisco/office-locations.html
+Crawled: https://www.cisco.com/content/cdc/site/us/en/about/contact-cisco/office-locations.html
+Crawled: https://www.cisco.com/content/cdc/site/us/en/about/contact-cisco/global-office-locations.html
+Crawled: https://www.cisco.com/content/cdc/site/ae/ar/about/contact-cisco/index.html
+Crawled: https://www.cisco.com/content/cdc/site/ae/en/about/contact-cisco/index.html
+Crawled: https://www.cisco.com/site/ae/en/about/index.html
+Crawled: https://www.cisco.com/site/us/en/about/cisco-insider/index.html
+Crawled: https://community.cisco.com/plugins/common/feature/saml/doauth/post
+Crawled: https://community.cisco.com/t5/community-help-knowledge-base/eu-digital-services-act-dsa/ta-p/5012720
+Found email: dsa-poc@cisco.com on https://community.cisco.com/t5/community-help-knowledge-base/eu-digital-services-act-dsa/ta-p/5012720
+Found email: no-reply@webex.com on https://community.cisco.com/t5/community-help-knowledge-base/eu-digital-services-act-dsa/ta-p/5012720
+Crawled: https://community.cisco.com/t5/user/viewprofilepage/user-id/1843957
+Crawled: https://community.cisco.com/t5/user/viewprofilepage/user-id/1018371
+Crawled: https://www.cisco.com/t5/blogues-de-geral/cisco-live-las-vegas-2026-t%C3%A3o-incr%C3%ADvel-quanto-imaginado/bc-p/5557905
+Crawled: https://www.cisco.com/c/en/us/about/csr/impact.html
+Crawled: https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/report-archive.html
+Crawled: https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/forward-looking-statements.html
+Crawled: https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/topic-index.html
+Crawled: https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub/energy-and-sustainability/resilient-ecosystems.html
+Crawled: https://blogs.cisco.com/our-corporate-purpose/celebrating-a-decade-of-connected-conservation
+Crawled: https://blogs.cisco.com/tag/sustainability
+Crawled: https://blogs.cisco.com/our-corporate-purpose/striving-for-sustainability-meet-mike-king
+Crawled: https://blogs.cisco.com/tag/striving-for-sustainability
+Crawled: https://blogs.cisco.com/news/striving-for-sustainability-meet-pelin
+Finished crawl: https://www.cisco.com (50 pages, 2 emails)
+Starting crawl: https://about.meta.com
+Crawled: https://about.meta.com
+Crawled: https://www.meta.com/about/leadership/
+Crawled: https://about.meta.com/account/
+Crawled: https://about.meta.com/meta-verified/
+Crawled: https://about.meta.com/legal/privacy-policy/
+Crawled: https://about.meta.com/help/ray-ban-stories/articles/assistant/
+Crawled: https://about.meta.com/help/ai-glasses/325301766361539/
+Crawled: https://about.meta.com/help/support/
+Crawled: https://about.meta.com/help/support/assistant/prompt/
+Crawled: https://about.meta.com/help/ai-glasses/2131562027007995/
+Crawled: https://about.meta.com/help/ai-glasses/642437007866653/
+Crawled: https://about.meta.com/help/ai-glasses/1074343457163322/
+Crawled: https://about.meta.com/help/ai-glasses/1405195906731721/
+Crawled: https://about.meta.com/help/ai-glasses/1506535577033338/
+Crawled: https://about.meta.com/help/ai-glasses/3487248634876136/
+Crawled: https://about.meta.com/help/ai-glasses/152708087872544/
+Crawled: https://about.meta.com/help/ai-glasses/279374995208117/
+Crawled: https://about.meta.com/help/ai-glasses/355715316882924/
+Crawled: https://about.meta.com/help/ai-glasses/852077233025627/
+Crawled: https://about.meta.com/help/ai-glasses/1481163499576351/
+Crawled: https://about.meta.com/help/ai-glasses/764536076119235/
+Crawled: https://about.meta.com/help/ai-glasses/2459826397825392/
+Crawled: https://about.meta.com/help/ai-glasses/814846737027479/
+Crawled: https://about.meta.com/help/ai-glasses/1264127564304941/
+Crawled: https://about.meta.com/help/ai-glasses/770840295349358/
+Crawled: https://about.meta.com/help/ai-glasses/268269592726432/
+Crawled: https://about.meta.com/help/ai-glasses/905490264519056/
+Crawled: https://about.meta.com/help/ai-glasses/
+Crawled: https://about.meta.com/help/ai-glasses/1809764829519902/
+Crawled: https://about.meta.com/help/ai-glasses/718045509827730/
+Crawled: https://about.meta.com/help/ai-glasses/326686793146045/
+Crawled: https://about.meta.com/help/ai-glasses/894093646030348/
+Crawled: https://about.meta.com/help/ai-glasses/647079267216457/
+Crawled: https://about.meta.com/help/smart-glasses/
+Crawled: https://about.meta.com/help/ai-glasses/544073848068065/
+Crawled: https://about.meta.com/help/ai-glasses/1080562823561076/
+Crawled: https://about.meta.com/help/ai-glasses/1468274331180316/
+Crawled: https://about.meta.com/help/ai-glasses/1296226131989237/
+Crawled: https://about.meta.com/help/ai-glasses/1466035674686599/
+Crawled: https://about.meta.com/help/ai-glasses/1378872149701658/
+Crawled: https://about.meta.com/help/ai-glasses/1560703381848855/
+Crawled: https://about.meta.com/help/ai-glasses/826511030169526/
+Crawled: https://about.meta.com/help/ai-glasses/4317333675190079/
+Crawled: https://about.meta.com/help/ai-glasses/2648989232153400/
+Crawled: https://about.meta.com/help/ai-glasses/1524316621830425/
+Crawled: https://about.meta.com/help/ai-glasses/9348728681850531/
+Crawled: https://about.meta.com/help/ai-glasses/2279658529230410/
+Crawled: https://about.meta.com/help/ai-glasses/728826956444153/
+Crawled: https://about.meta.com/help/ai-glasses/951708387778102/
+Crawled: https://about.meta.com/help/ai-glasses/1824727564872648/
+Finished crawl: https://about.meta.com (50 pages, 0 emails)
+Starting crawl: https://github.com
+Crawled: https://github.com
+Found email: you@domain.com on https://github.com
+Crawled: https://github.com/about/diversity
+Crawled: https://github.com/about/developer-policy
+Found email: policy@github.com on https://github.com/about/developer-policy
+Crawled: https://github.com/about/diversity/communities-of-belonging
+Crawled: https://github.com/about/diversity/communities-of-belonging/blacktocats
+Crawled: https://github.com/about/leadership
+Crawled: https://github.com/about/careers
+Found email: privacy@icims.com on https://github.com/about/careers
+Found email: icims-admin@github.com on https://github.com/about/careers
+Crawled: https://github.com/about/press
+Found email: press@github.com on https://github.com/about/press
+Crawled: https://github.com/orgs/community/discussions/
+Found email: fufu@hotmail.com on https://github.com/orgs/community/discussions/
+Crawled: https://github.com/orgs/community/discussions/201440
+Crawled: https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
+Finished crawl: https://github.com (11 pages, 6 emails)
+Starting crawl: https://www.gitlab.com
+Crawled: https://www.gitlab.com
+Crawled: https://about.gitlab.com/privacy/cookies/
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/content/en-us/privacy/cookies.yml
+Found email: f5573e26de8f4293b285e556c35dfd6e@new-sentry.gitlab.net on https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/content/en-us/privacy/cookies.yml
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/main/content/en-us/privacy/cookies.yml
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/.gitlab/CODEOWNERS
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/main/.gitlab/CODEOWNERS
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/main/.gitlab/CODEOWNERS
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/1698a8cc7fa36750ed5b6a027522bd2a19b46379
+Found email: git@gitlab.com on https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/1698a8cc7fa36750ed5b6a027522bd2a19b46379
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/1698a8cc7fa36750ed5b6a027522bd2a19b46379/.gitlab/CODEOWNERS
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/1698a8cc7fa36750ed5b6a027522bd2a19b46379/.gitlab/CODEOWNERS
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/1698a8cc7fa36750ed5b6a027522bd2a19b46379/.gitlab/CODEOWNERS
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/49e91de966702c6dee0e3082a18405f56031012b
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/49e91de966702c6dee0e3082a18405f56031012b/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/49e91de966702c6dee0e3082a18405f56031012b/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/49e91de966702c6dee0e3082a18405f56031012b/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/ba3d8831d711dcf12a26923d0617e04ac4d97cd2
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/ba3d8831d711dcf12a26923d0617e04ac4d97cd2/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/ba3d8831d711dcf12a26923d0617e04ac4d97cd2/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/ba3d8831d711dcf12a26923d0617e04ac4d97cd2/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/7974c9e727ad47393e055f21fee7a4c6d4889c7b
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/7974c9e727ad47393e055f21fee7a4c6d4889c7b/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/7974c9e727ad47393e055f21fee7a4c6d4889c7b/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/7974c9e727ad47393e055f21fee7a4c6d4889c7b/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/573f409ad06fb6d3813ca38791c7114eb1b1c5ac
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/573f409ad06fb6d3813ca38791c7114eb1b1c5ac/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/573f409ad06fb6d3813ca38791c7114eb1b1c5ac/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/573f409ad06fb6d3813ca38791c7114eb1b1c5ac/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/bcbade45e83f1e7610a44d75cd715a18dfa2bcf7
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/bcbade45e83f1e7610a44d75cd715a18dfa2bcf7/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/bcbade45e83f1e7610a44d75cd715a18dfa2bcf7/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/bcbade45e83f1e7610a44d75cd715a18dfa2bcf7/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/bf19c45703f23f76e977c67de5ef33cdd504672a
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/bf19c45703f23f76e977c67de5ef33cdd504672a/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/bf19c45703f23f76e977c67de5ef33cdd504672a/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/bf19c45703f23f76e977c67de5ef33cdd504672a/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/tree/2b005b66eb6ef90d72b50702893b86fe5cba9183
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/raw/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/raw/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blame/2b005b66eb6ef90d72b50702893b86fe5cba9183/yarn.lock
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/commits/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/raw/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/raw/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blame/2b005b66eb6ef90d72b50702893b86fe5cba9183/tsconfig.json
+Finished crawl: https://www.gitlab.com (50 pages, 2 emails)
+Starting crawl: https://www.atlassian.com
+Starting crawl: https://conuhacks.io
+Crawled: https://conuhacks.io
+Found email: sponsor.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Found email: team.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Crawled: https://conuhacks.io/
+Crawled: https://register.conuhacks.io/login
+Found email: john.doe@mail.com on https://register.conuhacks.io/login
+Crawled: https://conuhacks.io/forgot-password
+Crawled: https://conuhacks.io/register
+Finished crawl: https://conuhacks.io (5 pages, 3 emails)
+Starting crawl: https://hackthenorth.com
+Crawled: https://hackthenorth.com
+Found email: sponsor@hackthenorth.com on https://hackthenorth.com
+Found email: hello@hackthenorth.com on https://hackthenorth.com
+Failed to crawl: https://hackthenorth.com/site.webmanifest
+Crawled: https://museum.hackthenorth.com/s-kbd67
+Crawled: https://museum.hackthenorth.com
+Crawled: https://hackthenorth.com/blockblog-9djbn2
+Crawled: https://museum.hackthenorth.com/coach-bob
+Finished crawl: https://hackthenorth.com (5 pages, 2 emails)
+Starting crawl: https://mchacks.ca
+Crawled: https://mchacks.ca
+Found email: sponsorship@mchacks.ca on https://mchacks.ca
+Found email: contact@mchacks.ca on https://mchacks.ca
+Crawled: https://mchacks.ca/manifest.webmanifest
+Crawled: https://mchacks.ca/
+Crawled: https://app.mchacks.ca/
+Found email: your_email@gmail.com on https://app.mchacks.ca/
+Crawled: https://mchacks.ca/code-of-conduct
+Found email: directors@mchacks.ca on https://mchacks.ca/code-of-conduct
+Finished crawl: https://mchacks.ca (5 pages, 4 emails)
+Starting crawl: https://canadahacks.ca
+Crawled: https://canadahacks.ca
+Finished crawl: https://canadahacks.ca (1 pages, 0 emails)
+Starting crawl: https://uofthacks.com
+Crawled: https://uofthacks.com
+Found email: sponsors@uofthacks.com on https://uofthacks.com
+Found email: contact@uofthacks.com on https://uofthacks.com
+Crawled: https://uofthacks.com/shared/loading_gang.webp
+Crawled: https://portal.uofthacks.com/
+Crawled: https://uofthacks.com/privacypolicy
+Crawled: https://uofthacks.com/manifest.json
+Finished crawl: https://uofthacks.com (5 pages, 2 emails)
+Starting crawl: https://nwhacks.io
+Crawled: https://nwhacks.io
+Found email: sponsorship@nwplus.io on https://nwhacks.io
+Found email: info@nwplus.io on https://nwhacks.io
+Crawled: https://nwhacks.io/
+Crawled: https://2026.nwhacks.io/
+Crawled: https://nwhacks.io/linkedin.com/in/cait-chan/
+Crawled: https://nwhacks.io/www.linkedin.com/in/sunnysu101
+Finished crawl: https://nwhacks.io (5 pages, 2 emails)
+Starting crawl: https://deltahacks.com
+Crawled: https://deltahacks.com
+Found email: hello@deltahacks.com on https://deltahacks.com
+Crawled: https://deltahacks.com/
+Finished crawl: https://deltahacks.com (2 pages, 1 emails)
+Starting crawl: https://hackthe6ix.com
+Crawled: https://hackthe6ix.com
+Found email: sponsor@hackthe6ix.com on https://hackthe6ix.com
+Found email: hello@hackthe6ix.com on https://hackthe6ix.com
+Crawled: https://2026.dash.hackthe6ix.com
+Found email: name@host.com on https://2026.dash.hackthe6ix.com
+Found email: username@corporateID.com on https://2026.dash.hackthe6ix.com
+Crawled: https://hackthe6ix.com/forgotPassword
+Crawled: https://hackthe6ix.com/signup
+Crawled: https://hackthe6ix.com/oauth2/authorize
+Finished crawl: https://hackthe6ix.com (5 pages, 4 emails)
+Starting crawl: https://hackwestern.com
+Crawled: https://hackwestern.com
+Found email: hello@hackwestern.me on https://hackwestern.com
+Crawled: https://hackwestern.com/meta/manifest.json
+Finished crawl: https://hackwestern.com (2 pages, 1 emails)
+Starting crawl: https://qhacks.io
+Crawled: https://qhacks.io
+Crawled: https://qhacks.io/register
+Crawled: https://qhacks.io/login
+Crawled: https://qhacks.io/
+Finished crawl: https://qhacks.io (4 pages, 0 emails)
+Starting crawl: https://www.janestreet.com
+Crawled: https://www.janestreet.com
+Crawled: https://www.janestreet.com/contact-us/
+Found email: media@janestreet.com on https://www.janestreet.com/contact-us/
+Found email: sponsorship-inquiries@janestreet.com on https://www.janestreet.com/contact-us/
+Crawled: https://blog.janestreet.com/
+Crawled: https://www.janestreet.com/contact-us
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Light-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Medium-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Black-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Regular-1v7.otf
+Crawled: https://www.janestreet.com/ad-cookie-policy
+Found email: privacy-policy@janestreet.com on https://www.janestreet.com/ad-cookie-policy
+Finished crawl: https://www.janestreet.com (5 pages, 3 emails)
+Starting crawl: https://www.citadelsecurities.com
+Crawled: https://www.citadelsecurities.com
+Crawled: https://www.citadelsecurities.com/careers/career-perspectives/why-c-is-growing-and-what-c26-means-for-production-systems/
+Crawled: https://www.citadelsecurities.com/careers/
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities/positions-for-professionals/
+Finished crawl: https://www.citadelsecurities.com (5 pages, 0 emails)
+Starting crawl: https://www.hudsonrivertrading.com
+Crawled: https://www.hudsonrivertrading.com
+Found email: info@hudson-trading.com on https://www.hudsonrivertrading.com
+Crawled: https://www.hudsonrivertrading.com/about/
+Crawled: https://www.hudsonrivertrading.com/careers
+Found email: security@hudson-trading.com on https://www.hudsonrivertrading.com/careers
+Crawled: https://www.hudsonrivertrading.com/hrt-job/people-partner/
+Crawled: https://www.hudsonrivertrading.com/hrt-job/hardware-strategy-technology-partnerships-lead/
+Finished crawl: https://www.hudsonrivertrading.com (5 pages, 2 emails)
+Starting crawl: https://www.twosigma.com
+Crawled: https://www.twosigma.com
+Crawled: https://careers.twosigma.com/
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles
+Crawled: https://www.twosigma.com/careers/dei/
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles/
+Finished crawl: https://www.twosigma.com (5 pages, 0 emails)
+Starting crawl: https://drw.com
+Crawled: https://drw.com
+Found email: edesilva@drwholdings.com on https://drw.com
+Found email: spam_uxde@drwholdings.com on https://drw.com
+Crawled: https://drw.com/regulatory-and-fraud/contact-compliance
+Found email: compliance-us@drwholdings.com on https://drw.com/regulatory-and-fraud/contact-compliance
+Crawled: https://drw.com/contact-us
+Found email: name@email.com on https://drw.com/contact-us
+Found email: etf.sales@drw.com on https://drw.com/contact-us
+Found email: jbalbach@drwholdings.com on https://drw.com/contact-us
+Found email: convexityinfo@drwholdings.com on https://drw.com/contact-us
+Found email: rm@cumberland.io on https://drw.com/contact-us
+Found email: team@drwvc.com on https://drw.com/contact-us
+Found email: nx.business@drw.com on https://drw.com/contact-us
+Found email: FEdelmann@drw.com on https://drw.com/contact-us
+Found email: OYee@drw.com on https://drw.com/contact-us
+Found email: agreen@drwholdings.com on https://drw.com/contact-us
+Found email: campusrecruiting@drw.com on https://drw.com/contact-us
+Found email: drwrecruiting@drw.com on https://drw.com/contact-us
+Found email: mediarelations@drw.com on https://drw.com/contact-us
+Crawled: https://drw.com/tags/community-investment
+Crawled: https://drw.com/tags/community-investment/page/5
+Finished crawl: https://drw.com (5 pages, 16 emails)
+Starting crawl: https://www.optiver.com
+Crawled: https://www.optiver.com
+Found email: kWV@IUbHxuxEs.oza on https://www.optiver.com
+Crawled: https://www.optiver.com/about-us/contact/
+Found email: info@optiver.com on https://www.optiver.com/about-us/contact/
+Found email: recruiting@optiver.us on https://www.optiver.com/about-us/contact/
+Found email: careers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: office@optiver.uk on https://www.optiver.com/about-us/contact/
+Found email: indiacareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: chinacareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: taiwancareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Crawled: https://www.optiver.com/about-us/foundation/
+Crawled: https://www.optiver.com/insights/news/the-optiver-foundation-partners-with-oxford-university/
+Crawled: https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Found email: media@optiver.com on https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Found email: u003Emedia@optiver.com on https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Finished crawl: https://www.optiver.com (5 pages, 10 emails)
+Starting crawl: https://www.imc.com
+Crawled: https://www.imc.com
+Crawled: https://www.imc.com/us/careers/code-of-conduct
+Found email: contact.chicago@imc.com on https://www.imc.com/us/careers/code-of-conduct
+Crawled: https://www.imc.com/us/careers/talent-community
+Crawled: https://www.imc.com/in/careers/talent-community
+Crawled: https://www.imc.com/in/careers/code-of-conduct
+Finished crawl: https://www.imc.com (5 pages, 1 emails)
+Starting crawl: https://www.susinternational.com
+Failed to crawl: https://www.susinternational.com
+Finished crawl: https://www.susinternational.com (0 pages, 0 emails)
+Starting crawl: https://www.nvidia.com
+Crawled: https://www.nvidia.com
+Crawled: https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+Found email: privacy@nvidia.com on https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+Crawled: https://www.nvidia.com/en-us/about-nvidia/partners/
+Crawled: https://www.nvidia.com/en-us/data-center/gpu-cloud-computing/partners/
+Crawled: https://www.nvidia.com/en-us/about-nvidia/ai-computing/
+Finished crawl: https://www.nvidia.com (5 pages, 1 emails)
+Starting crawl: https://www.microsoft.com
+Crawled: https://www.microsoft.com
+Crawled: https://support.microsoft.com/contactus
+Crawled: https://www.microsoft.com/en-us/education/products/teams
+Crawled: https://www.microsoft.com/en/customers/story/26714-california-state-university-san-marcos-dynamics-365-contact-center
+Crawled: https://www.microsoft.com/en/microsoft-teams/group-chat-software
+Finished crawl: https://www.microsoft.com (5 pages, 0 emails)
+Starting crawl: https://careers.google.com
+Crawled: https://careers.google.com
+Crawled: https://careers.google.com/privacy-policy
+Found email: hrdatarequest@google.com on https://careers.google.com/privacy-policy
+Found email: u003ehrdatarequest@google.com on https://careers.google.com/privacy-policy
+Found email: data-protection-office@google.com on https://careers.google.com/privacy-policy
+Found email: u003edata-protection-office@google.com on https://careers.google.com/privacy-policy
+Found email: peopleops-help@google.com on https://careers.google.com/privacy-policy
+Found email: u003epeopleops-help@google.com on https://careers.google.com/privacy-policy
+Crawled: https://www.google.com/about/careers/applications/privacy-policy/
+Crawled: https://careers.google.com/how-we-hire/
+Crawled: https://careers.google.com/interview-tips
+Finished crawl: https://careers.google.com (5 pages, 6 emails)
+Starting crawl: https://aws.amazon.com
+Crawled: https://aws.amazon.com
+Crawled: https://aws.amazon.com/partners/work-with-partners/
+Crawled: https://aws.amazon.com/blogs/apn/
+Crawled: https://aws.amazon.com/blogs/apn/category/post-types/best-practices/
+Crawled: https://aws.amazon.com/blogs/apn/category/industries/life-sciences/
+Finished crawl: https://aws.amazon.com (5 pages, 0 emails)
+Starting crawl: https://www.apple.com
+Crawled: https://www.apple.com
+Crawled: https://www.apple.com/contact/
+Failed to crawl: http://developer.apple.com/contact/
+Crawled: https://www.apple.com/contact/feedback/
+Crawled: https://www.apple.com/za/contact/feedback/
+Crawled: https://www.apple.com/vn/contact/feedback/
+Finished crawl: https://www.apple.com (5 pages, 0 emails)
+Starting crawl: https://www.spacex.com
+Crawled: https://www.spacex.com
+Crawled: https://www.spacex.com/careers
+Crawled: https://www.spacex.com/careers/jobs
+Crawled: https://www.spacex.com/
+Crawled: https://www.spacex.com/vehicles/starship
+Found email: sales@spacex.com on https://www.spacex.com/vehicles/starship
+Finished crawl: https://www.spacex.com (5 pages, 1 emails)
+Starting crawl: https://www.cisco.com
+Crawled: https://www.cisco.com
+Crawled: https://www.cisco.com/site/us/en/about/sitemap.html
+Crawled: https://www.cisco.com/site/us/en/partners/tools/index.html
+Crawled: https://www.cisco.com/site/ae/ar/partners/tools-training/index.html
+Crawled: https://www.cisco.com/c/ar_ae/about/legal/privacy-full.html
+Finished crawl: https://www.cisco.com (5 pages, 0 emails)
+Starting crawl: https://about.meta.com
+Crawled: https://about.meta.com
+Crawled: https://about.meta.com/account/
+Crawled: https://www.meta.com/blog/rss/
+Crawled: https://about.meta.com/meta-verified/
+Crawled: https://about.meta.com/legal/privacy-policy/
+Finished crawl: https://about.meta.com (5 pages, 0 emails)
+Starting crawl: https://github.com
+Crawled: https://github.com
+Found email: you@domain.com on https://github.com
+Crawled: https://github.com/about/diversity
+Crawled: https://github.com/about/developer-policy
+Found email: policy@github.com on https://github.com/about/developer-policy
+Crawled: https://github.com/about/diversity/communities-of-belonging
+Crawled: https://github.com/about/diversity/communities-of-belonging/blacktocats
+Finished crawl: https://github.com (5 pages, 2 emails)
+Starting crawl: https://www.gitlab.com
+Crawled: https://www.gitlab.com
+Crawled: https://about.gitlab.com/privacy/cookies/
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/content/en-us/privacy/cookies.yml
+Found email: f5573e26de8f4293b285e556c35dfd6e@new-sentry.gitlab.net on https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/content/en-us/privacy/cookies.yml
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/main/content/en-us/privacy/cookies.yml
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/.gitlab/CODEOWNERS
+Finished crawl: https://www.gitlab.com (5 pages, 1 emails)
+Starting crawl: https://www.atlassian.com
+Crawled: https://www.atlassian.com
+Found email: press@atlassian.com on https://www.atlassian.com
+Crawled: https://www.atlassian.com/company/contact
+Crawled: https://atlassian.com/blog
+Found email: yourname@yourcompany.com on https://atlassian.com/blog
+Crawled: https://www.atlassian.com/blog/about
+Crawled: https://www.atlassian.com/blog/ai-at-work/ai-efficiency-paradox-why-productivity-gains-dont-mean-better-results
+Finished crawl: https://www.atlassian.com (5 pages, 2 emails)
+Starting crawl: https://www.jetbrains.com
+Crawled: https://www.jetbrains.com
+Crawled: https://blog.jetbrains.com/feed/
+Found email: JAM@jetbrains.com on https://blog.jetbrains.com/feed/
+Crawled: https://blog.jetbrains.com/dotnet/2026/01/26/how-we-made-variable-inspections-87-times-faster-for-unreal-engine-in-rider/
+Crawled: https://blog.jetbrains.com/dotnet/2026/06/08/rider-2026-2-code-quality-check-hooks-for-ai-agents/
+Crawled: https://blog.jetbrains.com/dotnet/tag/rider/
+Finished crawl: https://www.jetbrains.com (5 pages, 1 emails)
+Starting crawl: https://vercel.com
+Crawled: https://vercel.com
+Crawled: https://vercel.com/careers
+Crawled: https://vercel.com/careers/vercel-development-representative-startups-5815357004
+Found email: tammytriangle@email.com on https://vercel.com/careers/vercel-development-representative-startups-5815357004
+Crawled: https://vercel.com/careers/vercel-development-representative-majors-5039945004
+Crawled: https://vercel.com/careers/strategic-finance-manager-product-5855000004
+Finished crawl: https://vercel.com (5 pages, 1 emails)
+Starting crawl: https://www.cloudflare.com
+Crawled: https://www.cloudflare.com
+Crawled: https://community.cloudflare.com/
+Found email: support@cloudflare.com on https://community.cloudflare.com/
+Found email: help@meltwater.com on https://community.cloudflare.com/
+Found email: community@cloudflare.com on https://community.cloudflare.com/
+Crawled: https://www.cloudflare.com/people/
+Crawled: https://www.cloudflare.com/careers/life-at-cloudflare/
+Crawled: https://community.cloudflare.com
+Finished crawl: https://www.cloudflare.com (5 pages, 3 emails)
+Starting crawl: https://www.heroku.com
+Crawled: https://www.heroku.com
+Crawled: https://www.heroku.com/blog/feed/
+Found email: heroku-ai-feedback@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: heroku-feedback@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: johnsmith@codey.com on https://www.heroku.com/blog/feed/
+Found email: user@example.com on https://www.heroku.com/blog/feed/
+Found email: pcbcd9558e402ff2615a4484ac5ca9ac373f811e53bcb17f81ada3c243f8a11cc@ec2-52-20-254-181.compute-1.amazonaws.com on https://www.heroku.com/blog/feed/
+Found email: somesecret@loghost.example.com on https://www.heroku.com/blog/feed/
+Found email: heroku-managed-inference-and-agents@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: twelve-factor@googlegroups.com on https://www.heroku.com/blog/feed/
+Found email: aisha.upton@example.com on https://www.heroku.com/blog/feed/
+Found email: ospo-heroku-credits@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: username@example.com on https://www.heroku.com/blog/feed/
+Crawled: https://www.heroku.com/blog/xplenty-and-heroku-connect/
+Crawled: https://www.heroku.com/blog/feed
+Crawled: https://www.heroku.com/blog/category/ecosystem/feed/
+Finished crawl: https://www.heroku.com (5 pages, 11 emails)
+Starting crawl: https://www.mongodb.com
+Failed to crawl: https://www.mongodb.com
+Finished crawl: https://www.mongodb.com (0 pages, 0 emails)
+Starting crawl: https://www.postgresql.org
+Crawled: https://www.postgresql.org
+Crawled: https://www.postgresql.org/about/contact/
+Found email: security@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: coc@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: funds-group@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: usergroups@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: webmaster@postgresql.org on https://www.postgresql.org/about/contact/
+Crawled: https://www.postgresql.org/about/policies/coc_committee/
+Crawled: https://www.postgresql.org/about/policies/coc/reports/2018/
+Crawled: https://www.postgresql.org/about/policies/coc/reports/2019/
+Finished crawl: https://www.postgresql.org (5 pages, 5 emails)
+Starting crawl: https://redis.io
+Crawled: https://redis.io
+Crawled: https://redis.io/cloud-partners/azure/
+Crawled: https://redis.io/cloud-partners/google/
+Crawled: https://redis.io/cloud-partners/aws/
+Crawled: https://redis.io/blog/amazon-bedrock-integration-with-redis-enterprise/
+Finished crawl: https://redis.io (5 pages, 0 emails)
+Starting crawl: https://www.elastic.co
+Crawled: https://www.elastic.co
+Crawled: https://www.elastic.co/events/sponsor
+Crawled: https://www.elastic.co/blog/2022-elastic-excellence-awards-winners
+Crawled: https://www.elastic.co/blog/feed
+Found email: federal@elastic.co on https://www.elastic.co/blog/feed
+Found email: sled@elastic.co on https://www.elastic.co/blog/feed
+Crawled: https://www.elastic.co/blog/free-training-fundamentals-courses-elastic-enterprise-search
+Finished crawl: https://www.elastic.co (5 pages, 2 emails)
+Starting crawl: https://stripe.com
+Crawled: https://stripe.com
+Found email: jane.diaz@stripe.com on https://stripe.com
+Found email: damian.michelfelder@example.com on https://stripe.com
+Found email: taro.yamada@example.com on https://stripe.com
+Found email: billing@example.com on https://stripe.com
+Found email: jane.smith@example.com on https://stripe.com
+Crawled: https://stripe.com/en-ca/jobs
+Found email: careers@stripe.com on https://stripe.com/en-ca/jobs
+Found email: accommodations@stripe.com on https://stripe.com/en-ca/jobs
+Found email: candidatefeedback-applications@stripe.com on https://stripe.com/en-ca/jobs
+Starting crawl: https://conuhacks.io
+Crawled: https://conuhacks.io
+Found email: sponsor.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Found email: team.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Crawled: https://conuhacks.io/
+Crawled: https://register.conuhacks.io/login
+Found email: john.doe@mail.com on https://register.conuhacks.io/login
+Crawled: https://conuhacks.io/forgot-password
+Crawled: https://conuhacks.io/register
+Finished crawl: https://conuhacks.io (5 pages, 3 emails)
+Starting crawl: https://conuhacks.io
+Crawled: https://conuhacks.io
+Found email: sponsor.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Found email: team.hackconcordia@ecaconcordia.ca on https://conuhacks.io
+Crawled: https://conuhacks.io/
+Crawled: https://register.conuhacks.io/login
+Found email: john.doe@mail.com on https://register.conuhacks.io/login
+Crawled: https://conuhacks.io/forgot-password
+Crawled: https://conuhacks.io/register
+Finished crawl: https://conuhacks.io (5 pages, 3 emails)
+Starting crawl: https://hackthenorth.com
+Crawled: https://hackthenorth.com
+Found email: sponsor@hackthenorth.com on https://hackthenorth.com
+Found email: hello@hackthenorth.com on https://hackthenorth.com
+Failed to crawl: https://hackthenorth.com/site.webmanifest
+Crawled: https://museum.hackthenorth.com/s-kbd67
+Crawled: https://museum.hackthenorth.com
+Crawled: https://hackthenorth.com/blockblog-9djbn2
+Crawled: https://museum.hackthenorth.com/coach-bob
+Finished crawl: https://hackthenorth.com (5 pages, 2 emails)
+Starting crawl: https://mchacks.ca
+Crawled: https://mchacks.ca
+Found email: sponsorship@mchacks.ca on https://mchacks.ca
+Found email: contact@mchacks.ca on https://mchacks.ca
+Crawled: https://mchacks.ca/manifest.webmanifest
+Crawled: https://mchacks.ca/
+Crawled: https://app.mchacks.ca/
+Found email: your_email@gmail.com on https://app.mchacks.ca/
+Crawled: https://mchacks.ca/code-of-conduct
+Found email: directors@mchacks.ca on https://mchacks.ca/code-of-conduct
+Finished crawl: https://mchacks.ca (5 pages, 4 emails)
+Starting crawl: https://canadahacks.ca
+Crawled: https://canadahacks.ca
+Finished crawl: https://canadahacks.ca (1 pages, 0 emails)
+Starting crawl: https://uofthacks.com
+Crawled: https://uofthacks.com
+Found email: sponsors@uofthacks.com on https://uofthacks.com
+Found email: contact@uofthacks.com on https://uofthacks.com
+Crawled: https://uofthacks.com/shared/loading_gang.webp
+Crawled: https://portal.uofthacks.com/
+Crawled: https://uofthacks.com/privacypolicy
+Crawled: https://uofthacks.com/manifest.json
+Finished crawl: https://uofthacks.com (5 pages, 2 emails)
+Starting crawl: https://nwhacks.io
+Crawled: https://nwhacks.io
+Found email: sponsorship@nwplus.io on https://nwhacks.io
+Found email: info@nwplus.io on https://nwhacks.io
+Crawled: https://nwhacks.io/
+Crawled: https://2026.nwhacks.io/
+Crawled: https://nwhacks.io/linkedin.com/in/cait-chan/
+Crawled: https://nwhacks.io/www.linkedin.com/in/sunnysu101
+Finished crawl: https://nwhacks.io (5 pages, 2 emails)
+Starting crawl: https://deltahacks.com
+Crawled: https://deltahacks.com
+Found email: hello@deltahacks.com on https://deltahacks.com
+Crawled: https://deltahacks.com/
+Finished crawl: https://deltahacks.com (2 pages, 1 emails)
+Starting crawl: https://hackthe6ix.com
+Crawled: https://hackthe6ix.com
+Found email: sponsor@hackthe6ix.com on https://hackthe6ix.com
+Found email: hello@hackthe6ix.com on https://hackthe6ix.com
+Crawled: https://2026.dash.hackthe6ix.com
+Found email: name@host.com on https://2026.dash.hackthe6ix.com
+Found email: username@corporateID.com on https://2026.dash.hackthe6ix.com
+Crawled: https://hackthe6ix.com/forgotPassword
+Crawled: https://hackthe6ix.com/signup
+Crawled: https://hackthe6ix.com/oauth2/authorize
+Finished crawl: https://hackthe6ix.com (5 pages, 4 emails)
+Starting crawl: https://hackwestern.com
+Crawled: https://hackwestern.com
+Found email: hello@hackwestern.me on https://hackwestern.com
+Crawled: https://hackwestern.com/meta/manifest.json
+Finished crawl: https://hackwestern.com (2 pages, 1 emails)
+Starting crawl: https://qhacks.io
+Crawled: https://qhacks.io
+Finished crawl: https://qhacks.io (1 pages, 0 emails)
+Starting crawl: https://www.janestreet.com
+Crawled: https://www.janestreet.com
+Crawled: https://www.janestreet.com/contact-us/
+Found email: media@janestreet.com on https://www.janestreet.com/contact-us/
+Found email: sponsorship-inquiries@janestreet.com on https://www.janestreet.com/contact-us/
+Crawled: https://blog.janestreet.com/
+Crawled: https://www.janestreet.com/contact-us
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Light-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Medium-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Black-1v7.otf
+Failed to crawl: https://www.janestreet.com/static/fonts/Alright-Sans-LT/AlrightSansLT-Regular-1v7.otf
+Crawled: https://www.janestreet.com/ad-cookie-policy
+Found email: privacy-policy@janestreet.com on https://www.janestreet.com/ad-cookie-policy
+Finished crawl: https://www.janestreet.com (5 pages, 3 emails)
+Starting crawl: https://www.citadelsecurities.com
+Crawled: https://www.citadelsecurities.com
+Crawled: https://www.citadelsecurities.com/careers/career-perspectives/why-c-is-growing-and-what-c26-means-for-production-systems/
+Crawled: https://www.citadelsecurities.com/careers/
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities
+Crawled: https://www.citadelsecurities.com/careers/open-opportunities/positions-for-professionals/
+Finished crawl: https://www.citadelsecurities.com (5 pages, 0 emails)
+Starting crawl: https://www.hudsonrivertrading.com
+Crawled: https://www.hudsonrivertrading.com
+Found email: info@hudson-trading.com on https://www.hudsonrivertrading.com
+Crawled: https://www.hudsonrivertrading.com/about/
+Crawled: https://www.hudsonrivertrading.com/careers
+Found email: security@hudson-trading.com on https://www.hudsonrivertrading.com/careers
+Crawled: https://www.hudsonrivertrading.com/hrt-job/people-partner/
+Crawled: https://www.hudsonrivertrading.com/hrt-job/hardware-strategy-technology-partnerships-lead/
+Finished crawl: https://www.hudsonrivertrading.com (5 pages, 2 emails)
+Starting crawl: https://www.twosigma.com
+Crawled: https://www.twosigma.com
+Crawled: https://careers.twosigma.com/
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles
+Crawled: https://www.twosigma.com/careers/dei/
+Crawled: https://careers.twosigma.com/careers/ExperiencedRoles/
+Finished crawl: https://www.twosigma.com (5 pages, 0 emails)
+Starting crawl: https://drw.com
+Crawled: https://drw.com
+Found email: edesilva@drwholdings.com on https://drw.com
+Found email: spam_uxde@drwholdings.com on https://drw.com
+Crawled: https://drw.com/regulatory-and-fraud/contact-compliance
+Found email: compliance-us@drwholdings.com on https://drw.com/regulatory-and-fraud/contact-compliance
+Crawled: https://drw.com/contact-us
+Found email: name@email.com on https://drw.com/contact-us
+Found email: etf.sales@drw.com on https://drw.com/contact-us
+Found email: jbalbach@drwholdings.com on https://drw.com/contact-us
+Found email: convexityinfo@drwholdings.com on https://drw.com/contact-us
+Found email: rm@cumberland.io on https://drw.com/contact-us
+Found email: team@drwvc.com on https://drw.com/contact-us
+Found email: nx.business@drw.com on https://drw.com/contact-us
+Found email: FEdelmann@drw.com on https://drw.com/contact-us
+Found email: OYee@drw.com on https://drw.com/contact-us
+Found email: agreen@drwholdings.com on https://drw.com/contact-us
+Found email: campusrecruiting@drw.com on https://drw.com/contact-us
+Found email: drwrecruiting@drw.com on https://drw.com/contact-us
+Found email: mediarelations@drw.com on https://drw.com/contact-us
+Crawled: https://drw.com/tags/community-investment
+Crawled: https://drw.com/tags/community-investment/page/5
+Finished crawl: https://drw.com (5 pages, 16 emails)
+Starting crawl: https://www.optiver.com
+Crawled: https://www.optiver.com
+Found email: kWV@IUbHxuxEs.oza on https://www.optiver.com
+Crawled: https://www.optiver.com/about-us/contact/
+Found email: info@optiver.com on https://www.optiver.com/about-us/contact/
+Found email: recruiting@optiver.us on https://www.optiver.com/about-us/contact/
+Found email: careers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: office@optiver.uk on https://www.optiver.com/about-us/contact/
+Found email: indiacareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: chinacareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Found email: taiwancareers@optiver.com.au on https://www.optiver.com/about-us/contact/
+Crawled: https://www.optiver.com/about-us/foundation/
+Crawled: https://www.optiver.com/insights/news/the-optiver-foundation-partners-with-oxford-university/
+Crawled: https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Found email: media@optiver.com on https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Found email: u003Emedia@optiver.com on https://www.optiver.com/insights/news/optiver-partners-with-georgetown-universitys-psaros-center/
+Finished crawl: https://www.optiver.com (5 pages, 10 emails)
+Starting crawl: https://www.imc.com
+Crawled: https://www.imc.com
+Crawled: https://www.imc.com/us/careers/code-of-conduct
+Found email: contact.chicago@imc.com on https://www.imc.com/us/careers/code-of-conduct
+Crawled: https://www.imc.com/us/careers/talent-community
+Crawled: https://www.imc.com/in/careers/talent-community
+Crawled: https://www.imc.com/in/careers/code-of-conduct
+Finished crawl: https://www.imc.com (5 pages, 1 emails)
+Starting crawl: https://www.susinternational.com
+Failed to crawl: https://www.susinternational.com
+Finished crawl: https://www.susinternational.com (0 pages, 0 emails)
+Starting crawl: https://www.nvidia.com
+Crawled: https://www.nvidia.com
+Crawled: https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+Found email: privacy@nvidia.com on https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+Crawled: https://www.nvidia.com/en-us/about-nvidia/partners/
+Crawled: https://www.nvidia.com/en-us/data-center/gpu-cloud-computing/partners/
+Crawled: https://www.nvidia.com/en-us/about-nvidia/ai-computing/
+Finished crawl: https://www.nvidia.com (5 pages, 1 emails)
+Starting crawl: https://www.microsoft.com
+Crawled: https://www.microsoft.com
+Crawled: https://support.microsoft.com/contactus
+Crawled: https://www.microsoft.com/en-us/education/products/teams
+Crawled: https://www.microsoft.com/en/customers/story/26714-california-state-university-san-marcos-dynamics-365-contact-center
+Crawled: https://www.microsoft.com/en/microsoft-teams/group-chat-software
+Finished crawl: https://www.microsoft.com (5 pages, 0 emails)
+Starting crawl: https://careers.google.com
+Crawled: https://careers.google.com
+Crawled: https://careers.google.com/privacy-policy
+Found email: hrdatarequest@google.com on https://careers.google.com/privacy-policy
+Found email: u003ehrdatarequest@google.com on https://careers.google.com/privacy-policy
+Found email: data-protection-office@google.com on https://careers.google.com/privacy-policy
+Found email: u003edata-protection-office@google.com on https://careers.google.com/privacy-policy
+Found email: peopleops-help@google.com on https://careers.google.com/privacy-policy
+Found email: u003epeopleops-help@google.com on https://careers.google.com/privacy-policy
+Crawled: https://www.google.com/about/careers/applications/privacy-policy/
+Crawled: https://careers.google.com/how-we-hire/
+Crawled: https://careers.google.com/interview-tips
+Finished crawl: https://careers.google.com (5 pages, 6 emails)
+Starting crawl: https://aws.amazon.com
+Crawled: https://aws.amazon.com
+Crawled: https://aws.amazon.com/partners/work-with-partners/
+Crawled: https://aws.amazon.com/blogs/apn/
+Crawled: https://aws.amazon.com/blogs/apn/category/post-types/best-practices/
+Crawled: https://aws.amazon.com/blogs/apn/category/industries/life-sciences/
+Finished crawl: https://aws.amazon.com (5 pages, 0 emails)
+Starting crawl: https://www.apple.com
+Crawled: https://www.apple.com
+Crawled: https://www.apple.com/contact/
+Crawled: http://developer.apple.com/contact/
+Crawled: https://www.apple.com/contact/feedback/
+Crawled: https://www.apple.com/za/contact/feedback/
+Finished crawl: https://www.apple.com (5 pages, 0 emails)
+Starting crawl: https://www.spacex.com
+Crawled: https://www.spacex.com
+Crawled: https://www.spacex.com/careers
+Crawled: https://www.spacex.com/careers/jobs
+Crawled: https://www.spacex.com/
+Crawled: https://www.spacex.com/vehicles/starship
+Found email: sales@spacex.com on https://www.spacex.com/vehicles/starship
+Finished crawl: https://www.spacex.com (5 pages, 1 emails)
+Starting crawl: https://www.cisco.com
+Crawled: https://www.cisco.com
+Crawled: https://www.cisco.com/site/us/en/about/sitemap.html
+Crawled: https://www.cisco.com/site/us/en/partners/tools/index.html
+Crawled: https://www.cisco.com/site/ae/ar/partners/tools-training/index.html
+Crawled: https://www.cisco.com/c/ar_ae/about/legal/privacy-full.html
+Finished crawl: https://www.cisco.com (5 pages, 0 emails)
+Starting crawl: https://about.meta.com
+Crawled: https://about.meta.com
+Crawled: https://about.meta.com/account/
+Crawled: https://www.meta.com/blog/rss/
+Crawled: https://about.meta.com/meta-verified/
+Crawled: https://about.meta.com/legal/privacy-policy/
+Finished crawl: https://about.meta.com (5 pages, 0 emails)
+Starting crawl: https://github.com
+Crawled: https://github.com
+Found email: you@domain.com on https://github.com
+Crawled: https://github.com/about/diversity
+Crawled: https://github.com/about/developer-policy
+Found email: policy@github.com on https://github.com/about/developer-policy
+Crawled: https://github.com/about/diversity/communities-of-belonging
+Crawled: https://github.com/about/diversity/communities-of-belonging/blacktocats
+Finished crawl: https://github.com (5 pages, 2 emails)
+Starting crawl: https://www.gitlab.com
+Crawled: https://www.gitlab.com
+Crawled: https://about.gitlab.com/privacy/cookies/
+Crawled: https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/content/en-us/privacy/cookies.yml
+Found email: f5573e26de8f4293b285e556c35dfd6e@new-sentry.gitlab.net on https://gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/content/en-us/privacy/cookies.yml
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/edit/main/content/en-us/privacy/cookies.yml
+Crawled: https://www.gitlab.com/gitlab-com/marketing/digital-experience/about-gitlab-com/-/blob/main/.gitlab/CODEOWNERS
+Finished crawl: https://www.gitlab.com (5 pages, 1 emails)
+Starting crawl: https://www.atlassian.com
+Crawled: https://www.atlassian.com
+Found email: press@atlassian.com on https://www.atlassian.com
+Crawled: https://www.atlassian.com/company/contact
+Crawled: https://atlassian.com/blog
+Found email: yourname@yourcompany.com on https://atlassian.com/blog
+Crawled: https://www.atlassian.com/blog/about
+Crawled: https://www.atlassian.com/blog/ai-at-work/ai-efficiency-paradox-why-productivity-gains-dont-mean-better-results
+Finished crawl: https://www.atlassian.com (5 pages, 2 emails)
+Starting crawl: https://www.jetbrains.com
+Crawled: https://www.jetbrains.com
+Crawled: https://blog.jetbrains.com/feed/
+Found email: JAM@jetbrains.com on https://blog.jetbrains.com/feed/
+Crawled: https://blog.jetbrains.com/dotnet/2026/01/26/how-we-made-variable-inspections-87-times-faster-for-unreal-engine-in-rider/
+Crawled: https://blog.jetbrains.com/dotnet/2026/06/08/rider-2026-2-code-quality-check-hooks-for-ai-agents/
+Crawled: https://blog.jetbrains.com/dotnet/tag/rider/
+Finished crawl: https://www.jetbrains.com (5 pages, 1 emails)
+Starting crawl: https://vercel.com
+Crawled: https://vercel.com
+Crawled: https://vercel.com/careers
+Crawled: https://vercel.com/careers/vercel-development-representative-startups-5815357004
+Found email: tammytriangle@email.com on https://vercel.com/careers/vercel-development-representative-startups-5815357004
+Crawled: https://vercel.com/careers/vercel-development-representative-majors-5039945004
+Crawled: https://vercel.com/careers/strategic-finance-manager-product-5855000004
+Finished crawl: https://vercel.com (5 pages, 1 emails)
+Starting crawl: https://www.cloudflare.com
+Crawled: https://www.cloudflare.com
+Crawled: https://community.cloudflare.com/
+Found email: support@cloudflare.com on https://community.cloudflare.com/
+Found email: help@meltwater.com on https://community.cloudflare.com/
+Found email: community@cloudflare.com on https://community.cloudflare.com/
+Crawled: https://www.cloudflare.com/people/
+Crawled: https://www.cloudflare.com/careers/life-at-cloudflare/
+Crawled: https://community.cloudflare.com
+Finished crawl: https://www.cloudflare.com (5 pages, 3 emails)
+Starting crawl: https://www.heroku.com
+Crawled: https://www.heroku.com
+Crawled: https://www.heroku.com/blog/feed/
+Found email: heroku-ai-feedback@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: heroku-feedback@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: johnsmith@codey.com on https://www.heroku.com/blog/feed/
+Found email: user@example.com on https://www.heroku.com/blog/feed/
+Found email: pcbcd9558e402ff2615a4484ac5ca9ac373f811e53bcb17f81ada3c243f8a11cc@ec2-52-20-254-181.compute-1.amazonaws.com on https://www.heroku.com/blog/feed/
+Found email: somesecret@loghost.example.com on https://www.heroku.com/blog/feed/
+Found email: heroku-managed-inference-and-agents@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: twelve-factor@googlegroups.com on https://www.heroku.com/blog/feed/
+Found email: aisha.upton@example.com on https://www.heroku.com/blog/feed/
+Found email: ospo-heroku-credits@salesforce.com on https://www.heroku.com/blog/feed/
+Found email: username@example.com on https://www.heroku.com/blog/feed/
+Crawled: https://www.heroku.com/blog/xplenty-and-heroku-connect/
+Crawled: https://www.heroku.com/blog/feed
+Crawled: https://www.heroku.com/blog/category/ecosystem/feed/
+Finished crawl: https://www.heroku.com (5 pages, 11 emails)
+Starting crawl: https://www.mongodb.com
+Crawled: https://www.mongodb.com
+Found email: 92279d270fa9a4294eda3755fc2ccb95@o4504991346720768.ingest.sentry.io on https://www.mongodb.com
+Crawled: https://www.mongodb.com/company/contact/social-media-hub
+Crawled: https://www.mongodb.com/zh-cn/company/contact/social-media-hub
+Crawled: https://www.mongodb.com/fr-fr/company/contact/social-media-hub
+Crawled: https://www.mongodb.com/de-de/company/contact/social-media-hub
+Finished crawl: https://www.mongodb.com (5 pages, 1 emails)
+Starting crawl: https://www.postgresql.org
+Crawled: https://www.postgresql.org
+Crawled: https://www.postgresql.org/about/contact/
+Found email: security@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: coc@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: funds-group@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: usergroups@postgresql.org on https://www.postgresql.org/about/contact/
+Found email: webmaster@postgresql.org on https://www.postgresql.org/about/contact/
+Crawled: https://www.postgresql.org/about/policies/coc_committee/
+Crawled: https://www.postgresql.org/about/policies/coc/reports/2018/
+Crawled: https://www.postgresql.org/about/policies/coc/reports/2019/
+Finished crawl: https://www.postgresql.org (5 pages, 5 emails)
+Starting crawl: https://redis.io
+Crawled: https://redis.io
+Crawled: https://redis.io/cloud-partners/azure/
+Crawled: https://redis.io/cloud-partners/google/
+Crawled: https://redis.io/cloud-partners/aws/
+Crawled: https://redis.io/blog/amazon-bedrock-integration-with-redis-enterprise/
+Finished crawl: https://redis.io (5 pages, 0 emails)
+Starting crawl: https://www.elastic.co
+Crawled: https://www.elastic.co
+Crawled: https://www.elastic.co/events/sponsor
+Crawled: https://www.elastic.co/blog/2022-elastic-excellence-awards-winners
+Crawled: https://www.elastic.co/blog/feed
+Found email: federal@elastic.co on https://www.elastic.co/blog/feed
+Found email: sled@elastic.co on https://www.elastic.co/blog/feed
+Crawled: https://www.elastic.co/blog/free-training-fundamentals-courses-elastic-enterprise-search
+Finished crawl: https://www.elastic.co (5 pages, 2 emails)
+Starting crawl: https://stripe.com
+Crawled: https://stripe.com
+Found email: jane.diaz@stripe.com on https://stripe.com
+Found email: damian.michelfelder@example.com on https://stripe.com
+Found email: taro.yamada@example.com on https://stripe.com
+Found email: billing@example.com on https://stripe.com
+Found email: jane.smith@example.com on https://stripe.com
+Crawled: https://stripe.com/en-ca/jobs
+Found email: careers@stripe.com on https://stripe.com/en-ca/jobs
+Found email: accommodations@stripe.com on https://stripe.com/en-ca/jobs
+Found email: candidatefeedback-applications@stripe.com on https://stripe.com/en-ca/jobs
+Crawled: https://stripe.com/blog
+Found email: jane@example.com on https://stripe.com/blog
+Found email: sales@stripe.com on https://stripe.com/blog
+Crawled: https://stripe.com/zh-us/blog
+Crawled: https://stripe.com/es-us/blog
+Finished crawl: https://stripe.com (5 pages, 10 emails)
+Starting crawl: https://www.paypal.com
+Crawled: https://www.paypal.com
+Crawled: https://www.paypal.com/ca/home
+Crawled: https://www.paypal.com/home
+Crawled: https://www.paypal.com/business
+Crawled: https://www.paypal.com/ca/business/contact-sales
+Finished crawl: https://www.paypal.com (5 pages, 0 emails)
+Starting crawl: https://wise.com
+Crawled: https://wise.com
+Found email: ouvidoria@wise.com on https://wise.com
+Found email: u003eouvidoria@wise.com on https://wise.com
+Crawled: https://wise.com/gb/about/wise-reviews
+Crawled: https://wise.com/gb/blog/
+Crawled: https://wise.com/gb/blog/author/rejoice-ojiaku/
+Crawled: https://wise.com/gb/blog/google-ads-invoices-payment-and-billing-guide
+Finished crawl: https://wise.com (5 pages, 2 emails)
+Starting crawl: https://openai.com
+Crawled: https://openai.com
+Crawled: https://openai.com/careers/
+Crawled: https://community.openai.com/
+Found email: support@openai.com on https://community.openai.com/
+Crawled: https://openai.com/t/sora-2-api-jobs-stuck-at-progress-0/1386034/13
+Crawled: https://openai.com/t/sora-2-api-jobs-stuck-at-progress-0/1386034/1
+Finished crawl: https://openai.com (5 pages, 1 emails)
+Starting crawl: https://www.anthropic.com
+Crawled: https://www.anthropic.com
+Crawled: https://www.anthropic.com/careers
+Crawled: http://anthropic.com/careers
+Crawled: https://www.anthropic.com/careers/jobs
+Crawled: https://www.anthropic.com/
+Finished crawl: https://www.anthropic.com (5 pages, 0 emails)
+Starting crawl: https://cohere.com
+Crawled: https://cohere.com
+Found email: support@cohere.com on https://cohere.com
+Crawled: https://cohere.com/blog/fujitsu-partnership
+Crawled: https://cohere.com/blog/tag/company-news
+Crawled: https://cohere.com/blog/cohere-partner-program-boosting-enterprise-ai
+Crawled: https://cohere.com/blog/hipaa-business-associate-agreements-for-custom-model-development
+Found email: u003esupport@cohere.com on https://cohere.com/blog/hipaa-business-associate-agreements-for-custom-model-development
+Finished crawl: https://cohere.com (5 pages, 2 emails)
+Starting crawl: https://huggingface.co
+Crawled: https://huggingface.co
+Found email: git@hf.co on https://huggingface.co
+Found email: press@huggingface.co on https://huggingface.co
+Crawled: https://huggingface.co/blog
+Crawled: https://huggingface.co/blog/vllm-jobs
+Crawled: https://huggingface.co/blog/github-ci-hf-jobs
+Crawled: https://huggingface.co/blog/hello-hf-kernels
+Finished crawl: https://huggingface.co (5 pages, 2 emails)
+Starting crawl: https://www.desjardins.com
+Crawled: https://www.desjardins.com
+Crawled: https://www.desjardins.com/en.html
+Crawled: https://www.desjardins.com/en/about-us/community/accessibility.html
+Crawled: https://www.desjardins.com/ca/contact-us/comments-dissatisfactions-complaints/index.jsp
+Found email: complaints@desjardins.com on https://www.desjardins.com/ca/contact-us/comments-dissatisfactions-complaints/index.jsp
+Crawled: https://pservices.desjardins.com/apps/contact/index.html
+Finished crawl: https://www.desjardins.com (5 pages, 1 emails)
+Starting crawl: https://www.rbc.com
+Crawled: https://www.rbc.com
+Crawled: https://www.rbc.com/contact-us.html
+Crawled: https://www.rbc.com/newsroom/news/contact/index.html
+Found email: jeff.lanthier@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: sophie.leadbetter@rbccm.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: chloe.brooke@rbccm.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: rafael.ruffolo@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: scott.holtby@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: briana.darchi@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: fionaelisabeth.anderson@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: lisa.seepersad@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: cheryl.brean@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: lori.smith@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: jill.hastie@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: sarkiss.karayan@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: alexanne.fortingarant@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: lucie.caron@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: shauna.cook@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: robb.ritchie@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: shela.shapiro@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: elyse.lalonde@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: elisa.barsotti@rbccm.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: adam.lister@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: vanessa.romano@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: kris.herberg@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: victoria.walsh@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: melissa.teo@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: jeanfrancois.thibault@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: tony.catinella@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: lydia.cambata@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: elynn.wareham@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: nathaniel.wallace@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: ylana.kurtz@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: brianne.sommerville@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Found email: carol.key@rbc.com on https://www.rbc.com/newsroom/news/contact/index.html
+Crawled: https://www.rbc.com/community-social-impact/
+Crawled: https://www.rbc.com/our-impact/apply-for-funding/rbc-foundation-community-spaces-grant/index.html
+Found email: communityspacesgrant@rbc.com on https://www.rbc.com/our-impact/apply-for-funding/rbc-foundation-community-spaces-grant/index.html
+Finished crawl: https://www.rbc.com (5 pages, 33 emails)
+Starting crawl: https://www.td.com
+Crawled: https://www.td.com
+Crawled: https://www.td.com/ca/en/about-td/privacy-and-security/our-privacy-commitments/how-we-use-your-information/personalize-your-online-experience
+Crawled: https://www.td.com/ca/en/about-td/privacy-and-security/our-privacy-commitments/collecting-your-information.html
+Crawled: https://www.td.com/ca/en/about-td/privacy-and-security/our-privacy-commitments/protecting-your-information
+Crawled: https://www.td.com/ca/en/about-td/privacy-and-security/our-privacy-commitments/complaint-resolution
+Found email: TD.Privacy@td.com on https://www.td.com/ca/en/about-td/privacy-and-security/our-privacy-commitments/complaint-resolution
+Found email: td.privacy@td.com on https://www.td.com/ca/en/about-td/privacy-and-security/our-privacy-commitments/complaint-resolution
+Finished crawl: https://www.td.com (5 pages, 2 emails)
+Starting crawl: https://www.scotiabank.com
+Crawled: https://www.scotiabank.com
+Crawled: https://tc.scotiabank.com/about-scotiabank/media-centre.html
+Crawled: https://www.scotiabank.com/about-scotiabank/connect-with-scotiabank/accessibility-services.html
+Crawled: https://www.scotiabank.com/ca/en/about/contact-us/privacy/privacy-cookies.html
+Found email: scotia.economics@scotiabank.com on https://www.scotiabank.com/ca/en/about/contact-us/privacy/privacy-cookies.html
+Found email: escalatedconcerns@scotiabank.com on https://www.scotiabank.com/ca/en/about/contact-us/privacy/privacy-cookies.html
+Crawled: https://www.scotiabank.com/ca/en/about/accessibility.html
+Found email: clientaccessibility@scotiabank.com on https://www.scotiabank.com/ca/en/about/accessibility.html
+Finished crawl: https://www.scotiabank.com (5 pages, 3 emails)
+Starting crawl: https://www.bmo.com
+Failed to crawl: https://www.bmo.com
+Finished crawl: https://www.bmo.com (0 pages, 0 emails)
+Starting crawl: https://www.cibc.com
+Failed to crawl: https://www.cibc.com
+Finished crawl: https://www.cibc.com (0 pages, 0 emails)
