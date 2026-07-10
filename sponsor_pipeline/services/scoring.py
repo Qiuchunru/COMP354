@@ -8,7 +8,7 @@ logger = get_logger(__name__)
 
 class SponsorScoringService:
     """In-memory score registry, Scores are produced by SponsorEvaluator and
-    loaded here via load_scores() """
+    loaded here via load_scores()"""
 
     def __init__(self) -> None:
         self._scores: dict[str, SponsorScore] = {}

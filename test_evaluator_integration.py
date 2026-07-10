@@ -2,13 +2,13 @@
 Integration test: verifies SponsorEvaluator is wired end to end through run_scoring()
 
 What this tests:
-  - _build_dimension_evaluator(settings) picks the right provider 
+  - _build_dimension_evaluator(settings) picks the right provider
   - SponsorEvaluator.evaluate() is called with bridge-converted data
   - evaluator_score_to_pipeline() produces a valid PipelineSponsorScore
   - the score is saved to the repo and registered in self._scoring
 
 does NOT test:
-  - real web crawling 
+  - real web crawling
   - discovery or research stages
 """
 
@@ -51,7 +51,7 @@ def make_company() -> Company:
 
 
 def make_crawl(company: Company) -> CrawlResult:
-    """Pre-built crawl result """
+    """Pre-built crawl result"""
     return CrawlResult(
         start_url=company.website,
         pages_crawled=3,
