@@ -100,7 +100,10 @@ class PipelineOrchestrator:
             self._build_adapters(settings), self._llm, self._prompts
         )
         self._scoring = SponsorScoringService(self._llm, self._prompts)
+<<<<<<< Updated upstream
         # Pick the right LLM evaluator based on whatever provider is set in .env
+=======
+>>>>>>> Stashed changes
         self._evaluator = SponsorEvaluator(_build_dimension_evaluator(settings))
         self._filter = LeadFilter(self._scoring, settings.min_overall_score)
         self._research = CompanyResearchService(self._llm, self._prompts, self._filter)
