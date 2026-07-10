@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import anthropic
 from pathlib import Path
 
 from sponsor_pipeline.adapters.sources import (
@@ -29,10 +28,6 @@ from sponsor_pipeline.services.filter import LeadFilter
 from sponsor_pipeline.services.research import CompanyResearchService
 from sponsor_pipeline.services.scoring import SponsorScoringService
 from sponsor_pipeline.services.scraper import WebScraperService, normalize_url
-from sponsor_pipeline.services.sponsor_evaluator import (
-    ClaudeSponsorDimensionEvaluator,
-    SponsorEvaluator,
-)
 
 logger = get_logger(__name__)
 
@@ -50,11 +45,6 @@ class PipelineOrchestrator:
             self._build_adapters(settings), self._llm, self._prompts
         )
         self._scoring = SponsorScoringService(self._llm, self._prompts)
-        self._evaluator = SponsorEvaluator(
-            ClaudeSponsorDimensionEvaluator(
-                anthropic.Anthropic(api_key=settings.anthropic_api_key)
-            )
-        )
         self._filter = LeadFilter(self._scoring, settings.min_overall_score)
         self._research = CompanyResearchService(self._llm, self._prompts, self._filter)
         self._contacts = ContactDiscoveryService(

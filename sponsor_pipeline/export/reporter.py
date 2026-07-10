@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 from pathlib import Path
 
 from sponsor_pipeline.logger import get_logger
-from sponsor_pipeline.models import OutreachProspect, SponsorReport
+from sponsor_pipeline.models import OutreachProspect, SponsorReport, SponsorScore
 from sponsor_pipeline.persistence.repository import SponsorRepository
 
 logger = get_logger(__name__)
@@ -87,15 +88,8 @@ class ReportExporter:
             self.to_csv(prospects), encoding="utf-8"
         )
         for prospect in prospects:
-            scores_text = (
-                f"- Talent: {prospect.score.talent_score}/10\n"
-                f"- Developer adoption: {prospect.score.developer_adoption_score}/10\n"
-                f"- Brand/community: {prospect.score.brand_community_score}/10\n"
-                f"- Accessibility: {prospect.score.accessibility_score}/10\n"
-                f"- Budget likelihood: {prospect.score.budget_likelihood_score}/10\n"
-                f"- **Overall: {prospect.score.overall_score}/10**"
-            )
-            slug = prospect.company.name.lower().replace(" ", "_")
+            scores_text = _format_scores(prospect.score)
+            slug = _slugify(prospect.company.name)
             md = self.to_markdown(
                 prospect.report,
                 prospect.company.name,
@@ -114,3 +108,21 @@ class ReportExporter:
                 md + contact_section, encoding="utf-8"
             )
         logger.info("Exported prospects CSV and %s markdown report(s)", len(prospects))
+
+
+def _format_scores(score: SponsorScore) -> str:
+    lines = [
+        f"- {_criterion_label(key)}: {criterion.score:g}/10"
+        for key, criterion in score.criterion_scores.items()
+    ]
+    lines.append(f"- **Overall: {score.overall_score:g}/10**")
+    return "\n".join(lines)
+
+
+def _criterion_label(key: str) -> str:
+    return key.replace("_", " ").capitalize()
+
+
+def _slugify(value: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "_", value.lower()).strip("_")
+    return slug or "company"
