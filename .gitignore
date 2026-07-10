@@ -14,4 +14,6 @@ __pycache__/
 # OS files
 .DS_Store
 
-venv/
+venv/log.txt
+test_emails.txt
+results/

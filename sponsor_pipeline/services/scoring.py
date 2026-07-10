@@ -5,8 +5,8 @@ import json
 from sponsor_pipeline.llm.client import LLMClient
 from sponsor_pipeline.models import (
     Company,
-    CompanySize,
     CrawlResult,
+    CriterionScore,
     Evidence,
     SponsorMotivation,
     SponsorScore,
@@ -43,28 +43,48 @@ class SponsorScoringService:
             + f"Evidence:\n{json.dumps(evidence_payload, indent=2)}\n\n"
             + (f"Website research:\n{crawl_context}" if crawl_context else ""),
             """{
-  "talent_score": 0.0,
-  "developer_adoption_score": 0.0,
-  "brand_community_score": 0.0,
-  "accessibility_score": 0.0,
-  "budget_likelihood_score": 0.0,
   "overall_score": 0.0,
-  "primary_motivations": ["hiring_talent"],
-  "company_size": "unknown",
-  "scoring_rationale": "string"
+  "confidence": "medium",
+  "explanation": "string",
+  "key_strengths": ["string"],
+  "potential_weaknesses": ["string"],
+  "recommended_outreach_angle": "string",
+  "recommended_contact_role": "string",
+  "motivations": ["hiring_talent"],
+  "criterion_scores": {
+    "talent_acquisition": {"score": 0.0, "reasoning": "string", "supporting_evidence": []},
+    "developer_ecosystem": {"score": 0.0, "reasoning": "string", "supporting_evidence": []},
+    "community_sponsorship": {"score": 0.0, "reasoning": "string", "supporting_evidence": []},
+    "outreach_accessibility": {"score": 0.0, "reasoning": "string", "supporting_evidence": []},
+    "sponsorship_capacity": {"score": 0.0, "reasoning": "string", "supporting_evidence": []},
+    "strategic_alignment": {"score": 0.0, "reasoning": "string", "supporting_evidence": []}
+  }
 }""",
         )
+
+        criterion_scores = {
+            k: CriterionScore(
+                criterion_key=k,
+                score=_float(v.get("score")),
+                reasoning=str(v.get("reasoning", "")),
+                supporting_evidence=list(v.get("supporting_evidence", [])),
+            )
+            for k, v in result.get("criterion_scores", {}).items()
+        }
+
         score = SponsorScore(
-            company_id=company.id,
-            talent_score=_float(result.get("talent_score")),
-            developer_adoption_score=_float(result.get("developer_adoption_score")),
-            brand_community_score=_float(result.get("brand_community_score")),
-            accessibility_score=_float(result.get("accessibility_score")),
-            budget_likelihood_score=_float(result.get("budget_likelihood_score")),
+            company=company,
+            criterion_scores=criterion_scores,
             overall_score=_float(result.get("overall_score")),
-            primary_motivations=_motivations(result.get("primary_motivations", [])),
-            scoring_rationale=str(result.get("scoring_rationale", "")),
-            company_size=_company_size(result.get("company_size")),
+            motivations=_motivations(result.get("motivations", [])),
+            confidence=str(result.get("confidence", "medium")),
+            explanation=str(result.get("explanation", "")),
+            key_strengths=list(result.get("key_strengths", [])),
+            potential_weaknesses=list(result.get("potential_weaknesses", [])),
+            recommended_outreach_angle=str(
+                result.get("recommended_outreach_angle", "")
+            ),
+            recommended_contact_role=str(result.get("recommended_contact_role", "")),
         )
         self._scores[company.id] = score
         return score
@@ -85,7 +105,7 @@ class SponsorScoringService:
 
     def load_scores(self, scores: list[SponsorScore]) -> None:
         for score in scores:
-            self._scores[score.company_id] = score
+            self._scores[score.company.id] = score
 
 
 def _float(value: object) -> float:
@@ -103,10 +123,3 @@ def _motivations(raw: list) -> list[SponsorMotivation]:
         except ValueError:
             continue
     return results
-
-
-def _company_size(raw: object) -> CompanySize:
-    try:
-        return CompanySize(str(raw))
-    except ValueError:
-        return CompanySize.UNKNOWN

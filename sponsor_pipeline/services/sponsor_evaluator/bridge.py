@@ -70,6 +70,7 @@ def crawl_to_evidence(crawl: CrawlResult) -> EvaluatorEvidence:
             contact.append(f"Team/about page: {url}")
 
 
+
     # dedupe each bucket before returning so the LLM doesnt get confused
     return EvaluatorEvidence(
         hiring_signals=_dedupe(hiring),
