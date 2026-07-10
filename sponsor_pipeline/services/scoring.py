@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 from sponsor_pipeline.llm.client import LLMClient
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import (
     Company,
     CrawlResult,
@@ -13,6 +14,8 @@ from sponsor_pipeline.models import (
 )
 from sponsor_pipeline.prompts.templates import PromptTemplateRegistry
 from sponsor_pipeline.services.crawl_evidence import format_crawl_for_prompt
+
+logger = get_logger(__name__)
 
 
 class SponsorScoringService:
@@ -27,6 +30,11 @@ class SponsorScoringService:
         evidence: list[Evidence],
         crawl: CrawlResult | None = None,
     ) -> SponsorScore:
+        logger.info(
+            "Requesting sponsor score for %s using %s evidence item(s)",
+            company.name,
+            len(evidence),
+        )
         evidence_payload = [
             {
                 "category": e.category.value,
@@ -87,6 +95,11 @@ class SponsorScoringService:
             recommended_contact_role=str(result.get("recommended_contact_role", "")),
         )
         self._scores[company.id] = score
+        logger.info(
+            "Sponsor score completed for %s: %.1f/10",
+            company.name,
+            score.overall_score,
+        )
         return score
 
     def score_batch(
@@ -104,6 +117,7 @@ class SponsorScoringService:
         return self._scores.get(company_id)
 
     def load_scores(self, scores: list[SponsorScore]) -> None:
+        logger.info("Loading %s saved score(s) into scoring service", len(scores))
         for score in scores:
             self._scores[score.company.id] = score
 

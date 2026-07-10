@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import logging
 import re
 from collections import deque
 from urllib.parse import urljoin, urlparse
@@ -8,6 +7,7 @@ from urllib.parse import urljoin, urlparse
 from playwright.sync_api import sync_playwright
 
 from sponsor_pipeline.config import Settings
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import (
     ContactMethod,
     ContactMethodType,
@@ -16,7 +16,7 @@ from sponsor_pipeline.models import (
     EvidenceCategory,
 )
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 SKIP_EXTENSIONS = (
     ".jpg",
@@ -95,6 +95,10 @@ class WebScraperService:
                         len(emails) >= self._settings.max_emails_per_site
                         and pages_crawled > 10
                     ):
+                        self._log(
+                            "Stopping crawl after finding enough emails: "
+                            f"{len(emails)} email(s)"
+                        )
                         break
 
                     url = queue.popleft()
@@ -152,6 +156,7 @@ class WebScraperService:
         return result
 
     def batch_crawl(self, urls: list[str]) -> list[CrawlResult]:
+        logger.info("Starting batch crawl for %s URL(s)", len(urls))
         return [self.crawl_site(url) for url in urls]
 
     @staticmethod

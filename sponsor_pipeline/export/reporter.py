@@ -4,8 +4,11 @@ import csv
 import io
 from pathlib import Path
 
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import OutreachProspect, SponsorReport
 from sponsor_pipeline.persistence.repository import SponsorRepository
+
+logger = get_logger(__name__)
 
 
 class ReportExporter:
@@ -79,6 +82,7 @@ class ReportExporter:
     def export_all(self, repo: SponsorRepository, output_dir: Path) -> None:
         output_dir.mkdir(parents=True, exist_ok=True)
         prospects = repo.get_outreach_ready()
+        logger.info("Exporting %s outreach-ready prospect(s)", len(prospects))
         (output_dir / "prospects.csv").write_text(
             self.to_csv(prospects), encoding="utf-8"
         )
@@ -109,3 +113,4 @@ class ReportExporter:
             (output_dir / f"{slug}.md").write_text(
                 md + contact_section, encoding="utf-8"
             )
+        logger.info("Exported prospects CSV and %s markdown report(s)", len(prospects))

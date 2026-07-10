@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from sponsor_pipeline.llm.client import LLMClient
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import (
     Company,
     ContactMethod,
@@ -12,6 +13,8 @@ from sponsor_pipeline.models import (
 )
 from sponsor_pipeline.prompts.templates import PromptTemplateRegistry
 from sponsor_pipeline.services.scraper import WebScraperService
+
+logger = get_logger(__name__)
 
 GENERIC_EMAIL_PREFIXES = (
     "info@",
@@ -39,6 +42,7 @@ class ContactDiscoveryService:
     def find_key_contacts(
         self, company: Company, report: SponsorReport, crawl: CrawlResult | None = None
     ) -> list[ContactPerson]:
+        logger.info("Identifying key contacts for %s", company.name)
         crawl = crawl or self._scraper.crawl_site(company.website)
         snippet_text = "\n\n".join(
             f"URL: {url}\n{text}"
@@ -73,6 +77,11 @@ class ContactDiscoveryService:
                 )
             )
         contacts.sort(key=lambda c: c.relevance_score, reverse=True)
+        logger.info(
+            "Identified %s contact candidate(s) for %s",
+            len(contacts),
+            company.name,
+        )
         return contacts
 
     def find_public_contact_info(
@@ -81,6 +90,11 @@ class ContactDiscoveryService:
         company: Company,
         crawl: CrawlResult | None = None,
     ) -> list[ContactMethod]:
+        logger.info(
+            "Finding public contact methods for %s at %s",
+            contact.full_name,
+            company.name,
+        )
         crawl = crawl or self._scraper.crawl_site(company.website)
         methods = list(crawl.social_links)
         for email in crawl.emails:
@@ -130,7 +144,13 @@ class ContactDiscoveryService:
                     confidence=confidence,
                 )
             )
-        return _dedupe_methods(methods)
+        deduped = _dedupe_methods(methods)
+        logger.info(
+            "Found %s unique contact method(s) for %s",
+            len(deduped),
+            contact.full_name,
+        )
+        return deduped
 
 
 def _role(raw: object) -> ContactRole:

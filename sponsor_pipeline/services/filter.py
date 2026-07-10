@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import Company, Priority, SponsorScore
 from sponsor_pipeline.services.scoring import SponsorScoringService
+
+logger = get_logger(__name__)
 
 
 class LeadFilter:
@@ -24,6 +27,12 @@ class LeadFilter:
                 passed.append(company)
             else:
                 rejected.append(company)
+        logger.info(
+            "Lead threshold %.1f kept %s company candidate(s) and rejected %s",
+            self._min_overall,
+            len(passed),
+            len(rejected),
+        )
         return passed, rejected
 
     def assign_priority(self, score: SponsorScore) -> Priority:

@@ -6,7 +6,10 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import DiscoverySource, RawLead
+
+logger = get_logger(__name__)
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -17,6 +20,7 @@ SESSION.headers.update({"User-Agent": USER_AGENT})
 
 
 def fetch_url(url: str, timeout: int = 20) -> str:
+    logger.debug("Fetching URL: %s", url)
     response = SESSION.get(url, timeout=timeout)
     response.raise_for_status()
     return response.text
@@ -59,6 +63,7 @@ class MLHSourceAdapter(SourceAdapter):
         return DiscoverySource.MLH_EVENT
 
     def fetch_candidates(self) -> list[RawLead]:
+        logger.info("Fetching MLH events from %s", self._events_url)
         html = fetch_url(self._events_url)
         event_links = [
             link
@@ -72,8 +77,10 @@ class MLHSourceAdapter(SourceAdapter):
         seen: set[str] = set()
         for event_url in event_links:
             try:
+                logger.info("Inspecting MLH event page: %s", event_url)
                 event_html = fetch_url(event_url)
-            except requests.RequestException:
+            except requests.RequestException as exc:
+                logger.warning("Failed to fetch MLH event page %s: %s", event_url, exc)
                 continue
             sponsor_section = _extract_sponsor_section(event_html)
             for name in _guess_company_names(sponsor_section):
@@ -89,6 +96,7 @@ class MLHSourceAdapter(SourceAdapter):
                         notes=f"Seen on MLH event page: {event_url}",
                     )
                 )
+        logger.info("MLH adapter produced %s raw lead(s)", len(leads))
         return leads
 
 
@@ -104,8 +112,10 @@ class HackathonSiteAdapter(SourceAdapter):
         seen: set[str] = set()
         for url in self._urls:
             try:
+                logger.info("Inspecting hackathon sponsor page: %s", url)
                 html = fetch_url(url)
-            except requests.RequestException:
+            except requests.RequestException as exc:
+                logger.warning("Failed to fetch hackathon page %s: %s", url, exc)
                 continue
             sponsor_section = _extract_sponsor_section(html)
             for name in _guess_company_names(sponsor_section):
@@ -121,6 +131,7 @@ class HackathonSiteAdapter(SourceAdapter):
                         notes=f"Listed as sponsor on {url}",
                     )
                 )
+        logger.info("Hackathon site adapter produced %s raw lead(s)", len(leads))
         return leads
 
 
@@ -148,6 +159,7 @@ class JobBoardAdapter(SourceAdapter):
         return DiscoverySource.JOB_POSTING
 
     def fetch_candidates(self) -> list[RawLead]:
+        logger.info("Using %s seeded job-board/company leads", len(self.SEED_COMPANIES))
         return [
             RawLead(
                 name=name,
@@ -181,6 +193,7 @@ class ProductLaunchAdapter(SourceAdapter):
         return DiscoverySource.PRODUCT_LAUNCH
 
     def fetch_candidates(self) -> list[RawLead]:
+        logger.info("Using %s seeded developer-product leads", len(self.SEED_COMPANIES))
         return [
             RawLead(
                 name=name,

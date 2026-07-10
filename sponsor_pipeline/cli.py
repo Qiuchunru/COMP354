@@ -5,8 +5,11 @@ import sys
 from pathlib import Path
 
 from sponsor_pipeline.config import Settings
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import DiscoverySource
 from sponsor_pipeline.orchestrator import PipelineOrchestrator
+
+logger = get_logger(__name__)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -83,13 +86,21 @@ def _run_scrape(args: argparse.Namespace, settings: Settings) -> int:
         ]
 
     if not urls:
-        print("No URLs to scrape.", file=sys.stderr)
+        logger.error("No URLs to scrape.")
         return 1
 
+    logger.info("Starting scrape for %s URL(s)", len(urls))
     scraper = WebScraperService(settings)
     lines: list[str] = []
-    for url in urls:
+    for index, url in enumerate(urls, start=1):
+        logger.info("Scraping %s/%s: %s", index, len(urls), url)
         result = scraper.crawl_site(url)
+        logger.info(
+            "Scrape result for %s: %s page(s), %s email(s)",
+            result.start_url,
+            result.pages_crawled,
+            len(result.emails),
+        )
         lines.append(f"Website: {result.start_url}")
         lines.extend(result.emails)
         lines.append("")
@@ -102,46 +113,64 @@ def _run_scrape(args: argparse.Namespace, settings: Settings) -> int:
             existing += "\n"
         text = existing + text
     output_path.write_text(text, encoding="utf-8")
-    print(f"Wrote {output_path}")
+    logger.info("Wrote scrape output to %s", output_path)
     return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
-    settings = Settings.from_env()
+    logger.info("Command selected: %s", args.command)
+    try:
+        settings = Settings.from_env(require_llm=args.command != "scrape")
+    except ValueError as exc:
+        logger.error("Configuration error: %s", exc)
+        return 1
+    logger.info(
+        "Loaded settings: db=%s, provider=%s",
+        settings.sponsor_db_path,
+        settings.llm_provider,
+    )
 
     if args.command == "scrape":
         return _run_scrape(args, settings)
 
     try:
+        logger.info("Initializing pipeline orchestrator")
         orchestrator = PipelineOrchestrator(settings)
     except ValueError as exc:
-        print(f"Error: {exc}", file=sys.stderr)
+        logger.error("Error: %s", exc)
         return 1
 
     if args.command == "run":
+        logger.info("Running full pipeline")
         result = orchestrator.run_full_pipeline(_parse_sources(args.source))
+        logger.info("Pipeline complete")
         print("Pipeline complete:")
         for key, value in result.to_dict().items():
             print(f"  {key}: {value}")
-        orchestrator.export_reports(settings.db_path.parent / "exports")
-        print(f"Exports written to {settings.db_path.parent / 'exports'}")
+        export_dir = settings.sponsor_db_path.parent / "exports"
+        orchestrator.export_reports(export_dir)
+        logger.info("Exports written to %s", export_dir)
     elif args.command == "discover":
+        logger.info("Running discovery")
         companies = orchestrator.run_discovery()
-        print(f"Discovered {len(companies)} companies")
+        logger.info("Discovered %s companies", len(companies))
     elif args.command == "score":
+        logger.info("Running scoring")
         companies = orchestrator.run_scoring()
-        print(f"Scored {len(companies)} companies")
+        logger.info("Scored %s companies", len(companies))
     elif args.command == "research":
+        logger.info("Running research")
         companies = orchestrator.run_research()
-        print(f"Researched {len(companies)} companies")
+        logger.info("Researched %s companies", len(companies))
     elif args.command == "contacts":
+        logger.info("Running contact discovery")
         prospects = orchestrator.run_contact_discovery()
-        print(f"Found contacts for {len(prospects)} companies")
+        logger.info("Found contacts for %s companies", len(prospects))
     elif args.command == "export":
         orchestrator.export_reports(args.output)
-        print(f"Exported to {args.output}")
+        logger.info("Exported reports to %s", args.output)
 
     return 0
 
