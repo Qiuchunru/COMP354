@@ -34,6 +34,11 @@ from sponsor_pipeline.services.sponsor_evaluator import (
     OpenAISponsorDimensionEvaluator,
     SponsorEvaluator,
 )
+from sponsor_pipeline.services.sponsor_evaluator.bridge import (
+    crawl_to_evidence,
+    evaluator_score_to_pipeline,
+    pipeline_company_to_evaluator,
+)
 from sponsor_pipeline.services.sponsor_evaluator.llm.sponsor_dimension_evaluator import (
     SponsorDimensionEvaluator,
 )
@@ -100,10 +105,7 @@ class PipelineOrchestrator:
             self._build_adapters(settings), self._llm, self._prompts
         )
         self._scoring = SponsorScoringService(self._llm, self._prompts)
-<<<<<<< Updated upstream
         # Pick the right LLM evaluator based on whatever provider is set in .env
-=======
->>>>>>> Stashed changes
         self._evaluator = SponsorEvaluator(_build_dimension_evaluator(settings))
         self._filter = LeadFilter(self._scoring, settings.min_overall_score)
         self._research = CompanyResearchService(self._llm, self._prompts, self._filter)
@@ -186,7 +188,11 @@ class PipelineOrchestrator:
                 continue
             crawl = self._get_crawl(company.website)
             self._repo.save_evidence(company.id, crawl.evidence)
-            score = self._scoring.score_company(company, crawl.evidence, crawl)
+            eval_score = self._evaluator.evaluate(
+                pipeline_company_to_evaluator(company),
+                crawl_to_evidence(crawl),
+            )
+            score = evaluator_score_to_pipeline(company, eval_score)
             logger.info(
                 "Score for %s: %.1f/10 (%s)",
                 company.name,
@@ -194,9 +200,9 @@ class PipelineOrchestrator:
                 score.confidence,
             )
             company.status = LeadStatus.SCORED
-            company.company_size = score.company_size
             self._repo.save_company(company)
             self._repo.save_score(score)
+            self._scoring.load_scores([score])
             scored.append(company)
         logger.info("Scoring finished with %s scored company record(s)", len(scored))
         return scored
