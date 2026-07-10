@@ -26,7 +26,7 @@ This keeps all dependencies isolated from your system Python.
 
 ```bash
 # Prompt to create the virtual environment
-python -m venv venv
+python3 -m venv venv
 
 # Prompt to activate the virtual environment
 # On Windows (Git Bash):
@@ -47,7 +47,7 @@ You should see `(venv)` appear at the start of your terminal prompt.
 
 ```bash
 pip install -r requirements.txt
-python -m playwright install chromium
+python3 -m playwright install chromium
 ```
 
 > Note: `playwright install chromium` downloads a browser (~300MB) used for web scraping.
@@ -108,10 +108,10 @@ Run these quick checks before testing the full pipeline:
 
 ```bash
 # Check all imports work
-python -c "from sponsor_pipeline.config import Settings; from sponsor_pipeline.models import Company, RawLead; from sponsor_pipeline.orchestrator import PipelineOrchestrator; print('All imports OK')"
+python3 -c "from sponsor_pipeline.config import Settings; from sponsor_pipeline.models import Company, RawLead; from sponsor_pipeline.orchestrator import PipelineOrchestrator; print('All imports OK')"
 
 # Check settings load correctly
-python -c "
+python3 -c "
 from sponsor_pipeline.config import Settings
 s = Settings.from_env(require_llm=False)
 print(f'Provider: {s.llm_provider}')
@@ -121,7 +121,7 @@ print('Settings OK')
 "
 
 # Check CLI application is working
-python main.py --help
+python3 main.py --help
 ```
 
 All three should run without errors.
@@ -133,7 +133,7 @@ All three should run without errors.
 In terminal, test that Playwright can crawl a website and extract emails:
 
 ```bash
-python main.py scrape --url https://conuhacks.io --output test_emails.txt
+python3 main.py scrape --url https://conuhacks.io --output test_emails.txt
 cat test_emails.txt
 ```
 > **Note:** This prompt makes Playwright crawl `conuhacks` website. 
@@ -148,7 +148,7 @@ team.hackconcordia@ecaconcordia.ca
 
 You can also scrape multiple URLs from the seed list of sponsors file:
 ```bash
-python main.py scrape data/hackathon_urls.txt --output test_emails.txt
+python3 main.py scrape data/hackathon_urls.txt --output test_emails.txt
 ```
 
 ---
@@ -157,7 +157,7 @@ python main.py scrape data/hackathon_urls.txt --output test_emails.txt
 
 In terminal, test the initial outreach email generator:
 ```bash
-python generate_initial_outreach.py
+python3 generate_initial_outreach.py
 ```
 
 When prompted:
@@ -169,7 +169,7 @@ You should see a fully formatted sponsorship email with your name and event deta
 
 Test the follow-up email generator:
 ```bash
-python generate_followup_email.py
+python3 generate_followup_email.py
 ```
 
 Same prompts as above.
@@ -184,25 +184,25 @@ Same prompts as above.
 
 ```bash
 # Stage 1: Discover companies from hackathon websites
-python main.py discover
+python3 main.py discover
 
 # Stage 2: Score discovered companies (uses LLM credits)
-python main.py score
+python3 main.py score
 
 # Stage 3: Research high-scoring companies (uses LLM credits)
-python main.py research
+python3 main.py research
 
 # Stage 4: Find contacts for researched companies (uses LLM credits)
-python main.py contacts
+python3 main.py contacts
 
 # Export results to CSV and Markdown
-python main.py export --output-dir results/
+python3 main.py export --output-dir results/
 ```
 
 ### Option B — Run the full pipeline in one command (terminal)
 
 ```bash
-python main.py run
+python3 main.py run
 ```
 
 ---
@@ -227,7 +227,7 @@ ls results/
 Make sure your virtual environment is activated (`venv\Scripts\activate` on Windows) and you ran `pip install -r requirements.txt`.
 
 **"playwright: command not found"**
-Use `python -m playwright install chromium` instead of `playwright install chromium`.
+Use `python3 -m playwright install chromium` instead of `playwright install chromium`.
 
 **"API key not set"**
 Make sure your `.env` file exists and has the correct API key for your chosen provider.
