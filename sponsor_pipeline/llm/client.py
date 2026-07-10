@@ -13,6 +13,9 @@ from abc import ABC, abstractmethod
 from typing import Any
 
 from sponsor_pipeline.config import Settings
+from sponsor_pipeline.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 # Abstract backend interface
@@ -100,6 +103,7 @@ class LLMClient:
     def __init__(self, settings: Settings) -> None:
         provider = settings.llm_provider
         model = settings.llm_model
+        logger.info("Initializing LLM client: provider=%s, model=%s", provider, model)
 
         if provider == "anthropic":
             if not settings.anthropic_api_key:
@@ -131,12 +135,15 @@ class LLMClient:
         """
         Send a prompt and return the model's text response.
         """
+        logger.info("Sending LLM completion request")
         user_content = prompt
         if context:
             user_content += "\n\nContext:\n" + json.dumps(
                 context, indent=2, default=str
             )
-        return self._backend.complete(_SYSTEM_PROMPT, user_content)
+        response = self._backend.complete(_SYSTEM_PROMPT, user_content)
+        logger.info("Received LLM completion response")
+        return response
 
     def complete_structured(self, prompt: str, schema_hint: str) -> dict[str, Any]:
         """
@@ -148,7 +155,11 @@ class LLMClient:
             "Do not include markdown fences."
         )
         text = self.complete(full_prompt)
-        return _parse_json(text)
+        parsed = _parse_json(text)
+        logger.debug(
+            "Parsed structured LLM response with keys: %s", list(parsed.keys())
+        )
+        return parsed
 
 
 def _parse_json(text: str) -> dict[str, Any]:

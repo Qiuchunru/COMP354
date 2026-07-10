@@ -2,6 +2,7 @@ from __future__ import annotations
 
 
 from sponsor_pipeline.llm.client import LLMClient
+from sponsor_pipeline.logger import get_logger
 
 from sponsor_pipeline.models import (
     Company,
@@ -16,6 +17,8 @@ from sponsor_pipeline.prompts.templates import PromptTemplateRegistry
 from sponsor_pipeline.services.crawl_evidence import format_crawl_for_prompt
 
 from sponsor_pipeline.services.filter import LeadFilter
+
+logger = get_logger(__name__)
 
 
 class CompanyResearchService:
@@ -38,6 +41,7 @@ class CompanyResearchService:
         score: SponsorScore,
         crawl: CrawlResult | None = None,
     ) -> SponsorReport:
+        logger.info("Generating research report for %s", company.name)
 
         crawl_context = (
             format_crawl_for_prompt(crawl)
@@ -88,6 +92,11 @@ class CompanyResearchService:
         )
 
         priority = self._lead_filter.assign_priority(score)
+        logger.info(
+            "Research report completed for %s with %s priority",
+            company.name,
+            priority.value,
+        )
 
         return SponsorReport(
             company_id=company.id,

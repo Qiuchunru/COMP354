@@ -5,8 +5,11 @@ from urllib.parse import urlparse
 
 from sponsor_pipeline.adapters.sources import SourceAdapter
 from sponsor_pipeline.llm.client import LLMClient
+from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import Company, DiscoverySource, RawLead
 from sponsor_pipeline.prompts.templates import PromptTemplateRegistry
+
+logger = get_logger(__name__)
 
 
 class CompanyDiscoveryService:
@@ -26,15 +29,33 @@ class CompanyDiscoveryService:
         raw_leads: list[RawLead] = []
         for adapter in self._adapters:
             if sources and adapter.get_source_type() not in sources:
+                logger.debug(
+                    "Skipping discovery adapter: %s",
+                    adapter.get_source_type().value,
+                )
                 continue
-            raw_leads.extend(adapter.fetch_candidates())
+            source = adapter.get_source_type().value
+            logger.info("Fetching discovery candidates from %s", source)
+            candidates = adapter.fetch_candidates()
+            logger.info("Fetched %s raw lead(s) from %s", len(candidates), source)
+            raw_leads.extend(candidates)
 
         companies = self._enrich_with_ai(raw_leads)
-        return _dedupe_companies(companies)
+        deduped = _dedupe_companies(companies)
+        logger.info(
+            "Discovery normalization produced %s company record(s), %s after dedupe",
+            len(companies),
+            len(deduped),
+        )
+        return deduped
 
     def enrich_from_web(self, company: Company) -> Company:
         if company.website:
+            logger.debug(
+                "Website already known for %s: %s", company.name, company.website
+            )
             return company
+        logger.info("Finding official website for %s", company.name)
         result = self._llm.complete_structured(
             self._prompts.get_discovery_prompt()
             + f"\n\nFind the official website URL for: {company.name}",
@@ -43,6 +64,9 @@ class CompanyDiscoveryService:
         website = str(result.get("website", "")).strip()
         if website.startswith("http"):
             company.website = website
+            logger.info("Found website for %s: %s", company.name, website)
+        else:
+            logger.warning("Could not find website for %s", company.name)
         return company
 
     def _enrich_with_ai(self, leads: list[RawLead]) -> list[Company]:
@@ -53,6 +77,12 @@ class CompanyDiscoveryService:
         batch_size = 25
         for i in range(0, len(leads), batch_size):
             batch = leads[i : i + batch_size]
+            logger.info(
+                "Normalizing discovery leads with AI: batch %s-%s of %s",
+                i + 1,
+                min(i + batch_size, len(leads)),
+                len(leads),
+            )
             payload = [
                 {
                     "name": lead.name,
