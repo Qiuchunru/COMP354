@@ -28,6 +28,61 @@ from sponsor_pipeline.services.filter import LeadFilter
 from sponsor_pipeline.services.research import CompanyResearchService
 from sponsor_pipeline.services.scoring import SponsorScoringService
 from sponsor_pipeline.services.scraper import WebScraperService, normalize_url
+from sponsor_pipeline.services.sponsor_evaluator import (
+    ClaudeSponsorDimensionEvaluator,
+    GoogleSponsorDimensionEvaluator,
+    OpenAISponsorDimensionEvaluator,
+    SponsorEvaluator,
+)
+from sponsor_pipeline.services.sponsor_evaluator.llm.sponsor_dimension_evaluator import (
+    SponsorDimensionEvaluator,
+)
+
+
+def _build_dimension_evaluator(settings: Settings) -> SponsorDimensionEvaluator:
+    """
+    factory that creates the right LLM evaluator based on the LLM_PROVIDER setting
+
+    lazy imports (import inside the if-branch)
+    only import the SDK for the provider the user actually configured
+
+    Each branch:
+        anthropic : creates an anthropic.Anthropic client and passes it to Claude evaluator
+        openai    : creates an openai.OpenAI client and passes it to OpenAI evaluator
+        google    : configures genai globally with the API key, passes the module to Google evaluator
+    """
+    provider = settings.llm_provider
+    model = settings.llm_model
+
+    if provider == "anthropic":
+        import anthropic
+
+        return ClaudeSponsorDimensionEvaluator(
+            anthropic.Anthropic(api_key=settings.anthropic_api_key),
+            model,
+        )
+
+    if provider == "openai":
+        from openai import OpenAI
+
+        return OpenAISponsorDimensionEvaluator(
+            OpenAI(api_key=settings.openai_api_key),
+            model,
+        )
+
+    if provider == "google":
+        # Uses the new google.genai SDK (google-genai package), not the deprecated google.generativeai
+        from google import genai
+
+        client = genai.Client(api_key=settings.google_api_key)
+        return GoogleSponsorDimensionEvaluator(client, model)
+
+    # raise as a safety net
+    raise ValueError(
+        f"Unsupported LLM provider for the evaluator: '{provider}'. "
+        f"Choose one of: anthropic, openai, google"
+    )
+
 
 logger = get_logger(__name__)
 
@@ -45,6 +100,8 @@ class PipelineOrchestrator:
             self._build_adapters(settings), self._llm, self._prompts
         )
         self._scoring = SponsorScoringService(self._llm, self._prompts)
+        # Pick the right LLM evaluator based on whatever provider is set in .env
+        self._evaluator = SponsorEvaluator(_build_dimension_evaluator(settings))
         self._filter = LeadFilter(self._scoring, settings.min_overall_score)
         self._research = CompanyResearchService(self._llm, self._prompts, self._filter)
         self._contacts = ContactDiscoveryService(

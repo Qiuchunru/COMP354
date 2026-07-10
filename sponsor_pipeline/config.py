@@ -92,7 +92,7 @@ class Settings:
         default_models = {
             "anthropic": "claude-sonnet-4-6",
             "openai": "gpt-4o-mini",
-            "google": "gemini-1.5-flash",
+            "google": "gemini-2.0-flash",
         }
         llm_model = os.getenv("LLM_MODEL") or default_models[provider]
 
