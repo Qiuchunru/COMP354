@@ -70,19 +70,27 @@ class _OpenAIBackend(_LLMBackend):
 
 
 # For Google / Gemini backend --------------------------------
+# Uses the new google.genai SDK (google-genai package) — the same one
+# already used in services/sponsor_evaluator/llm/sponsor_dimension_evaluator.py.
+# The old google.generativeai package is deprecated and is not installed
+# (see requirements.txt), so importing it here used to raise ModuleNotFoundError
+# for every LLM_PROVIDER=google call that went through LLMClient (discover,
+# research, contacts stages).
 class _GoogleBackend(_LLMBackend):
     def __init__(self, api_key: str, model: str) -> None:
-        import google.generativeai as genai
+        from google import genai
 
-        genai.configure(api_key=api_key)
-        self._model_name = model
-        self._genai = genai
+        self._client = genai.Client(api_key=api_key)
+        self._model = model
 
     def complete(self, system: str, user: str) -> str:
-        model = self._genai.GenerativeModel(
-            model_name=self._model_name, system_instruction=system
+        from google.genai import types
+
+        response = self._client.models.generate_content(
+            model=self._model,
+            contents=user,
+            config=types.GenerateContentConfig(system_instruction=system),
         )
-        response = model.generate_content(user)
         return response.text or ""
 
 
