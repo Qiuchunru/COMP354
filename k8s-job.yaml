@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sponsor-scraper-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: scraper
+        image: sponsor-pipeline:v1.1
+        
+        imagePullPolicy: Never
+      
+        command: ["python", "-c", "import requests; print('K8s Scraper Run Success! Response:', requests.get('https://httpbin.org/user-agent').status_code)"]
+      restartPolicy: Never
+  backoffLimit: 1
+  
