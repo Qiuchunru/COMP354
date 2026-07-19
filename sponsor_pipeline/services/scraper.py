@@ -83,11 +83,19 @@ class WebScraperService:
 
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(headless=True)
+            # =========================================================================
+            # MAINTAINED BY TEAM 6: Modernised hardcoded User-Agent to prevent anti-bot
+            # blocking and enabled dynamic loading from config settings as fallback.
+            # =========================================================================
+            fallback_ua = (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+            )
+            
+            current_ua = getattr(self._settings, "user_agent", fallback_ua)
+
             context = browser.new_context(
-                user_agent=(
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-                )
+                user_agent=current_ua
             )
             try:
                 while queue and pages_crawled < self._settings.max_crawl_pages:
