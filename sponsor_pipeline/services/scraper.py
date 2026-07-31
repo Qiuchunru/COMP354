@@ -91,12 +91,10 @@ class WebScraperService:
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
             )
-            
+
             current_ua = getattr(self._settings, "user_agent", fallback_ua)
 
-            context = browser.new_context(
-                user_agent=current_ua
-            )
+            context = browser.new_context(user_agent=current_ua)
             try:
                 while queue and pages_crawled < self._settings.max_crawl_pages:
                     if (
