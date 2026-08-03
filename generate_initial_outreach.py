@@ -101,7 +101,7 @@ def main():
             print("=" * 80 + "\n")
 
             user_input = input("Press enter to generate another email (type 'exit' or 'e' to stop): ")
-            if user_input == 'exit' or 'e':
+            if user_input == "exit" or user_input == "e":
                 break
     except KeyboardInterrupt:
         print("\nExited program.")
