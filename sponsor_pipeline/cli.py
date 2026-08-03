@@ -105,6 +105,8 @@ def _run_scrape(args: argparse.Namespace, settings: Settings) -> int:
         lines.extend(result.emails)
         lines.append("")
 
+    logger.info("args.output = %r", args.output)
+    logger.info("cwd = %s", Path.cwd())
     output_path = Path(args.output)
     text = "\n".join(lines)
     if args.append and output_path.exists():

@@ -110,8 +110,8 @@ def evaluator_score_to_pipeline(
     eval_score: EvaluatorScore,
 ) -> PipelineSponsorScore:
     """
-    Convert schemas.SponsorScore (evaluator output) to models.SponsorScore (pipeline type).
-    Uses the pipeline Company so the score is linked to the correct pipeline entity (with id, status...).
+    Convert schemas.SponsorScore (evaluator output) to models.SponsorScore (pipeline type)
+    Uses the pipeline Company so the score is linked to the correct pipeline entity (with id, status...)
     """
     criterion_scores = {
         key: PipelineCriterionScore(
