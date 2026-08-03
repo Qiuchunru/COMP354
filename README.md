@@ -17,6 +17,7 @@ An AI-assisted pipeline that automates sponsor discovery, scoring, research, and
 ## Quick start
 
 ### Prerequisites
+
 - Python 3.11+
 - Git
 - An API key for Anthropic, OpenAI, or Google
@@ -33,6 +34,8 @@ cd COMP354
 python3 -m venv venv && source venv/bin/activate
 # Windows:
 python -m venv venv && venv\Scripts\activate
+# Windows (Git Bash):
+python -m venv venv && source venv/Scripts/activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
@@ -93,11 +96,11 @@ results/                 # Exported reports (created by export command)
 
 The pipeline supports three providers — set `LLM_PROVIDER` in your `.env`:
 
-| Provider | Key | Default model |
-|---|---|---|
+| Provider           | Key                 | Default model       |
+| ------------------ | ------------------- | ------------------- |
 | Anthropic (Claude) | `ANTHROPIC_API_KEY` | `claude-sonnet-4-6` |
-| OpenAI (ChatGPT) | `OPENAI_API_KEY` | `gpt-4o-mini` |
-| Google (Gemini) | `GOOGLE_API_KEY` | `gemini-2.0-flash` |
+| OpenAI (ChatGPT)   | `OPENAI_API_KEY`    | `gpt-4o-mini`       |
+| Google (Gemini)    | `GOOGLE_API_KEY`    | `gemini-2.0-flash`  |
 
 ---
 
@@ -124,7 +127,7 @@ This is Version 1.0 of a larger planned system for HackConcordia's sponsor resea
 ## Team
 
 | Name               | Role                                       |
-|--------------------|--------------------------------------------|
+| ------------------ | ------------------------------------------ |
 | Elizabeth Wong     | Scraper Management / Repo Owner            |
 | Matthieu Geahel    | Project Lead / Architectural Core Pipeline |
 | Daniel Henao Duque | Backend Developer & Integration Lead       |
