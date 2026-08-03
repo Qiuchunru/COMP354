@@ -15,7 +15,6 @@ from sponsor_pipeline.models import (
 )
 from sponsor_pipeline.services.sponsor_evaluator.bridge import crawl_to_evidence
 
-
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------

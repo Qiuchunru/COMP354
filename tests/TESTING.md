@@ -3,6 +3,7 @@
 ## Setup
 
 Install pytest if you haven't already:
+
 ```
 pip install pytest
 ```
@@ -13,27 +14,36 @@ No API key is needed to run the unit tests. The test suite uses `FakeSponsorDime
 ## Running the tests
 
 Run the full test suite from the project root:
+
 ```
 pytest tests/
 ```
 
 Run just the sponsor evaluator tests:
+
 ```
 pytest tests/services/sponsor_evaluator/
 ```
 
 Run a specific file:
+
 ```
 pytest tests/services/sponsor_evaluator/test_scoring.py
 ```
 
+Run tests using sh script
+
+```
+sh scripts/docker-checks.sh
+```
+
 ## What's covered
 
-| File | What it tests |
-|---|---|
-| `test_scoring.py` | `ScoreCalculator` — weighted average math and validation |
-| `test_bridge.py` | `crawl_to_evidence` — evidence bucketing and deduplication |
-| `test_evaluator.py` | `SponsorEvaluator` — orchestration flow, not LLM logic |
+| File                | What it tests                                              |
+| ------------------- | ---------------------------------------------------------- |
+| `test_scoring.py`   | `ScoreCalculator` — weighted average math and validation   |
+| `test_bridge.py`    | `crawl_to_evidence` — evidence bucketing and deduplication |
+| `test_evaluator.py` | `SponsorEvaluator` — orchestration flow, not LLM logic     |
 
 ## Testing the full LLM pipeline with a real company
 
@@ -44,6 +54,7 @@ tool-use parsing, and score assembly all work together correctly.
 **Requires** `ANTHROPIC_API_KEY` set in your `.env` (copy `.env.example` and fill it in).
 
 Run it from the project root:
+
 ```
 python3 tests/demo_evaluator.py
 ```

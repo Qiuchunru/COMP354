@@ -16,16 +16,30 @@ from __future__ import annotations
 
 from sponsor_pipeline.models import (
     Company as PipelineCompany,
+)
+from sponsor_pipeline.models import (
     CrawlResult,
-    CriterionScore as PipelineCriterionScore,
     EvidenceCategory,
+)
+from sponsor_pipeline.models import (
+    CriterionScore as PipelineCriterionScore,
+)
+from sponsor_pipeline.models import (
     SponsorMotivation as PipelineMotivation,
+)
+from sponsor_pipeline.models import (
     SponsorScore as PipelineSponsorScore,
 )
 from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     Company as EvaluatorCompany,
+)
+from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     Evidence as EvaluatorEvidence,
+)
+from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     SponsorMotivation as EvaluatorMotivation,
+)
+from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     SponsorScore as EvaluatorScore,
 )
 

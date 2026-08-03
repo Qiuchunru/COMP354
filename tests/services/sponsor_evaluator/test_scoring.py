@@ -8,10 +8,12 @@ from __future__ import annotations
 
 import pytest
 
-from sponsor_pipeline.services.sponsor_evaluator.criteria import CRITERIA, EvaluationCriterion
+from sponsor_pipeline.services.sponsor_evaluator.criteria import (
+    CRITERIA,
+    EvaluationCriterion,
+)
 from sponsor_pipeline.services.sponsor_evaluator.schemas import CriterionScore
 from sponsor_pipeline.services.sponsor_evaluator.scoring import ScoreCalculator
-
 
 # ---------------------------------------------------------------------------
 # Helpers, build minimal objects without touching the LLM layer

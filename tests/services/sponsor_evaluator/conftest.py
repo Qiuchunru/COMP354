@@ -26,7 +26,6 @@ from sponsor_pipeline.services.sponsor_evaluator.schemas import (
     SponsorMotivation,
 )
 
-
 # ---------------------------------------------------------------------------
 # Stub implementation, satisfies the abstract contract without hitting an API
 # ---------------------------------------------------------------------------

@@ -13,9 +13,10 @@ from pathlib import Path
 # script is run directly from any working directory
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import os
+
 import anthropic
 from dotenv import load_dotenv
-import os
 
 from sponsor_pipeline.services.sponsor_evaluator.evaluator import SponsorEvaluator
 from sponsor_pipeline.services.sponsor_evaluator.llm.sponsor_dimension_evaluator import (

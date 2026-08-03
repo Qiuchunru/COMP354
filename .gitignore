@@ -16,6 +16,7 @@ __pycache__/
 
 venv/log.txt
 test_emails.txt
+emails.txt
 results/
 
 venv/
