@@ -8,6 +8,8 @@ from sponsor_pipeline.config import Settings
 from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import DiscoverySource
 from sponsor_pipeline.orchestrator import PipelineOrchestrator
+#T.A. - added stage and release message
+import sponsor_pipeline as pkg
 
 logger = get_logger(__name__)
 
@@ -15,6 +17,14 @@ logger = get_logger(__name__)
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Hack Canada sponsor research pipeline — discover, score, research, and find contacts."
+    )
+    # T.A. - Add a global `--version` flag that prints the package release/version and exits.
+    # This uses the `__release__` defined in `sponsor_pipeline/__init__.py`.
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=pkg.__release__,
+        help="Show program version and exit",
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
