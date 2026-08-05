@@ -17,6 +17,14 @@ from .conftest import FakeSponsorDimensionEvaluator
 class TestSponsorEvaluator:
     """Tests for the orchestration flow in SponsorEvaluator.evaluate()"""
 
+    def test_fields_are_copied_to_result(self, fake_evaluator, sample_company, sample_evidence):
+        result = SponsorEvaluator(fake_evaluator).evaluate(sample_company, sample_evidence)
+        assert result.explanation == "Fake explanation, no LLM called"
+        assert result.key_strengths == ["Fake strength"]
+        assert result.potential_weaknesses == ["Fake weakness"]
+        assert result.recommended_outreach_angle == "Fake angle"
+        assert result.recommended_contact_role == "Fake role"
+
     def test_evaluate_returns_sponsor_score(self, fake_evaluator, sample_company, sample_evidence):
         result = SponsorEvaluator(fake_evaluator).evaluate(sample_company, sample_evidence)
         assert isinstance(result, SponsorScore)

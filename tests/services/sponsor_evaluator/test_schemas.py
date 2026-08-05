@@ -129,3 +129,20 @@ def test_criterion_score_optional_field():
     assert score.score == 8.0
     assert score.reasoning == "strong hiring signals"
     assert score.supporting_evidence == ["hiring interns"]
+
+def test_criterion_score_independence():
+    first = CriterionScore(
+        criterion_key="talent",
+        score=8.0,
+        reasoning="Strong hiring signals",
+    )
+    second = CriterionScore(
+        criterion_key="talent",
+        score=8.0,
+        reasoning="Strong hiring signals",
+    )
+
+    first.supporting_evidence.append("hiring interns")
+
+    assert first.supporting_evidence == ["hiring interns"]
+    assert second.supporting_evidence == []
