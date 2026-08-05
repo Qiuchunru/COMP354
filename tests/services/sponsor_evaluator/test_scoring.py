@@ -74,6 +74,16 @@ class TestScoreCalculator:
         scores = {c.key: _score(c.key, 7.0) for c in CRITERIA}
         assert ScoreCalculator(CRITERIA).compute(scores) == 7.0
 
+    def test_score_exactly_zero_is_valid(self):
+        criteria = [_criterion("a", 1.0)]
+        scores = {"a": _score("a", 0.0)}
+        assert ScoreCalculator(criteria).compute(scores) == 0.0
+
+    def test_score_exactly_ten_is_valid(self):
+        criteria = [_criterion("a", 1.0)]
+        scores = {"a": _score("a", 10.0)}
+        assert ScoreCalculator(criteria).compute(scores) == 10.0
+
     # ------------------------------------------------------------------
     # Validation, guard rails that must raise ValueError
     # ------------------------------------------------------------------
@@ -97,3 +107,8 @@ class TestScoreCalculator:
         criteria = [_criterion("a", 0.0)]
         with pytest.raises(ValueError, match="weights are 0.0"):
             ScoreCalculator(criteria).compute({"a": _score("a", 5.0)})
+
+    def test_empty_scores_dict_raises(self):
+        criteria = [_criterion("a", 1.0)]
+        with pytest.raises(ValueError):
+            ScoreCalculator(criteria).compute({})
