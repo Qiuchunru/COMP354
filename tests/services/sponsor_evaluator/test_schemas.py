@@ -17,7 +17,6 @@ from sponsor_pipeline.services.sponsor_evaluator.schemas import (
 
 def test_company_required_name_field():
     company = Company(name="ABC")
-
     assert company.name == "ABC"
     assert company.website == ""
     assert company.industry == ""
@@ -31,7 +30,6 @@ def test_company_optional_fields():
         industry="technology",
         description="it is a company",
     )
-
     assert company.website == "https://abc.com"
     assert company.industry == "technology"
     assert company.description == "it is a company"
@@ -44,7 +42,6 @@ def test_company_optional_fields():
 
 def test_evidence_empty_defaults():
     evidence = Evidence()
-
     assert evidence.hiring_signals == []
     assert evidence.developer_products == []
     assert evidence.past_sponsorships == []
@@ -56,9 +53,7 @@ def test_evidence_empty_defaults():
 def test_evidence_list_independence():
     first = Evidence()
     second = Evidence()
-
     first.hiring_signals.append("hiring interns")
-
     assert first.hiring_signals == ["hiring interns"]
     assert second.hiring_signals == []
 
@@ -69,7 +64,6 @@ def test_evidence_accepts_values():
         developer_products=["public API"],
         past_sponsorships=["hackathon sponsor"],
     )
-
     assert evidence.hiring_signals == ["hiring interns"]
     assert evidence.developer_products == ["public API"]
     assert evidence.past_sponsorships == ["hackathon sponsor"]
@@ -113,7 +107,6 @@ def test_criterion_score_default_fields():
         score=8.0,
         reasoning="Strong hiring signals",
     )
-
     assert score.supporting_evidence == []
 
 
@@ -124,7 +117,6 @@ def test_criterion_score_optional_field():
         reasoning="strong hiring signals",
         supporting_evidence=["hiring interns"],
     )
-
     assert score.criterion_key == "talent"
     assert score.score == 8.0
     assert score.reasoning == "strong hiring signals"
@@ -141,8 +133,6 @@ def test_criterion_score_independence():
         score=8.0,
         reasoning="Strong hiring signals",
     )
-
     first.supporting_evidence.append("hiring interns")
-
     assert first.supporting_evidence == ["hiring interns"]
     assert second.supporting_evidence == []

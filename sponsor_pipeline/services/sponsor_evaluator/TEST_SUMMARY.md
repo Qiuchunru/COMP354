@@ -9,14 +9,16 @@
 This file defines the building blocks every other module uses: Company, Evidence, CriterionScore, SponsorScore, and the Confidence , SponsorMotivation enums
 
 **summary:**
+
 - create a `Company` with just a name, the other fields (website, industry, description) safely default to empty strings, so nothing crashes when data is missing
 
-- Every field on `Evidence` defaults to an empty list, not `None`,  the prompt builders iterate over these lists, a `None` default would cause a crash
+- Every field on `Evidence` defaults to an empty list, not `None`, the prompt builders iterate over these lists, a `None` default would cause a crash
 
 - Each `Evidence` instance gets its own independent list
 
-- The `Confidence` and `SponsorMotivation` enums reject invalid values with a clear error 
+- The `Confidence` and `SponsorMotivation` enums reject invalid values with a clear error
   ex: if the LLM returns `"High"` instead of `"high"`, the parser fails loudly rather than silently
+
 ---
 
 ### 2. Evaluation Criteria Configuration `criteria.py` (7 test)
@@ -26,6 +28,7 @@ the file defines the six sponsorship dimensions and their weights
 Outreach Accessibility, Sponsorship Capacity, Strategic Alignment)
 
 **summary:**
+
 - There are exactly 6 criteria (no accidental additions or removals)
 
 - All criterion keys are unique. a duplicate key would cause one dimension to silently overwrite another in the results dictionary
@@ -35,7 +38,7 @@ Outreach Accessibility, Sponsorship Capacity, Strategic Alignment)
 
 - The `CRITERIA_BY_KEY` lookup dictionary is in sync with the `CRITERIA` list
 
------
+---
 
 ### 3. Score Calculation `scoring.py` (11 tests)
 
@@ -43,6 +46,7 @@ the math layer, it takes the six dimension scores and combines them into a singl
 overall score using a weighted average
 
 **What we confirmed:**
+
 - Equal weights produce a plain average : two scores of 6 and 8 with equal weights gives 7.0
 
 - Unequal weights pull the result toward the heavier dimension, as expected
@@ -61,8 +65,7 @@ overall score using a weighted average
 
 - A calculator where all weights are 0.0 raises `ValueError` to not divide by zero
 
-----
-
+---
 
 ### 4. Prompt Builders `llm/sponsor_dimension_evaluator.py` (12 tests)
 
@@ -70,6 +73,7 @@ the functions that build the text sent to Claude, (company name missing, evidenc
 just quietly produce lower-quality output
 
 **summary:**
+
 - The company name always appears in the prompt
 
 - The criterion name and what it measures always appear
@@ -91,17 +95,17 @@ just quietly produce lower-quality output
 
 they take the raw response from Claude and convert it into a structured Python objects (`CriterionScore` & `SponsorEvaluationSummary`)
 
-
 **summary:**
+
 - all fields (score, reasoning, supporting evidence) are correctly extracted from esponse
 
 - The score is always stored as a float
 
 - `supporting_evidence` defaults to `[]` when the LLM omits it
 
-- The parser correctly finds the tool block even when Claude prefixes it with a plain text block 
+- The parser correctly finds the tool block even when Claude prefixes it with a plain text block
 
-- If Claude returns no tool block at all, a clear `ValueError` is raised 
+- If Claude returns no tool block at all, a clear `ValueError` is raised
 
 - Motivation strings like `talent` and confidence strings like `high` are correctly converted into their respective enum types `SponsorMotivation.TALENT`, `Confidence.HIGH`
 
@@ -110,6 +114,7 @@ they take the raw response from Claude and convert it into a structured Python o
 ### 6. Orchestration `evaluator.py` (8 tests)
 
 **summary:**
+
 - `evaluate()` always returns a `SponsorScore`
 
 - The LLM evaluator is called exactly 6 times(1 per dimension)
@@ -127,6 +132,7 @@ they take the raw response from Claude and convert it into a structured Python o
 ---
 
 ## What's not tested yet
+
 `ClaudeSponsorDimensionEvaluator`, the class that actually
-calls the Claude API. requires a real `ANTHROPIC_API_KEY`,  this integration test
+calls the Claude API. requires a real `ANTHROPIC_API_KEY`, this integration test
 will be conducted separately once the rest of the pipeline is ready and wired
