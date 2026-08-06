@@ -140,6 +140,7 @@ def _run_scrape(args: argparse.Namespace, settings: Settings) -> int:
         lines.append("")
 
     output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     text = "\n".join(lines)
     if args.append and output_path.exists():
         existing = output_path.read_text(encoding="utf-8")
