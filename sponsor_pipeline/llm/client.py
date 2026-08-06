@@ -139,6 +139,11 @@ class LLMClient:
                 f"Unsupported LLM provider: '{provider}'. Choose one of 'anthropic', 'openai', 'google'."
             )
 
+        self._system_prompt = (
+            f"You are a sponsor research assistant for {settings.event_name}, a student hackathon taking place at {settings.event_venue}. "
+            "Be realistic about sponsorship fit, not company fame."
+        )
+
     def complete(self, prompt: str, context: dict[str, Any] | None = None) -> str:
         """
         Send a prompt and return the model's text response.
@@ -149,7 +154,7 @@ class LLMClient:
             user_content += "\n\nContext:\n" + json.dumps(
                 context, indent=2, default=str
             )
-        response = self._backend.complete(_SYSTEM_PROMPT, user_content)
+        response = self._backend.complete(self._system_prompt, user_content)
         logger.info("Received LLM completion response")
         return response
 
