@@ -16,6 +16,14 @@ An AI-assisted pipeline that automates sponsor discovery, scoring, research, and
 
 ## Quick start
 
+### Version
+
+```bash
+python main.py --version
+# formats as: Hack Canada Sponsor Research Pipeline X.X.X (prototype)
+```
+
+
 ### Prerequisites
 
 - Python 3.11+
