@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "/home/taylor/Projects/COMP354_v2/COMP354/main.py", line 7, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/taylor/Projects/COMP354_v2/COMP354/sponsor_pipeline/cli.py", line 207, in main
+    companies = orchestrator.run_discovery()
+  File "/home/taylor/Projects/COMP354_v2/COMP354/sponsor_pipeline/orchestrator.py", line 158, in run_discovery
+    companies = self._discovery.discover_companies(sources)
+  File "/home/taylor/Projects/COMP354_v2/COMP354/sponsor_pipeline/services/discovery.py", line 43, in discover_companies
+    companies = self._enrich_with_ai(raw_leads)
+  File "/home/taylor/Projects/COMP354_v2/COMP354/sponsor_pipeline/services/discovery.py", line 95, in _enrich_with_ai
+    result = self._llm.complete(
+        self._prompts.get_discovery_prompt()
+    ...<5 lines>...
+        + json.dumps(payload, indent=2),
+    )
+  File "/home/taylor/Projects/COMP354_v2/COMP354/sponsor_pipeline/llm/client.py", line 152, in complete
+    response = self._backend.complete(_SYSTEM_PROMPT, user_content)
+  File "/home/taylor/Projects/COMP354_v2/COMP354/sponsor_pipeline/llm/client.py", line 61, in complete
+    response = self._client.chat.completions.create(
+        model=self._model,
+    ...<4 lines>...
+        ],
+    )
+  File "/home/taylor/Projects/COMP354_v2/COMP354/venv/lib/python3.14/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "/home/taylor/Projects/COMP354_v2/COMP354/venv/lib/python3.14/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/taylor/Projects/COMP354_v2/COMP354/venv/lib/python3.14/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taylor/Projects/COMP354_v2/COMP354/venv/lib/python3.14/site-packages/openai/_base_client.py", line 1148, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your-ope********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}

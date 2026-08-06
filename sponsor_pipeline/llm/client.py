@@ -112,6 +112,7 @@ class LLMClient:
         provider = settings.llm_provider
         model = settings.llm_model
         logger.info("Initializing LLM client: provider=%s, model=%s", provider, model)
+        self._provider = provider # T.A.
 
         if provider == "anthropic":
             if not settings.anthropic_api_key:
@@ -149,7 +150,24 @@ class LLMClient:
             user_content += "\n\nContext:\n" + json.dumps(
                 context, indent=2, default=str
             )
-        response = self._backend.complete(_SYSTEM_PROMPT, user_content)
+            #T.A. Added the try  block to provide a user firendly error 
+        try:
+            response = self._backend.complete(_SYSTEM_PROMPT, user_content)
+        except Exception as exc:
+            # Try to detect authentication-like failures and raise a friendly error
+            msg = str(exc) or ""
+            low = msg.lower()
+            if "401" in msg or "incorrect api key" in low or "invalid_api_key" in low or "authentication" in low:
+                env_name = {
+                    "anthropic": "ANTHROPIC_API_KEY",
+                    "openai": "OPENAI_API_KEY",
+                    "google": "GOOGLE_API_KEY",
+                }.get(self._provider, "API key")
+                raise ValueError(
+                    f"LLM authentication failed for provider '{self._provider}'."
+                    f" Check {env_name} in your .env and ensure it is a valid key."
+                ) from exc
+            raise
         logger.info("Received LLM completion response")
         return response
 
