@@ -79,11 +79,13 @@ def test_confidence_values():
     assert Confidence.MEDIUM.value == "medium"
     assert Confidence.HIGH.value == "high"
 
-
 def test_invalid_confidence_values():
     with pytest.raises(ValueError):
         Confidence("Not")
 
+def test_invalid_confidence_values_capitals():
+    with pytest.raises(ValueError):
+        Confidence("High")
 
 def test_sponsor_motivation_values():
     assert SponsorMotivation.TALENT.value == "talent"
@@ -95,6 +97,10 @@ def test_invalid_sponsor_motivation_values():
     with pytest.raises(ValueError):
         SponsorMotivation("Skill")
 
+
+def test_invalid_sponsor_motivation_values_capitals():
+    with pytest.raises(ValueError):
+        SponsorMotivation("Talent")
 
 # ------------------------------------------------------------
 # Tests for CriterionScore
@@ -108,7 +114,6 @@ def test_criterion_score_default_fields():
         reasoning="Strong hiring signals",
     )
     assert score.supporting_evidence == []
-
 
 def test_criterion_score_optional_field():
     score = CriterionScore(

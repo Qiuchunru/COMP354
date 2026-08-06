@@ -40,7 +40,7 @@ Outreach Accessibility, Sponsorship Capacity, Strategic Alignment)
 
 ---
 
-### 3. Score Calculation `scoring.py` (11 tests)
+### 3. Score Calculation `scoring.py` (15 tests)
 
 the math layer, it takes the six dimension scores and combines them into a single
 overall score using a weighted average
@@ -69,8 +69,7 @@ overall score using a weighted average
 
 ### 4. Prompt Builders `llm/sponsor_dimension_evaluator.py` (12 tests)
 
-the functions that build the text sent to Claude, (company name missing, evidence not included) won't raise an exception, the LLM will
-just quietly produce lower-quality output
+the functions that build the text sent to Claude, (company name missing, evidence not included) won't raise an exception, the LLM will just quietly produce lower-quality output
 
 **summary:**
 
@@ -97,7 +96,7 @@ they take the raw response from Claude and convert it into a structured Python o
 
 **summary:**
 
-- all fields (score, reasoning, supporting evidence) are correctly extracted from esponse
+- all fields (score, reasoning, supporting evidence) are correctly extracted from the response
 
 - The score is always stored as a float
 
@@ -111,7 +110,7 @@ they take the raw response from Claude and convert it into a structured Python o
 
 ---
 
-### 6. Orchestration `evaluator.py` (8 tests)
+### 6. Orchestration `evaluator.py` (9 tests)
 
 **summary:**
 

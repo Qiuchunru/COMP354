@@ -13,6 +13,13 @@ def test_six_criteria_exist():
         assert criterion.description
         assert criterion.weight
 
+def test_criteria_have_real_descriptions():
+    for criterion in CRITERIA:
+        assert criterion.description.strip()
+
+def test_criteria_have_real_names():
+    for criterion in CRITERIA:
+        assert criterion.name.strip()
 
 def test_criterion_keys_are_unique():
     keys = [criterion.key for criterion in CRITERIA]
@@ -25,6 +32,7 @@ def test_all_criteria_have_positive_weights():
 
 
 def test_criteria_lookup_matches_list():
+    assert len(CRITERIA_BY_KEY) == len(CRITERIA)
     keys = {criterion.key for criterion in CRITERIA}
     assert set(CRITERIA_BY_KEY.keys()) == keys
 
