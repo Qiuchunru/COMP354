@@ -8,8 +8,8 @@ Usage:
     python benchmark_scraper.py
 """
 
-import time
 import logging
+import time
 
 from sponsor_pipeline.config import Settings
 from sponsor_pipeline.services.scraper import WebScraperService

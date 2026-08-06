@@ -4,11 +4,11 @@ import argparse
 import sys
 from pathlib import Path
 
+import sponsor_pipeline as pkg
 from sponsor_pipeline.config import Settings
 from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import DiscoverySource
 from sponsor_pipeline.orchestrator import PipelineOrchestrator
-import sponsor_pipeline as pkg
 
 logger = get_logger(__name__)
 
@@ -35,9 +35,7 @@ def _looks_like_api_key(key: str) -> bool:
     if not any(c.isalnum() for c in k):
         return False
     # reasonable minimal length to avoid placeholders
-    if len(k) < 16:
-        return False
-    return True
+    return len(k) >= 16
 
 
 def build_parser() -> argparse.ArgumentParser:

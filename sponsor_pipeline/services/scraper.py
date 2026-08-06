@@ -1,12 +1,12 @@
 from __future__ import annotations
 
+import asyncio
 import re
 from collections import deque
 from urllib.parse import urljoin, urlparse
 
-import asyncio
-from playwright.sync_api import sync_playwright
 from playwright.async_api import async_playwright
+from playwright.sync_api import Error, TimeoutError, sync_playwright
 
 from sponsor_pipeline.config import Settings
 from sponsor_pipeline.logger import get_logger
@@ -60,10 +60,10 @@ EMAIL_RE = re.compile(
     r"\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b", re.IGNORECASE
 )
 LINKEDIN_RE = re.compile(
-    r"https?://(?:www\.)?linkedin\.com/(?:in|company)/[A-Za-z0-9_/%-]+", re.I
+    r"https?://(?:www\.)?linkedin\.com/(?:in|company)/[A-Za-z0-9_/%-]+", re.IGNORECASE
 )
-TWITTER_RE = re.compile(r"https?://(?:www\.)?(?:twitter|x)\.com/[A-Za-z0-9_]+", re.I)
-GITHUB_RE = re.compile(r"https?://(?:www\.)?github\.com/[A-Za-z0-9_-]+", re.I)
+TWITTER_RE = re.compile(r"https?://(?:www\.)?(?:twitter|x)\.com/[A-Za-z0-9_]+", re.IGNORECASE)
+GITHUB_RE = re.compile(r"https?://(?:www\.)?github\.com/[A-Za-z0-9_-]+", re.IGNORECASE)
 
 
 class WebScraperService:
@@ -276,7 +276,7 @@ class WebScraperService:
             page.goto(url, wait_until="domcontentloaded", timeout=25000)
             page.wait_for_timeout(1000)
             return page.content()
-        except Exception as exc:
+        except (TimeoutError, Error) as exc:
             logger.warning("Failed to fetch %s: %s", url, exc)
             return ""
         finally:
@@ -289,7 +289,7 @@ class WebScraperService:
             await page.goto(url, wait_until="domcontentloaded", timeout=25000)
             await page.wait_for_timeout(1000)
             return await page.content()
-        except Exception as exc:
+        except (Error, TimeoutError) as exc:
             logger.warning("Failed to fetch %s: %s", url, exc)
             return ""
         finally:
@@ -373,8 +373,8 @@ def _extract_social_links(html: str, source_url: str) -> list[ContactMethod]:
 
 
 def _html_to_text(html: str, max_chars: int) -> str:
-    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.I)
-    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
+    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.IGNORECASE)
+    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.IGNORECASE)
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text[:max_chars]
