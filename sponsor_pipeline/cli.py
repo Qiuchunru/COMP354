@@ -8,13 +8,12 @@ from sponsor_pipeline.config import Settings
 from sponsor_pipeline.logger import get_logger
 from sponsor_pipeline.models import DiscoverySource
 from sponsor_pipeline.orchestrator import PipelineOrchestrator
-#T.A. - added stage and release message
 import sponsor_pipeline as pkg
 
 logger = get_logger(__name__)
 
 
-# T.A. commands that require LLM access
+# commands that indicate LLM access
 LLM_COMMANDS = {"run", "discover", "score", "research", "contacts"}
 
 
@@ -45,7 +44,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Hack Canada sponsor research pipeline — discover, score, research, and find contacts."
     )
-    # T.A. - Add a global `--version` flag that prints the package release/version and exits.
+    # Add a global `--version` flag that prints the package release/version and exits.
     # This uses the `__release__` defined in `sponsor_pipeline/__init__.py`.
     parser.add_argument(
         "--version",
@@ -169,7 +168,7 @@ def main(argv: list[str] | None = None) -> int:
         settings.llm_provider,
     )
 
-    # T.A. If this command will use the LLM, run a simple heuristic check on the active provider key.
+    # If this command will use the LLM, run a simple heuristic check on the active provider key.
     if args.command in LLM_COMMANDS:
         provider = settings.llm_provider
         env_name = {
@@ -195,7 +194,7 @@ def main(argv: list[str] | None = None) -> int:
     except ValueError as exc:
         logger.error("Error: %s", exc)
         return 1
-# T.A. wrapped everything in a try block.
+# wrapped everything in a try block.
     try:
         if args.command == "run":
             logger.info("Running full pipeline")

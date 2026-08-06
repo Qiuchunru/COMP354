@@ -112,7 +112,7 @@ class LLMClient:
         provider = settings.llm_provider
         model = settings.llm_model
         logger.info("Initializing LLM client: provider=%s, model=%s", provider, model)
-        self._provider = provider # T.A.
+        self._provider = provider
 
         if provider == "anthropic":
             if not settings.anthropic_api_key:
@@ -150,7 +150,7 @@ class LLMClient:
             user_content += "\n\nContext:\n" + json.dumps(
                 context, indent=2, default=str
             )
-            #T.A. Added the try  block to provide a user firendly error 
+            # Added the try  block to provide a user firendly error 
         try:
             response = self._backend.complete(_SYSTEM_PROMPT, user_content)
         except Exception as exc:
